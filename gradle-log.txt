@@ -1,0 +1,59 @@
+Calculating task graph as configuration cache cannot be reused because file 'gradle\libs.versions.toml' has changed.
+> Task :app:generateDebugAssets UP-TO-DATE
+> Task :app:preBuild UP-TO-DATE
+> Task :app:preDebugBuild UP-TO-DATE
+> Task :app:clean
+> Task :app:mergeDebugNativeDebugMetadata NO-SOURCE
+> Task :app:createDebugCompatibleScreenManifests
+> Task :app:writeDebugSigningConfigVersions
+> Task :app:mapDebugSourceSetPaths
+> Task :app:writeDebugAppMetadata
+> Task :app:extractDeepLinksDebug FROM-CACHE
+> Task :app:javaPreCompileDebug FROM-CACHE
+> Task :app:generateDebugResources FROM-CACHE
+> Task :app:validateSigningDebug
+> Task :app:generateDebugGlobalSynthetics FROM-CACHE
+> Task :app:mergeDebugJniLibFolders
+> Task :app:desugarDebugFileDependencies FROM-CACHE
+> Task :app:packageDebugResources FROM-CACHE
+> Task :app:mergeDebugAssets
+> Task :app:checkDebugAarMetadata
+> Task :app:checkDebugDuplicateClasses
+> Task :app:mergeDebugResources FROM-CACHE
+> Task :app:processDebugNavigationResources FROM-CACHE
+> Task :app:compileDebugNavigationResources FROM-CACHE
+> Task :app:parseDebugLocalResources FROM-CACHE
+> Task :app:compressDebugAssets FROM-CACHE
+> Task :app:mergeLibDexDebug FROM-CACHE
+> Task :app:mergeDebugNativeLibs
+> Task :app:generateDebugRFile FROM-CACHE
+> Task :app:processDebugMainManifest
+
+> Task :app:stripDebugDebugSymbols
+Unable to strip the following libraries, packaging them as they are: libandroidx.graphics.path.so. Run with --info option to learn more.
+
+> Task :app:processDebugManifest
+> Task :app:processDebugManifestForPackage
+> Task :app:processDebugResources
+> Task :app:kspDebugKotlin
+
+> Task :app:compileDebugKotlin
+w: file:///C:/Users/pdrpic86/Desktop/QuizMaster-catalog-clean/QuizMaster/app/src/main/java/com/example/quizmaster/ui/components/CategoryHeader.kt:46:45 'val Icons.Rounded.KeyboardArrowLeft: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Rounded.KeyboardArrowLeft.
+w: file:///C:/Users/pdrpic86/Desktop/QuizMaster-catalog-clean/QuizMaster/app/src/main/java/com/example/quizmaster/ui/screens/home/HomeScreen.kt:559:49 'val Icons.Rounded.KeyboardArrowRight: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Rounded.KeyboardArrowRight.
+w: file:///C:/Users/pdrpic86/Desktop/QuizMaster-catalog-clean/QuizMaster/app/src/main/java/com/example/quizmaster/ui/screens/home/HomeScreen.kt:636:45 'val Icons.Rounded.KeyboardArrowRight: ImageVector' is deprecated. Use the AutoMirrored version at Icons.AutoMirrored.Rounded.KeyboardArrowRight.
+
+> Task :app:mergeExtDexDebug
+> Task :app:compileDebugJavaWithJavac NO-SOURCE
+> Task :app:processDebugJavaRes
+> Task :app:dexBuilderDebug FROM-CACHE
+> Task :app:mergeProjectDexDebug FROM-CACHE
+> Task :app:mergeDebugJavaResource
+> Task :app:packageDebug
+> Task :app:assembleDebug
+> Task :app:createDebugApkListingFileRedirect
+
+[Incubating] Problems report is available at: file:///C:/Users/pdrpic86/Desktop/QuizMaster-catalog-clean/QuizMaster/build/reports/problems/problems-report.html
+
+BUILD SUCCESSFUL in 13s
+38 actionable tasks: 23 executed, 15 from cache
+Configuration cache entry stored.

@@ -16,7 +16,6 @@ val QuizBlueLight = Color(0xFF60A5FA)
 // Tertiary red for warning/glow effects
 val QuizRed = Color(0xFFEF4444)
 val QuizRedDark = Color(0xFF7F1D1D)
-
 // Text colors
 val QuizText = Color(0xFFEAF2FF)
 val QuizMutedText = Color(0xFF94A3B8)
@@ -24,4 +23,3 @@ val QuizMutedText = Color(0xFF94A3B8)
 // Quiz feedback colors
 val CorrectGreen = Color(0xFF22C55E)
 val WrongRed = Color(0xFFEF4444)
-val WarningYellow = Color(0xFFFACC15)
