@@ -35,7 +35,7 @@ Implemented so far:
 - ✅ Jetpack Compose UI
 - ✅ Material Design 3 theme
 - ✅ Black + blue visual identity
-- ✅ Animated Splash screen
+- ✅ Native Splash screen (Android 12+ API)
 - ✅ Animated Home screen
 - ✅ Category selection screen
 - ✅ Difficulty selection screen
@@ -92,7 +92,7 @@ Design principles:
 Current temporary flow:
 
 ```text
-Splash
+System Splash (Native API)
   ↓
 Home
   ↓
