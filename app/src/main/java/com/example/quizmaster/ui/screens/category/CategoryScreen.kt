@@ -1,6 +1,7 @@
 package com.example.quizmaster.ui.screens.category
 
 import androidx.compose.foundation.background
+import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
@@ -162,24 +163,35 @@ private fun CategoryHeaderSection(
     onBackClick: () -> Unit
 ) {
     Row(
-        modifier = Modifier.fillMaxWidth(),
+        modifier = Modifier
+            .fillMaxWidth()
+            .background(Color.White.copy(alpha = 0.04f), RoundedCornerShape(24.dp))
+            .border(
+                width = 0.5.dp,
+                brush = Brush.linearGradient(
+                    colors = listOf(Color.White.copy(alpha = 0.15f), Color.Transparent)
+                ),
+                shape = RoundedCornerShape(24.dp)
+            )
+            .padding(16.dp),
         verticalAlignment = Alignment.CenterVertically
     ) {
         Surface(
-            modifier = Modifier.size(48.dp),
-            shape = RoundedCornerShape(16.dp),
-            color = Color.White.copy(alpha = 0.08f)
+            modifier = Modifier.size(44.dp),
+            shape = RoundedCornerShape(14.dp),
+            color = Color.White.copy(alpha = 0.1f)
         ) {
             IconButton(onClick = onBackClick) {
                 Icon(
                     imageVector = Icons.AutoMirrored.Rounded.ArrowBack,
                     contentDescription = "Back",
-                    tint = Color.White
+                    tint = Color.White,
+                    modifier = Modifier.size(20.dp)
                 )
             }
         }
 
-        Spacer(modifier = Modifier.width(14.dp))
+        Spacer(modifier = Modifier.width(16.dp))
 
         Column(
             modifier = Modifier.weight(1f)
@@ -187,31 +199,23 @@ private fun CategoryHeaderSection(
             Text(
                 text = "Categories",
                 color = Color.White,
-                fontSize = 32.sp,
-                fontWeight = FontWeight.ExtraBold
+                fontSize = 28.sp,
+                fontWeight = FontWeight.Black
             )
-
-            Spacer(modifier = Modifier.height(6.dp))
 
             Text(
-                text = "Choose a category and start the quiz",
-                color = Color.White.copy(alpha = 0.68f),
-                fontSize = 15.sp
+                text = "Pick your challenge",
+                color = Color.White.copy(alpha = 0.55f),
+                fontSize = 14.sp
             )
         }
 
-        Surface(
-            modifier = Modifier.size(48.dp),
-            shape = RoundedCornerShape(16.dp),
-            color = Color.White.copy(alpha = 0.08f)
-        ) {
-            Icon(
-                imageVector = Icons.Rounded.Category,
-                contentDescription = null,
-                tint = Color(0xFF9C6BFF),
-                modifier = Modifier.padding(12.dp)
-            )
-        }
+        Icon(
+            imageVector = Icons.Rounded.Category,
+            contentDescription = null,
+            tint = Color(0xFF60A5FA),
+            modifier = Modifier.size(28.dp)
+        )
     }
 }
 
@@ -259,26 +263,33 @@ private fun CategoryCard(
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .height(112.dp)
+            .height(116.dp)
             .clickable { onClick() },
-        shape = RoundedCornerShape(26.dp),
+        shape = RoundedCornerShape(28.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White.copy(alpha = 0.065f)
+            containerColor = Color.White.copy(alpha = 0.045f)
         ),
         elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
     ) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
+                .border(
+                    width = 0.5.dp,
+                    brush = Brush.horizontalGradient(
+                        colors = listOf(category.accentColor.copy(alpha = 0.3f), Color.Transparent)
+                    ),
+                    shape = RoundedCornerShape(28.dp)
+                )
                 .background(
-                    Brush.horizontalGradient(
+                    Brush.linearGradient(
                         colors = listOf(
-                            category.accentColor.copy(alpha = 0.22f),
-                            Color.White.copy(alpha = 0.025f)
+                            category.accentColor.copy(alpha = 0.12f),
+                            Color.Transparent
                         )
                     )
                 )
-                .padding(horizontal = 18.dp, vertical = 16.dp)
+                .padding(horizontal = 20.dp, vertical = 18.dp)
         ) {
             Row(
                 modifier = Modifier.fillMaxSize(),
@@ -286,16 +297,17 @@ private fun CategoryCard(
             ) {
                 Box(
                     modifier = Modifier
-                        .size(64.dp)
-                        .clip(RoundedCornerShape(20.dp))
-                        .background(category.accentColor.copy(alpha = 0.95f)),
+                        .size(60.dp)
+                        .clip(RoundedCornerShape(18.dp))
+                        .background(category.accentColor.copy(alpha = 0.15f))
+                        .border(1.dp, category.accentColor.copy(alpha = 0.4f), RoundedCornerShape(18.dp)),
                     contentAlignment = Alignment.Center
                 ) {
                     Icon(
                         imageVector = category.icon,
                         contentDescription = null,
-                        tint = Color.White,
-                        modifier = Modifier.size(34.dp)
+                        tint = category.accentColor,
+                        modifier = Modifier.size(32.dp)
                     )
                 }
 
@@ -307,38 +319,27 @@ private fun CategoryCard(
                     Text(
                         text = category.name,
                         color = Color.White,
-                        fontSize = 22.sp,
-                        fontWeight = FontWeight.Bold
+                        fontSize = 21.sp,
+                        fontWeight = FontWeight.Black
                     )
 
-                    Spacer(modifier = Modifier.height(5.dp))
+                    Spacer(modifier = Modifier.height(4.dp))
 
                     Text(
                         text = category.subtitle,
-                        color = Color.White.copy(alpha = 0.66f),
-                        fontSize = 14.sp,
-                        lineHeight = 18.sp
+                        color = Color.White.copy(alpha = 0.5f),
+                        fontSize = 13.sp,
+                        lineHeight = 17.sp,
+                        maxLines = 2
                     )
                 }
 
-                Column(
-                    horizontalAlignment = Alignment.End,
-                    verticalArrangement = Arrangement.Center
-                ) {
-                    QuestionBadge(
-                        count = category.questionCount,
-                        color = category.accentColor
-                    )
-
-                    Spacer(modifier = Modifier.height(10.dp))
-
-                    Icon(
-                        imageVector = Icons.AutoMirrored.Rounded.ArrowForwardIos,
-                        contentDescription = null,
-                        tint = Color.White.copy(alpha = 0.72f),
-                        modifier = Modifier.size(20.dp)
-                    )
-                }
+                Icon(
+                    imageVector = Icons.AutoMirrored.Rounded.ArrowForwardIos,
+                    contentDescription = null,
+                    tint = category.accentColor.copy(alpha = 0.6f),
+                    modifier = Modifier.size(18.dp)
+                )
             }
         }
     }
@@ -360,5 +361,13 @@ private fun QuestionBadge(
             fontWeight = FontWeight.ExtraBold,
             modifier = Modifier.padding(horizontal = 14.dp, vertical = 7.dp)
         )
+    }
+}
+
+@androidx.compose.ui.tooling.preview.Preview
+@Composable
+fun CategoryScreenPreview() {
+    com.example.quizmaster.ui.theme.QuizMasterTheme {
+        CategoryScreen(onBackClick = {}, onCategorySelected = {})
     }
 }

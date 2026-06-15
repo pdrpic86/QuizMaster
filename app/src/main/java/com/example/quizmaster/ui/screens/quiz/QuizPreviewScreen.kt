@@ -1,11 +1,23 @@
 package com.example.quizmaster.ui.screens.quiz
 
+import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.Animatable
 import androidx.compose.animation.core.EaseOutBack
 import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.LinearEasing
+import androidx.compose.animation.core.RepeatMode
+import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.animateFloatAsState
+import androidx.compose.animation.core.infiniteRepeatable
+import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.tween
+import androidx.compose.animation.fadeIn
+import androidx.compose.animation.fadeOut
+import androidx.compose.animation.slideInVertically
+import androidx.compose.animation.slideOutVertically
+import androidx.compose.animation.togetherWith
+import androidx.compose.foundation.Canvas
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -46,15 +58,19 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
+import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.StrokeCap
+import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import com.example.quizmaster.data.local.QuestionEntity
 import com.example.quizmaster.data.local.QuizDatabase
+import com.example.quizmaster.data.remote.QuizApiService
 import com.example.quizmaster.data.repository.QuestionRepository
 import com.example.quizmaster.ui.components.CategoryHeader
 import com.example.quizmaster.ui.components.GlowCircle
@@ -116,7 +132,15 @@ fun QuizPreviewScreen(
         runCatching {
             withContext(Dispatchers.IO) {
                 val database = QuizDatabase.getDatabase(context)
-                val repository = QuestionRepository(database.questionDao())
+                val repository = QuestionRepository(
+                    questionDao = database.questionDao(),
+                    apiService = QuizApiService()
+                )
+                
+                // Professional Sync: Attempt to get fresh questions from Ktor
+                // This will fail (and be caught) because the URL is a dummy
+                repository.syncQuestions(selectedCategory, selectedDifficulty)
+
                 repository.getQuestionsForQuiz(
                     category = selectedCategory,
                     difficulty = selectedDifficulty,
@@ -299,34 +323,43 @@ private fun ColumnScope.QuizQuestionContent(
 
     Card(
         modifier = Modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(30.dp),
+        shape = RoundedCornerShape(32.dp),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.82f)
+            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.45f)
         ),
-        elevation = CardDefaults.cardElevation(defaultElevation = 10.dp)
+        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
     ) {
-        Column(
+        Box(
             modifier = Modifier
                 .fillMaxWidth()
+                .border(
+                    width = 0.5.dp,
+                    brush = Brush.linearGradient(
+                        colors = listOf(Color.White.copy(alpha = 0.25f), Color.Transparent)
+                    ),
+                    shape = RoundedCornerShape(32.dp)
+                )
                 .padding(24.dp),
-            horizontalAlignment = Alignment.CenterHorizontally
+            contentAlignment = Alignment.Center
         ) {
-            Text(
-                text = "Difficulty ${question.difficulty}",
-                style = MaterialTheme.typography.labelLarge,
-                fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.primary
-            )
+            Column(horizontalAlignment = Alignment.CenterHorizontally) {
+                Text(
+                    text = "Difficulty ${question.difficulty}",
+                    style = MaterialTheme.typography.labelLarge,
+                    fontWeight = FontWeight.ExtraBold,
+                    color = MaterialTheme.colorScheme.primary.copy(alpha = 0.85f)
+                )
 
-            Spacer(modifier = Modifier.height(18.dp))
+                Spacer(modifier = Modifier.height(18.dp))
 
-            Text(
-                text = question.question,
-                style = MaterialTheme.typography.headlineSmall,
-                fontWeight = FontWeight.ExtraBold,
-                color = MaterialTheme.colorScheme.onPrimaryContainer,
-                textAlign = TextAlign.Center
-            )
+                Text(
+                    text = question.question,
+                    style = MaterialTheme.typography.headlineSmall,
+                    fontWeight = FontWeight.Black,
+                    color = MaterialTheme.colorScheme.onBackground,
+                    textAlign = TextAlign.Center
+                )
+            }
         }
     }
 
@@ -351,7 +384,6 @@ private fun ColumnScope.QuizQuestionContent(
         FeedbackFooter(
             isCorrect = selectedAnswer == question.correctAnswer,
             isTimeout = selectedAnswer.isEmpty(),
-            correctAnswer = question.correctAnswer,
             isLastQuestion = currentIndex == totalQuestions - 1,
             onNextClick = onNextClick
         )
@@ -371,43 +403,100 @@ private fun CountdownTimer(secondsLeft: Int) {
     val isWarning = secondsLeft in 1..5
     val isFinished = secondsLeft == 0
 
-    val timerScale by animateFloatAsState(
+    val animatedProgress by animateFloatAsState(
+        targetValue = secondsLeft.toFloat() / QUESTION_SECONDS.toFloat(),
+        animationSpec = tween(durationMillis = 1000, easing = LinearEasing),
+        label = "Timer progress"
+    )
+
+    val infiniteTransition = rememberInfiniteTransition(label = "timer pulse")
+    val pulseScale by infiniteTransition.animateFloat(
+        initialValue = 1f,
         targetValue = if (isWarning) 1.12f else 1f,
-        animationSpec = tween(durationMillis = 280),
+        animationSpec = infiniteRepeatable(
+            animation = tween(400, easing = FastOutSlowInEasing),
+            repeatMode = RepeatMode.Reverse
+        ),
+        label = "pulse scale"
+    )
+
+    val timerScale by animateFloatAsState(
+        targetValue = if (isWarning) 1.15f else 1f,
+        animationSpec = tween(durationMillis = 300),
         label = "Timer scale"
     )
 
     val timerColor by animateColorAsState(
         targetValue = when {
             isFinished -> MaterialTheme.colorScheme.error
-            isWarning -> MaterialTheme.colorScheme.error
+            isWarning -> Color(0xFFEF4444)
             else -> MaterialTheme.colorScheme.primary
         },
-        animationSpec = tween(durationMillis = 250),
+        animationSpec = tween(durationMillis = 300),
         label = "Timer color"
     )
 
     Box(
-        modifier = Modifier
-            .size(74.dp)
-            .scale(timerScale)
-            .background(
-                color = timerColor.copy(alpha = 0.14f),
-                shape = CircleShape
-            )
-            .border(
-                width = if (isWarning) 2.dp else 1.dp,
-                color = timerColor.copy(alpha = 0.75f),
-                shape = CircleShape
-            ),
+        modifier = Modifier.size(80.dp),
         contentAlignment = Alignment.Center
     ) {
-        Text(
-            text = secondsLeft.toString(),
-            style = MaterialTheme.typography.headlineSmall,
-            fontWeight = FontWeight.ExtraBold,
-            color = timerColor
-        )
+        if (isWarning) {
+            Box(
+                modifier = Modifier
+                    .size(60.dp)
+                    .blur(20.dp)
+                    .background(timerColor.copy(alpha = 0.3f), CircleShape)
+            )
+        }
+
+        Canvas(
+            modifier = Modifier
+                .size(76.dp)
+                .scale(timerScale * pulseScale)
+        ) {
+            val strokeWidth = 4.dp.toPx()
+            
+            // Background track
+            drawCircle(
+                color = timerColor.copy(alpha = 0.12f),
+                style = Stroke(width = strokeWidth)
+            )
+
+            // Progress arc
+            drawArc(
+                color = timerColor,
+                startAngle = -90f,
+                sweepAngle = 360f * animatedProgress,
+                useCenter = false,
+                style = Stroke(
+                    width = strokeWidth,
+                    cap = StrokeCap.Round
+                )
+            )
+        }
+
+        AnimatedContent(
+            targetState = secondsLeft,
+            transitionSpec = {
+                if (targetState < initialState) {
+                    (slideInVertically { it } + fadeIn()) togetherWith
+                            (slideOutVertically { -it } + fadeOut())
+                } else {
+                    (slideInVertically { -it } + fadeIn()) togetherWith
+                            (slideOutVertically { it } + fadeOut())
+                }.using(
+                    androidx.compose.animation.SizeTransform(clip = false)
+                )
+            },
+            label = "Timer text"
+        ) { targetSeconds ->
+            Text(
+                text = targetSeconds.toString().padStart(2, '0'),
+                style = MaterialTheme.typography.headlineSmall,
+                fontWeight = FontWeight.Black,
+                color = timerColor
+            )
+        }
     }
 }
 
@@ -423,15 +512,15 @@ private fun AnswerButton(
     val isCorrectAnswer = text == correctAnswer
 
     val containerColor: Color = when {
-        isLocked && isCorrectAnswer -> Color(0xFF14532D).copy(alpha = 0.88f)
-        isLocked && isSelected -> MaterialTheme.colorScheme.error.copy(alpha = 0.72f)
-        else -> MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.78f)
+        isLocked && isCorrectAnswer -> Color(0xFF064E3B)
+        isLocked && isSelected -> Color(0xFF7F1D1D)
+        else -> MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.65f)
     }
 
     val borderColor: Color = when {
-        isLocked && isCorrectAnswer -> Color(0xFF22C55E)
-        isLocked && isSelected -> MaterialTheme.colorScheme.error
-        else -> MaterialTheme.colorScheme.primary.copy(alpha = 0.16f)
+        isLocked && isCorrectAnswer -> Color(0xFF34D399)
+        isLocked && isSelected -> Color(0xFFF87171)
+        else -> MaterialTheme.colorScheme.primary.copy(alpha = 0.25f)
     }
 
     Card(
@@ -442,38 +531,40 @@ private fun AnswerButton(
             .fillMaxWidth()
             .border(
                 width = 1.dp,
-                color = borderColor,
+                color = borderColor.copy(alpha = 0.6f),
                 shape = RoundedCornerShape(20.dp)
             ),
         shape = RoundedCornerShape(20.dp),
         colors = CardDefaults.cardColors(containerColor = containerColor),
-        elevation = CardDefaults.cardElevation(defaultElevation = 3.dp)
+        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
     ) {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(18.dp),
+                .padding(20.dp),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
                 text = text,
                 modifier = Modifier.weight(1f),
                 style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.Bold,
-                color = MaterialTheme.colorScheme.onSurfaceVariant
+                fontWeight = FontWeight.ExtraBold,
+                color = if (isLocked) Color.White else MaterialTheme.colorScheme.onSurfaceVariant
             )
 
             if (isLocked && isCorrectAnswer) {
                 Icon(
                     imageVector = Icons.Rounded.CheckCircle,
                     contentDescription = null,
-                    tint = Color(0xFF22C55E)
+                    tint = Color(0xFF34D399),
+                    modifier = Modifier.size(24.dp)
                 )
             } else if (isLocked && isSelected) {
                 Icon(
                     imageVector = Icons.Rounded.Close,
                     contentDescription = null,
-                    tint = MaterialTheme.colorScheme.onError
+                    tint = Color(0xFFF87171),
+                    modifier = Modifier.size(24.dp)
                 )
             }
         }
@@ -484,7 +575,6 @@ private fun AnswerButton(
 private fun FeedbackFooter(
     isCorrect: Boolean,
     isTimeout: Boolean,
-    correctAnswer: String,
     isLastQuestion: Boolean,
     onNextClick: () -> Unit
 ) {
@@ -496,7 +586,7 @@ private fun FeedbackFooter(
 
     val message = when {
         isCorrect -> "Nice hit. Keep going."
-        else -> "Correct answer: $correctAnswer"
+        else -> "Better luck next time."
     }
 
     Column(

@@ -54,6 +54,7 @@ import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.blur
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Brush
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
@@ -239,32 +240,25 @@ private fun GlassIconButton(
 ) {
     Box(
         modifier = Modifier
-            .size(46.dp)
+            .size(50.dp)
             .background(
-                brush = Brush.linearGradient(
-                    colors = listOf(
-                        MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.72f),
-                        MaterialTheme.colorScheme.background.copy(alpha = 0.92f)
-                    )
-                ),
-                shape = RoundedCornerShape(16.dp)
+                color = Color.White.copy(alpha = 0.06f),
+                shape = RoundedCornerShape(18.dp)
             )
             .border(
-                width = 1.dp,
+                width = 0.5.dp,
                 brush = Brush.linearGradient(
-                    colors = listOf(
-                        MaterialTheme.colorScheme.primary.copy(alpha = 0.55f),
-                        MaterialTheme.colorScheme.tertiary.copy(alpha = 0.35f)
-                    )
+                    colors = listOf(Color.White.copy(alpha = 0.25f), Color.Transparent)
                 ),
-                shape = RoundedCornerShape(16.dp)
+                shape = RoundedCornerShape(18.dp)
             ),
         contentAlignment = Alignment.Center
     ) {
         Icon(
             imageVector = icon,
             contentDescription = null,
-            tint = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.9f)
+            tint = Color.White.copy(alpha = 0.85f),
+            modifier = Modifier.size(24.dp)
         )
 
         if (showDot) {
@@ -338,31 +332,17 @@ private fun HeroChallengeCard() {
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(32.dp),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.52f)
+            containerColor = Color.White.copy(alpha = 0.04f)
         ),
-        elevation = CardDefaults.cardElevation(
-            defaultElevation = 12.dp
-        )
+        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
     ) {
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .background(
-                    brush = Brush.linearGradient(
-                        colors = listOf(
-                            MaterialTheme.colorScheme.primary.copy(alpha = 0.22f),
-                            MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.82f),
-                            MaterialTheme.colorScheme.tertiary.copy(alpha = 0.18f)
-                        )
-                    )
-                )
                 .border(
-                    width = 1.dp,
+                    width = 0.5.dp,
                     brush = Brush.linearGradient(
-                        colors = listOf(
-                            MaterialTheme.colorScheme.primary.copy(alpha = 0.9f),
-                            MaterialTheme.colorScheme.tertiary.copy(alpha = 0.75f)
-                        )
+                        colors = listOf(Color.White.copy(alpha = 0.2f), Color.Transparent)
                     ),
                     shape = RoundedCornerShape(32.dp)
                 )
@@ -371,10 +351,11 @@ private fun HeroChallengeCard() {
             Box(
                 modifier = Modifier
                     .align(Alignment.CenterEnd)
-                    .size(160.dp)
-                    .blur(45.dp)
+                    .offset(x = 20.dp)
+                    .size(150.dp)
+                    .blur(40.dp)
                     .background(
-                        color = MaterialTheme.colorScheme.primary.copy(alpha = 0.28f),
+                        color = MaterialTheme.colorScheme.primary.copy(alpha = 0.18f),
                         shape = CircleShape
                     )
             )
@@ -576,33 +557,24 @@ private fun MiniMenuCard(
 ) {
     Card(
         onClick = onClick,
-        modifier = modifier.height(124.dp),
-        shape = RoundedCornerShape(22.dp),
+        modifier = modifier.height(130.dp),
+        shape = RoundedCornerShape(24.dp),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.58f)
+            containerColor = Color.White.copy(alpha = 0.05f)
         ),
-        elevation = CardDefaults.cardElevation(
-            defaultElevation = 8.dp,
-            pressedElevation = 2.dp
-        )
+        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
     ) {
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .background(
-                    brush = Brush.linearGradient(
-                        colors = listOf(
-                            MaterialTheme.colorScheme.primary.copy(alpha = 0.16f),
-                            MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.78f)
-                        )
-                    )
-                )
                 .border(
-                    width = 1.dp,
-                    color = MaterialTheme.colorScheme.primary.copy(alpha = 0.42f),
-                    shape = RoundedCornerShape(22.dp)
+                    width = 0.5.dp,
+                    brush = Brush.verticalGradient(
+                        colors = listOf(Color.White.copy(alpha = 0.15f), Color.Transparent)
+                    ),
+                    shape = RoundedCornerShape(24.dp)
                 )
-                .padding(14.dp)
+                .padding(16.dp)
         ) {
             Column(
                 modifier = Modifier.align(Alignment.CenterStart)
@@ -611,16 +583,16 @@ private fun MiniMenuCard(
                     imageVector = icon,
                     contentDescription = null,
                     tint = MaterialTheme.colorScheme.primary,
-                    modifier = Modifier.size(32.dp)
+                    modifier = Modifier.size(30.dp)
                 )
 
-                Spacer(modifier = Modifier.height(16.dp))
+                Spacer(modifier = Modifier.height(18.dp))
 
                 Text(
                     text = title,
                     style = MaterialTheme.typography.labelLarge,
                     fontWeight = FontWeight.Black,
-                    color = MaterialTheme.colorScheme.onBackground
+                    color = Color.White
                 )
 
                 Spacer(modifier = Modifier.height(4.dp))
@@ -628,7 +600,7 @@ private fun MiniMenuCard(
                 Text(
                     text = subtitle,
                     style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.58f)
+                    color = Color.White.copy(alpha = 0.55f)
                 )
             }
 
@@ -649,36 +621,22 @@ private fun BottomStatsCard() {
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .height(96.dp),
-        shape = RoundedCornerShape(24.dp),
+            .height(100.dp),
+        shape = RoundedCornerShape(26.dp),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.58f)
+            containerColor = Color.White.copy(alpha = 0.03f)
         ),
-        elevation = CardDefaults.cardElevation(
-            defaultElevation = 8.dp
-        )
+        elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
     ) {
         Row(
             modifier = Modifier
                 .fillMaxSize()
-                .background(
-                    brush = Brush.linearGradient(
-                        colors = listOf(
-                            MaterialTheme.colorScheme.primary.copy(alpha = 0.12f),
-                            MaterialTheme.colorScheme.background.copy(alpha = 0.75f),
-                            MaterialTheme.colorScheme.tertiary.copy(alpha = 0.12f)
-                        )
-                    )
-                )
                 .border(
-                    width = 1.dp,
-                    brush = Brush.linearGradient(
-                        colors = listOf(
-                            MaterialTheme.colorScheme.primary.copy(alpha = 0.55f),
-                            MaterialTheme.colorScheme.tertiary.copy(alpha = 0.48f)
-                        )
+                    width = 0.5.dp,
+                    brush = Brush.horizontalGradient(
+                        colors = listOf(Color.White.copy(alpha = 0.1f), Color.Transparent, Color.White.copy(alpha = 0.1f))
                     ),
-                    shape = RoundedCornerShape(24.dp)
+                    shape = RoundedCornerShape(26.dp)
                 )
                 .padding(horizontal = 22.dp),
             verticalAlignment = Alignment.CenterVertically

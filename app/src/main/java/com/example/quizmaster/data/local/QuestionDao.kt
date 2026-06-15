@@ -1,6 +1,8 @@
 package com.example.quizmaster.data.local
 
 import androidx.room.Dao
+import androidx.room.Insert
+import androidx.room.OnConflictStrategy
 import androidx.room.Query
 
 @Dao
@@ -39,6 +41,9 @@ interface QuestionDao {
         difficulty: Int,
         limit: Int = 10
     ): List<QuestionEntity>
+
+    @Insert(onConflict = OnConflictStrategy.REPLACE)
+    suspend fun insertQuestions(questions: List<QuestionEntity>)
 
     @Query(
         """

@@ -14,11 +14,12 @@ import com.example.quizmaster.navigation.AppScreen
 import com.example.quizmaster.ui.screens.category.CategoryScreen
 import com.example.quizmaster.ui.screens.difficulty.DifficultyScreen
 import com.example.quizmaster.ui.screens.home.HomeScreen
+import com.example.quizmaster.ui.screens.login.LoginScreen
 import com.example.quizmaster.ui.screens.quiz.QuizPreviewScreen
 
 @Composable
 fun QuizMasterApp() {
-    var currentScreen by remember { mutableStateOf(AppScreen.Home) }
+    var currentScreen by remember { mutableStateOf(AppScreen.Login) }
 
     // Temporary state for selected category and difficulty.
     // This can move to a ViewModel when the app grows.
@@ -37,6 +38,14 @@ fun QuizMasterApp() {
         label = "Screen transition"
     ) { screen ->
         when (screen) {
+            AppScreen.Login -> {
+                LoginScreen(
+                    onLoginClick = {
+                        currentScreen = AppScreen.Home
+                    }
+                )
+            }
+
             AppScreen.Home -> {
                 HomeScreen(
                     onCategoriesClick = {
