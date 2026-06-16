@@ -26,6 +26,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.quizmaster.ui.components.GlowCircle
 import com.example.quizmaster.ui.theme.QuizMasterTheme
+import android.util.Patterns
 
 @Composable
 fun LoginScreen(
@@ -34,33 +35,13 @@ fun LoginScreen(
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(
-                Brush.verticalGradient(
-                    colors = listOf(
-                        Color(0xFF070B1A),
-                        Color(0xFF0B1024),
-                        Color(0xFF050816)
-                    )
-                )
-            )
-    ) {
-        // Decorative background elements
-        GlowCircle(
-            modifier = Modifier
-                .align(Alignment.TopStart)
-                .offset(x = (-60).dp, y = (-20).dp)
-                .scale(1.2f)
-        )
+    val isEmailValid = remember(email) {
+        email.isEmpty() || Patterns.EMAIL_ADDRESS.matcher(email).matches()
+    }
 
-        GlowCircle(
-            modifier = Modifier
-                .align(Alignment.BottomEnd)
-                .offset(x = 40.dp, y = 40.dp)
-        )
+    val canLogin = email.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches() && password.isNotEmpty()
 
+    com.example.quizmaster.ui.components.AppBackground {
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -126,12 +107,23 @@ fun LoginScreen(
                         modifier = Modifier.fillMaxWidth(),
                         placeholder = { Text("Email Address", color = Color.White.copy(alpha = 0.3f)) },
                         leadingIcon = { Icon(Icons.Rounded.Email, null, tint = Color.White.copy(alpha = 0.5f)) },
+                        isError = !isEmailValid,
+                        supportingText = {
+                            if (!isEmailValid) {
+                                Text(
+                                    text = "Invalid email format",
+                                    color = MaterialTheme.colorScheme.error,
+                                    style = MaterialTheme.typography.labelSmall
+                                )
+                            }
+                        },
                         shape = RoundedCornerShape(16.dp),
                         colors = OutlinedTextFieldDefaults.colors(
                             focusedTextColor = Color.White,
                             unfocusedTextColor = Color.White,
                             focusedBorderColor = Color(0xFF60A5FA),
-                            unfocusedBorderColor = Color.White.copy(alpha = 0.1f)
+                            unfocusedBorderColor = Color.White.copy(alpha = 0.1f),
+                            errorBorderColor = MaterialTheme.colorScheme.error
                         )
                     )
 
@@ -167,12 +159,14 @@ fun LoginScreen(
 
                     Button(
                         onClick = onLoginClick,
+                        enabled = canLogin,
                         modifier = Modifier
                             .fillMaxWidth()
                             .height(56.dp),
                         shape = RoundedCornerShape(16.dp),
                         colors = ButtonDefaults.buttonColors(
-                            containerColor = Color(0xFF2563EB)
+                            containerColor = Color(0xFF2563EB),
+                            disabledContainerColor = Color(0xFF2563EB).copy(alpha = 0.4f)
                         )
                     ) {
                         Text(
@@ -180,6 +174,39 @@ fun LoginScreen(
                             fontSize = 18.sp,
                             fontWeight = FontWeight.Bold
                         )
+                    }
+
+                    Spacer(modifier = Modifier.height(16.dp))
+
+                    OutlinedButton(
+                        onClick = { /* Handle Google Sign In */ },
+                        modifier = Modifier
+                            .fillMaxWidth()
+                            .height(56.dp),
+                        shape = RoundedCornerShape(16.dp),
+                        border = androidx.compose.foundation.BorderStroke(
+                            width = 1.dp,
+                            color = Color.White.copy(alpha = 0.2f)
+                        ),
+                        colors = ButtonDefaults.outlinedButtonColors(
+                            contentColor = Color.White
+                        )
+                    ) {
+                        Row(
+                            modifier = Modifier.fillMaxWidth(),
+                            verticalAlignment = Alignment.CenterVertically,
+                            horizontalArrangement = Arrangement.Center
+                        ) {
+                            Text(
+                                text = "Sign in with Google",
+                                fontSize = 16.sp,
+                                fontWeight = FontWeight.Medium,
+                                modifier = Modifier.weight(1f),
+                                textAlign = TextAlign.Center
+                            )
+                            
+                            GoogleIcon(modifier = Modifier.size(24.dp))
+                        }
                     }
                 }
             }
@@ -200,6 +227,43 @@ fun LoginScreen(
                 )
             }
         }
+    }
+}
+
+@Composable
+private fun GoogleIcon(modifier: Modifier = Modifier) {
+    Box(
+        modifier = modifier
+            .clip(CircleShape)
+            .background(Color.White)
+            .padding(2.dp),
+        contentAlignment = Alignment.Center
+    ) {
+        androidx.compose.foundation.Canvas(modifier = Modifier.fillMaxSize()) {
+            val radius = size.minDimension / 2
+            
+            // Google Colors
+            val red = Color(0xFFEA4335)
+            val yellow = Color(0xFFFBBC05)
+            val green = Color(0xFF34A853)
+            val blue = Color(0xFF4285F4)
+            
+            // Draw 4 segments
+            drawArc(color = red, startAngle = 180f, sweepAngle = 90f, useCenter = true)
+            drawArc(color = yellow, startAngle = 90f, sweepAngle = 90f, useCenter = true)
+            drawArc(color = green, startAngle = 0f, sweepAngle = 90f, useCenter = true)
+            drawArc(color = blue, startAngle = 270f, sweepAngle = 90f, useCenter = true)
+            
+            // Draw a small white circle in the middle to make it look like a ring
+            drawCircle(color = Color.White, radius = radius * 0.6f)
+        }
+        Text(
+            text = "G",
+            color = Color(0xFF4285F4), // Google Blue
+            fontSize = 11.sp,
+            fontWeight = FontWeight.Black,
+            textAlign = TextAlign.Center
+        )
     }
 }
 

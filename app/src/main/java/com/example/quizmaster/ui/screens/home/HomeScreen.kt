@@ -60,7 +60,8 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
-import com.example.quizmaster.ui.components.GlowCircle
+import com.example.quizmaster.ui.components.AppBackground
+import com.example.quizmaster.ui.theme.QuizMasterTheme
 
 @Composable
 fun HomeScreen(
@@ -87,22 +88,7 @@ fun HomeScreen(
         )
     }
 
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(
-                brush = Brush.radialGradient(
-                    colors = listOf(
-                        MaterialTheme.colorScheme.surface,
-                        MaterialTheme.colorScheme.background,
-                        MaterialTheme.colorScheme.background
-                    ),
-                    radius = 1100f
-                )
-            )
-    ) {
-        NeonBackground()
-
+    AppBackground {
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -115,6 +101,7 @@ fun HomeScreen(
             horizontalAlignment = Alignment.CenterHorizontally
         ) {
             TopBar()
+            // ... the rest of the column content
 
             Spacer(modifier = Modifier.height(18.dp))
 
@@ -170,48 +157,6 @@ fun HomeScreen(
             Spacer(modifier = Modifier.weight(1f))
         }
     }
-}
-
-@Composable
-private fun NeonBackground() {
-    GlowCircle(
-        modifier = Modifier
-            .offset(x = 210.dp, y = 90.dp)
-            .scale(1.4f)
-    )
-
-    Box(
-        modifier = Modifier
-            .offset(x = (-80).dp, y = 360.dp)
-            .size(210.dp)
-            .blur(70.dp)
-            .background(
-                color = MaterialTheme.colorScheme.primary.copy(alpha = 0.24f),
-                shape = CircleShape
-            )
-    )
-
-    Box(
-        modifier = Modifier
-            .offset(x = 260.dp, y = 420.dp)
-            .size(210.dp)
-            .blur(75.dp)
-            .background(
-                color = MaterialTheme.colorScheme.tertiary.copy(alpha = 0.22f),
-                shape = CircleShape
-            )
-    )
-
-    Box(
-        modifier = Modifier
-            .offset(x = 70.dp, y = 690.dp)
-            .size(180.dp)
-            .blur(80.dp)
-            .background(
-                color = MaterialTheme.colorScheme.primary.copy(alpha = 0.18f),
-                shape = CircleShape
-            )
-    )
 }
 
 @Composable

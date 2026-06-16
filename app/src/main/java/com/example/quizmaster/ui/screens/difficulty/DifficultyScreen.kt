@@ -48,9 +48,9 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import com.example.quizmaster.ui.components.AppBackground
 import com.example.quizmaster.ui.components.CategoryBadge
 import com.example.quizmaster.ui.components.CategoryHeader
-import com.example.quizmaster.ui.components.GlowCircle
 
 @Composable
 fun DifficultyScreen(
@@ -79,32 +79,7 @@ fun DifficultyScreen(
         )
     }
 
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(
-                brush = Brush.verticalGradient(
-                    colors = listOf(
-                        MaterialTheme.colorScheme.background,
-                        MaterialTheme.colorScheme.surface,
-                        MaterialTheme.colorScheme.background
-                    )
-                )
-            )
-    ) {
-        GlowCircle(
-            modifier = Modifier
-                .align(Alignment.TopEnd)
-                .offset(x = 50.dp, y = 90.dp)
-        )
-
-        GlowCircle(
-            modifier = Modifier
-                .align(Alignment.BottomStart)
-                .offset(x = (-70).dp, y = (-80).dp)
-                .scale(1.15f)
-        )
-
+    AppBackground {
         Column(
             modifier = Modifier
                 .fillMaxSize()

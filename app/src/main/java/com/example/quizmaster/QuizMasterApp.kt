@@ -16,9 +16,11 @@ import com.example.quizmaster.ui.screens.difficulty.DifficultyScreen
 import com.example.quizmaster.ui.screens.home.HomeScreen
 import com.example.quizmaster.ui.screens.login.LoginScreen
 import com.example.quizmaster.ui.screens.quiz.QuizPreviewScreen
+import com.example.quizmaster.ui.theme.QuizMasterTheme
 
 @Composable
 fun QuizMasterApp() {
+    var isDarkTheme by remember { mutableStateOf(true) }
     var currentScreen by remember { mutableStateOf(AppScreen.Login) }
 
     // Temporary state for selected category and difficulty.
@@ -26,67 +28,71 @@ fun QuizMasterApp() {
     var selectedCategory by remember { mutableStateOf("Sports") }
     var selectedDifficulty by remember { mutableStateOf("Mixed") }
 
-    AnimatedContent(
-        targetState = currentScreen,
-        transitionSpec = {
-            fadeIn(
-                animationSpec = tween(250)
-            ) togetherWith fadeOut(
-                animationSpec = tween(180)
-            )
-        },
-        label = "Screen transition"
-    ) { screen ->
-        when (screen) {
-            AppScreen.Login -> {
-                LoginScreen(
-                    onLoginClick = {
-                        currentScreen = AppScreen.Home
-                    }
+    QuizMasterTheme(darkTheme = isDarkTheme) {
+        AnimatedContent(
+            targetState = currentScreen,
+            transitionSpec = {
+                fadeIn(
+                    animationSpec = tween(250)
+                ) togetherWith fadeOut(
+                    animationSpec = tween(180)
                 )
-            }
+            },
+            label = "Screen transition"
+        ) { screen ->
+            when (screen) {
+                AppScreen.Login -> {
+                    LoginScreen(
+                        onLoginClick = {
+                            currentScreen = AppScreen.Home
+                        }
+                    )
+                }
 
-            AppScreen.Home -> {
-                HomeScreen(
-                    onCategoriesClick = {
-                        currentScreen = AppScreen.Categories
-                    }
-                )
-            }
+                AppScreen.Home -> {
+                    HomeScreen(
+                        onCategoriesClick = {
+                            currentScreen = AppScreen.Categories
+                        }
+                    )
+                }
 
-            AppScreen.Categories -> {
-                CategoryScreen(
-                    onBackClick = {
-                        currentScreen = AppScreen.Home
-                    },
-                    onCategorySelected = { category ->
-                        selectedCategory = category
-                        currentScreen = AppScreen.Difficulty
-                    }
-                )
-            }
+                AppScreen.Categories -> {
+                    CategoryScreen(
+                        onBackClick = {
+                            currentScreen = AppScreen.Home
+                        },
+                        onCategorySelected = { category ->
+                            selectedCategory = category
+                            currentScreen = AppScreen.Difficulty
+                        }
+                    )
+                }
 
-            AppScreen.Difficulty -> {
-                DifficultyScreen(
-                    selectedCategory = selectedCategory,
-                    onBackClick = {
-                        currentScreen = AppScreen.Categories
-                    },
-                    onDifficultySelected = { difficulty ->
-                        selectedDifficulty = difficulty
-                        currentScreen = AppScreen.QuizPreview
-                    }
-                )
-            }
+                AppScreen.Difficulty -> {
+                    DifficultyScreen(
+                        selectedCategory = selectedCategory,
+                        onBackClick = {
+                            currentScreen = AppScreen.Categories
+                        },
+                        onDifficultySelected = { difficulty ->
+                            selectedDifficulty = difficulty
+                            currentScreen = AppScreen.QuizPreview
+                        }
+                    )
+                }
 
-            AppScreen.QuizPreview -> {
-                QuizPreviewScreen(
-                    selectedCategory = selectedCategory,
-                    selectedDifficulty = selectedDifficulty,
-                    onBackClick = {
-                        currentScreen = AppScreen.Difficulty
-                    }
-                )
+                AppScreen.QuizPreview -> {
+                    QuizPreviewScreen(
+                        selectedCategory = selectedCategory,
+                        selectedDifficulty = selectedDifficulty,
+                        onBackClick = {
+                            currentScreen = AppScreen.Difficulty
+                        },
+                        isDarkTheme = isDarkTheme,
+                        onThemeToggle = { isDarkTheme = !isDarkTheme }
+                    )
+                }
             }
         }
     }

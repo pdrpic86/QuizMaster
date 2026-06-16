@@ -54,6 +54,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import com.example.quizmaster.ui.components.AppBackground
 
 data class CategoryUi(
     val name: String,
@@ -107,19 +108,7 @@ fun CategoryScreen(
         category.name.contains(searchQuery, ignoreCase = true)
     }
 
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(
-                Brush.verticalGradient(
-                    colors = listOf(
-                        Color(0xFF070B1A),
-                        Color(0xFF0B1024),
-                        Color(0xFF050816)
-                    )
-                )
-            )
-    ) {
+    AppBackground {
         LazyColumn(
             modifier = Modifier
                 .fillMaxSize()

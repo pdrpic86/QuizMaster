@@ -36,16 +36,24 @@ import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.size
 import androidx.compose.foundation.layout.statusBars
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.CheckCircle
 import androidx.compose.material.icons.rounded.Close
+import androidx.compose.material.icons.rounded.LightMode
+import androidx.compose.material.icons.rounded.Nightlight
 import androidx.compose.material.icons.rounded.Refresh
 import androidx.compose.material.icons.rounded.SkipNext
+import androidx.compose.animation.core.animateDpAsState
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
+import androidx.compose.material3.IconButton
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -59,6 +67,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.blur
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
@@ -68,25 +77,28 @@ import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.quizmaster.data.local.QuestionEntity
 import com.example.quizmaster.data.local.QuizDatabase
 import com.example.quizmaster.data.remote.QuizApiService
 import com.example.quizmaster.data.repository.QuestionRepository
+import com.example.quizmaster.ui.components.AppBackground
 import com.example.quizmaster.ui.components.CategoryHeader
-import com.example.quizmaster.ui.components.GlowCircle
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.delay
 import kotlinx.coroutines.withContext
 import kotlin.time.Duration.Companion.seconds
 
 private const val QUIZ_LIMIT = 10
-private const val QUESTION_SECONDS = 15
+private const val QUESTION_SECONDS = 20
 
 @Composable
 fun QuizPreviewScreen(
     selectedCategory: String,
     selectedDifficulty: String,
-    onBackClick: () -> Unit
+    onBackClick: () -> Unit,
+    isDarkTheme: Boolean,
+    onThemeToggle: () -> Unit
 ) {
     val context = LocalContext.current
     val screenAlpha = remember { Animatable(0f) }
@@ -178,25 +190,7 @@ fun QuizPreviewScreen(
         }
     }
 
-    Box(
-        modifier = Modifier
-            .fillMaxSize()
-            .background(
-                brush = Brush.verticalGradient(
-                    colors = listOf(
-                        MaterialTheme.colorScheme.background,
-                        MaterialTheme.colorScheme.surface,
-                        MaterialTheme.colorScheme.background
-                    )
-                )
-            )
-    ) {
-        GlowCircle(
-            modifier = Modifier
-                .align(Alignment.TopEnd)
-                .offset(x = 40.dp, y = 80.dp)
-        )
-
+    AppBackground {
         Column(
             modifier = Modifier
                 .fillMaxSize()
@@ -249,6 +243,8 @@ fun QuizPreviewScreen(
                         score = score,
                         secondsLeft = secondsLeft,
                         selectedAnswer = selectedAnswer,
+                        isDarkTheme = isDarkTheme,
+                        onThemeToggle = onThemeToggle,
                         onAnswerSelected = { answer ->
                             if (selectedAnswer == null) {
                                 selectedAnswer = answer
@@ -281,6 +277,8 @@ private fun ColumnScope.QuizQuestionContent(
     score: Int,
     secondsLeft: Int,
     selectedAnswer: String?,
+    isDarkTheme: Boolean,
+    onThemeToggle: () -> Unit,
     onAnswerSelected: (String) -> Unit,
     onNextClick: () -> Unit
 ) {
@@ -316,6 +314,16 @@ private fun ColumnScope.QuizQuestionContent(
             )
         }
 
+        IconButton(onClick = onThemeToggle) {
+            Icon(
+                imageVector = if (isDarkTheme) Icons.Rounded.LightMode else Icons.Rounded.Nightlight,
+                contentDescription = "Toggle Theme",
+                tint = MaterialTheme.colorScheme.primary
+            )
+        }
+
+        Spacer(modifier = Modifier.width(8.dp))
+
         CountdownTimer(secondsLeft = secondsLeft)
     }
 
@@ -325,7 +333,7 @@ private fun ColumnScope.QuizQuestionContent(
         modifier = Modifier.fillMaxWidth(),
         shape = RoundedCornerShape(32.dp),
         colors = CardDefaults.cardColors(
-            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.45f)
+            containerColor = Color.White.copy(alpha = 0.05f)
         ),
         elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
     ) {
@@ -335,29 +343,45 @@ private fun ColumnScope.QuizQuestionContent(
                 .border(
                     width = 0.5.dp,
                     brush = Brush.linearGradient(
-                        colors = listOf(Color.White.copy(alpha = 0.25f), Color.Transparent)
+                        colors = listOf(
+                            Color.White.copy(alpha = 0.15f),
+                            Color.Transparent
+                        )
                     ),
                     shape = RoundedCornerShape(32.dp)
                 )
                 .padding(24.dp),
             contentAlignment = Alignment.Center
         ) {
+            // Subtle question glow
+            Box(
+                modifier = Modifier
+                    .size(200.dp)
+                    .blur(50.dp)
+                    .background(
+                        MaterialTheme.colorScheme.primary.copy(alpha = 0.12f),
+                        CircleShape
+                    )
+            )
+
             Column(horizontalAlignment = Alignment.CenterHorizontally) {
                 Text(
-                    text = "Difficulty ${question.difficulty}",
-                    style = MaterialTheme.typography.labelLarge,
+                    text = "QUESTION ${currentIndex + 1}",
+                    style = MaterialTheme.typography.labelMedium,
                     fontWeight = FontWeight.ExtraBold,
-                    color = MaterialTheme.colorScheme.primary.copy(alpha = 0.85f)
+                    color = MaterialTheme.colorScheme.primary.copy(alpha = 0.7f),
+                    letterSpacing = 2.sp
                 )
 
-                Spacer(modifier = Modifier.height(18.dp))
+                Spacer(modifier = Modifier.height(14.dp))
 
                 Text(
                     text = question.question,
                     style = MaterialTheme.typography.headlineSmall,
                     fontWeight = FontWeight.Black,
                     color = MaterialTheme.colorScheme.onBackground,
-                    textAlign = TextAlign.Center
+                    textAlign = TextAlign.Center,
+                    lineHeight = 32.sp
                 )
             }
         }
@@ -511,60 +535,82 @@ private fun AnswerButton(
     val isSelected = selectedAnswer == text
     val isCorrectAnswer = text == correctAnswer
 
-    val containerColor: Color = when {
-        isLocked && isCorrectAnswer -> Color(0xFF064E3B)
-        isLocked && isSelected -> Color(0xFF7F1D1D)
-        else -> MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.65f)
+    val interactionSource = remember { MutableInteractionSource() }
+    val isPressed by interactionSource.collectIsPressedAsState()
+
+    val scale by animateFloatAsState(
+        targetValue = if (isPressed) 0.96f else 1f,
+        animationSpec = tween(100),
+        label = "button scale"
+    )
+
+    val backgroundBrush = when {
+        isLocked && isCorrectAnswer -> Brush.linearGradient(
+            colors = listOf(Color(0xFF059669), Color(0xFF10B981)) // Emerald
+        )
+        isLocked && isSelected -> Brush.linearGradient(
+            colors = listOf(Color(0xFFDC2626), Color(0xFFEF4444)) // Crimson
+        )
+        else -> Brush.linearGradient(
+            colors = listOf(Color.White.copy(alpha = 0.08f), Color.White.copy(alpha = 0.03f))
+        )
     }
 
-    val borderColor: Color = when {
-        isLocked && isCorrectAnswer -> Color(0xFF34D399)
-        isLocked && isSelected -> Color(0xFFF87171)
-        else -> MaterialTheme.colorScheme.primary.copy(alpha = 0.25f)
-    }
+    val borderAlpha by animateFloatAsState(
+        targetValue = if (isSelected || (isLocked && isCorrectAnswer)) 0.8f else 0.2f,
+        label = "border alpha"
+    )
 
-    Card(
-        onClick = {
-            if (!isLocked) onClick()
-        },
+    Box(
         modifier = Modifier
             .fillMaxWidth()
+            .scale(scale)
+            .clip(RoundedCornerShape(24.dp))
+            .background(backgroundBrush)
             .border(
                 width = 1.dp,
-                color = borderColor.copy(alpha = 0.6f),
-                shape = RoundedCornerShape(20.dp)
-            ),
-        shape = RoundedCornerShape(20.dp),
-        colors = CardDefaults.cardColors(containerColor = containerColor),
-        elevation = CardDefaults.cardElevation(defaultElevation = 2.dp)
+                brush = Brush.linearGradient(
+                    colors = listOf(
+                        Color.White.copy(alpha = borderAlpha),
+                        Color.Transparent
+                    )
+                ),
+                shape = RoundedCornerShape(24.dp)
+            )
+            .clickable(
+                interactionSource = interactionSource,
+                indication = null,
+                enabled = !isLocked,
+                onClick = onClick
+            )
+            .padding(20.dp),
+        contentAlignment = Alignment.CenterStart
     ) {
         Row(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(20.dp),
+            modifier = Modifier.fillMaxWidth(),
             verticalAlignment = Alignment.CenterVertically
         ) {
             Text(
                 text = text,
                 modifier = Modifier.weight(1f),
                 style = MaterialTheme.typography.titleMedium,
-                fontWeight = FontWeight.ExtraBold,
-                color = if (isLocked) Color.White else MaterialTheme.colorScheme.onSurfaceVariant
+                fontWeight = FontWeight.Bold,
+                color = if (isLocked && (isCorrectAnswer || isSelected)) Color.White else MaterialTheme.colorScheme.onSurfaceVariant
             )
 
             if (isLocked && isCorrectAnswer) {
                 Icon(
                     imageVector = Icons.Rounded.CheckCircle,
                     contentDescription = null,
-                    tint = Color(0xFF34D399),
-                    modifier = Modifier.size(24.dp)
+                    tint = Color.White,
+                    modifier = Modifier.size(26.dp)
                 )
             } else if (isLocked && isSelected) {
                 Icon(
                     imageVector = Icons.Rounded.Close,
                     contentDescription = null,
-                    tint = Color(0xFFF87171),
-                    modifier = Modifier.size(24.dp)
+                    tint = Color.White,
+                    modifier = Modifier.size(26.dp)
                 )
             }
         }
@@ -760,6 +806,37 @@ private fun ActionCard(
                 fontWeight = FontWeight.ExtraBold,
                 color = MaterialTheme.colorScheme.onBackground
             )
+        }
+    }
+}
+
+@androidx.compose.ui.tooling.preview.Preview
+@Composable
+fun QuizQuestionPreview() {
+    com.example.quizmaster.ui.theme.QuizMasterTheme {
+        Box(modifier = Modifier.padding(24.dp)) {
+            Column {
+                AnswerButton(
+                    text = "Emerald Gradient (Correct)",
+                    correctAnswer = "Emerald Gradient (Correct)",
+                    selectedAnswer = "Emerald Gradient (Correct)",
+                    onClick = {}
+                )
+                Spacer(modifier = Modifier.height(12.dp))
+                AnswerButton(
+                    text = "Crimson Gradient (Wrong)",
+                    correctAnswer = "Other",
+                    selectedAnswer = "Crimson Gradient (Wrong)",
+                    onClick = {}
+                )
+                Spacer(modifier = Modifier.height(12.dp))
+                AnswerButton(
+                    text = "Glass Gradient (Normal)",
+                    correctAnswer = "Other",
+                    selectedAnswer = null,
+                    onClick = {}
+                )
+            }
         }
     }
 }
