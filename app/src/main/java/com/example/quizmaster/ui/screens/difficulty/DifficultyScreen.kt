@@ -100,8 +100,8 @@ fun DifficultyScreen(
 
             Text(
                 text = "Choose difficulty",
-                style = MaterialTheme.typography.headlineMedium,
-                fontWeight = FontWeight.ExtraBold,
+                style = MaterialTheme.typography.headlineLarge,
+                fontWeight = FontWeight.Black,
                 color = MaterialTheme.colorScheme.onBackground
             )
 
@@ -109,7 +109,7 @@ fun DifficultyScreen(
 
             Text(
                 text = "Category: $selectedCategory",
-                style = MaterialTheme.typography.bodyMedium,
+                style = MaterialTheme.typography.titleMedium,
                 color = MaterialTheme.colorScheme.primary
             )
 
@@ -231,7 +231,7 @@ private fun DifficultyCard(
                 ) {
                     Text(
                         text = title,
-                        style = MaterialTheme.typography.titleMedium,
+                        style = MaterialTheme.typography.titleLarge,
                         fontWeight = FontWeight.Black,
                         color = Color.White
                     )

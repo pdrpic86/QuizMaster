@@ -11,9 +11,9 @@ import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.example.quizmaster.ui.theme.QuizBlack
-import com.example.quizmaster.ui.theme.QuizBlue
-import com.example.quizmaster.ui.theme.QuizRed
+import com.example.quizmaster.ui.theme.NeonBlue
+import com.example.quizmaster.ui.theme.NeonRed
+import com.example.quizmaster.ui.theme.NeonTokens
 
 @Composable
 fun AppBackground(
@@ -22,15 +22,7 @@ fun AppBackground(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(
-                Brush.verticalGradient(
-                    colors = listOf(
-                        QuizBlack,
-                        Color(0xFF070B1A),
-                        QuizBlack
-                    )
-                )
-            )
+            .background(NeonTokens.MainGradient)
     ) {
         // Dynamic Blue Glow (Top End)
         GlowCircle(
@@ -39,7 +31,7 @@ fun AppBackground(
                 .offset(x = 40.dp, y = 80.dp)
                 .background(
                     Brush.radialGradient(
-                        colors = listOf(QuizBlue.copy(alpha = 0.3f), Color.Transparent)
+                        colors = listOf(NeonBlue.copy(alpha = 0.3f), Color.Transparent)
                     )
                 )
         )
@@ -52,7 +44,7 @@ fun AppBackground(
                 .scale(1.15f)
                 .background(
                     Brush.radialGradient(
-                        colors = listOf(QuizRed.copy(alpha = 0.25f), Color.Transparent)
+                        colors = listOf(NeonRed.copy(alpha = 0.25f), Color.Transparent)
                     )
                 )
         )

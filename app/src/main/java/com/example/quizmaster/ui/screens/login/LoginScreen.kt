@@ -71,14 +71,14 @@ fun LoginScreen(
             Text(
                 text = "Quiz Master",
                 color = Color.White,
-                fontSize = 32.sp,
+                style = MaterialTheme.typography.displayMedium,
                 fontWeight = FontWeight.Black
             )
 
             Text(
                 text = "Sign in to continue",
                 color = Color.White.copy(alpha = 0.5f),
-                fontSize = 16.sp
+                style = MaterialTheme.typography.titleMedium
             )
 
             Spacer(modifier = Modifier.height(48.dp))

@@ -54,9 +54,13 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.ProgressIndicatorDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import com.example.quizmaster.ui.theme.NeonTokens
+import com.example.quizmaster.ui.theme.QuizMasterTheme
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.mutableIntStateOf
@@ -283,13 +287,22 @@ private fun ColumnScope.QuizQuestionContent(
     onNextClick: () -> Unit
 ) {
     val answers = remember(question.id) {
-        listOf(
+        val list = mutableListOf(
             question.correctAnswer,
             question.wrongAnswer1,
             question.wrongAnswer2,
             question.wrongAnswer3
-        ).shuffled()
+        ).shuffled().toMutableList()
+        list.add("SKIP QUESTION")
+        list
     }
+
+    val progress = (currentIndex + 1).toFloat() / totalQuestions.toFloat()
+    val animatedProgress by animateFloatAsState(
+        targetValue = progress,
+        animationSpec = ProgressIndicatorDefaults.ProgressAnimationSpec,
+        label = "question progress"
+    )
 
     Row(
         modifier = Modifier.fillMaxWidth(),
@@ -299,18 +312,23 @@ private fun ColumnScope.QuizQuestionContent(
             modifier = Modifier.weight(1f)
         ) {
             Text(
-                text = "Question ${currentIndex + 1} / $totalQuestions",
+                text = "Question ${currentIndex + 1} / $totalQuestions (Score: $score)",
                 style = MaterialTheme.typography.labelLarge,
                 fontWeight = FontWeight.ExtraBold,
                 color = MaterialTheme.colorScheme.primary
             )
 
-            Spacer(modifier = Modifier.height(6.dp))
+            Spacer(modifier = Modifier.height(8.dp))
 
-            Text(
-                text = "Score: $score",
-                style = MaterialTheme.typography.bodyMedium,
-                color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.72f)
+            LinearProgressIndicator(
+                progress = { animatedProgress },
+                modifier = Modifier
+                    .fillMaxWidth(0.8f)
+                    .height(8.dp)
+                    .clip(CircleShape),
+                color = MaterialTheme.colorScheme.primary,
+                trackColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.1f),
+                strokeCap = StrokeCap.Round
             )
         }
 
@@ -326,6 +344,8 @@ private fun ColumnScope.QuizQuestionContent(
 
         CountdownTimer(secondsLeft = secondsLeft)
     }
+
+    Spacer(modifier = Modifier.height(24.dp))
 
     Spacer(modifier = Modifier.height(28.dp))
 
@@ -534,6 +554,7 @@ private fun AnswerButton(
     val isLocked = selectedAnswer != null
     val isSelected = selectedAnswer == text
     val isCorrectAnswer = text == correctAnswer
+    val isSkip = text == "SKIP QUESTION"
 
     val interactionSource = remember { MutableInteractionSource() }
     val isPressed by interactionSource.collectIsPressedAsState()
@@ -545,19 +566,18 @@ private fun AnswerButton(
     )
 
     val backgroundBrush = when {
-        isLocked && isCorrectAnswer -> Brush.linearGradient(
-            colors = listOf(Color(0xFF059669), Color(0xFF10B981)) // Emerald
-        )
-        isLocked && isSelected -> Brush.linearGradient(
+        isLocked && isCorrectAnswer -> NeonTokens.CorrectGradient
+        isLocked && isSelected && !isSkip -> Brush.linearGradient(
             colors = listOf(Color(0xFFDC2626), Color(0xFFEF4444)) // Crimson
         )
+        isSkip -> NeonTokens.SkipGradient
         else -> Brush.linearGradient(
             colors = listOf(Color.White.copy(alpha = 0.08f), Color.White.copy(alpha = 0.03f))
         )
     }
 
     val borderAlpha by animateFloatAsState(
-        targetValue = if (isSelected || (isLocked && isCorrectAnswer)) 0.8f else 0.2f,
+        targetValue = if (isSelected || (isLocked && isCorrectAnswer) || isSkip) 0.8f else 0.2f,
         label = "border alpha"
     )
 
@@ -813,7 +833,7 @@ private fun ActionCard(
 @androidx.compose.ui.tooling.preview.Preview
 @Composable
 fun QuizQuestionPreview() {
-    com.example.quizmaster.ui.theme.QuizMasterTheme {
+    QuizMasterTheme {
         Box(modifier = Modifier.padding(24.dp)) {
             Column {
                 AnswerButton(

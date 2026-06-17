@@ -36,6 +36,7 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.OutlinedTextFieldDefaults
 import androidx.compose.material3.Surface
@@ -188,14 +189,14 @@ private fun CategoryHeaderSection(
             Text(
                 text = "Categories",
                 color = Color.White,
-                fontSize = 28.sp,
+                style = MaterialTheme.typography.headlineLarge,
                 fontWeight = FontWeight.Black
             )
 
             Text(
                 text = "Pick your challenge",
                 color = Color.White.copy(alpha = 0.55f),
-                fontSize = 14.sp
+                style = MaterialTheme.typography.bodyMedium
             )
         }
 

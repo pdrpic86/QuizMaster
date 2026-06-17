@@ -228,16 +228,15 @@ private fun LogoTitle() {
     ) {
         Text(
             text = "QUIZ",
-            style = MaterialTheme.typography.displayMedium,
+            style = MaterialTheme.typography.displayLarge,
             fontWeight = FontWeight.Black,
-            fontFamily = FontFamily.SansSerif,
             color = MaterialTheme.colorScheme.onBackground,
             textAlign = TextAlign.Center
         )
 
         Text(
             text = "M A S T E R",
-            style = MaterialTheme.typography.titleMedium,
+            style = MaterialTheme.typography.headlineMedium,
             fontWeight = FontWeight.ExtraBold,
             color = MaterialTheme.colorScheme.primary,
             textAlign = TextAlign.Center
