@@ -1,30 +1,46 @@
-package com.example.quizmaster.ui.theme
-
-import android.os.Build
 import androidx.compose.animation.core.*
 import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.TextStyle
-import androidx.compose.ui.text.font.FontFamily
-import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.font.*
 import androidx.compose.ui.unit.sp
 
 // ------------------------------------------------------------
-// MATERIAL 3 COLOR SCHEME (Neon Black, Blue, Red)
+// NEON JUNGLE COLORS
 // ------------------------------------------------------------
 
-private val NeonDarkColorScheme = darkColorScheme(
-    primary = NeonBlue,
+val NeonPurple = Color(0xFF9D4DFF)
+val NeonPink = Color(0xFFFF4DDB)
+val JungleGreen = Color(0xFF39FF8A)
+val JungleGold = Color(0xFFFFB84D)
+
+val DeepSpace = Color(0xFF050711)
+val ForestBlack = Color(0xFF07120D)
+val CardDark = Color(0xFF101822)
+val CardGreenDark = Color(0xFF102417)
+
+val TextMain = Color(0xFFF7F4FF)
+val TextMuted = Color(0xFFB9B2C8)
+
+val CorrectGreen = Color(0xFF39FF8A)
+val WrongRed = Color(0xFFFF4D6D)
+val WarningGold = Color(0xFFFFC857)
+
+// ------------------------------------------------------------
+// MATERIAL 3 COLOR SCHEME
+// ------------------------------------------------------------
+
+private val NeonJungleDarkColorScheme = darkColorScheme(
+    primary = NeonPink,
     onPrimary = Color.White,
 
-    secondary = NeonRed,
-    onSecondary = Color.White,
+    secondary = JungleGreen,
+    onSecondary = Color.Black,
 
-    tertiary = WarningGold,
+    tertiary = JungleGold,
     onTertiary = Color.Black,
 
     background = DeepSpace,
@@ -33,23 +49,23 @@ private val NeonDarkColorScheme = darkColorScheme(
     surface = CardDark,
     onSurface = TextMain,
 
-    surfaceVariant = DarkBlue,
+    surfaceVariant = CardGreenDark,
     onSurfaceVariant = TextMuted,
 
     error = WrongRed,
     onError = Color.White,
 
-    outline = NeonBlue
+    outline = NeonPurple
 )
 
-private val NeonLightColorScheme = lightColorScheme(
-    primary = NeonBlue,
+private val NeonJungleLightColorScheme = lightColorScheme(
+    primary = NeonPurple,
     onPrimary = Color.White,
 
-    secondary = NeonRed,
-    onSecondary = Color.White,
+    secondary = JungleGreen,
+    onSecondary = Color.Black,
 
-    tertiary = WarningGold,
+    tertiary = JungleGold,
     onTertiary = Color.Black,
 
     background = Color(0xFFF7F9F4),
@@ -58,20 +74,21 @@ private val NeonLightColorScheme = lightColorScheme(
     surface = Color(0xFFFFFFFF),
     onSurface = Color(0xFF101010),
 
-    surfaceVariant = Color(0xFFE9F1F5),
-    onSurfaceVariant = Color(0xFF4B515A),
+    surfaceVariant = Color(0xFFE9F5EC),
+    onSurfaceVariant = Color(0xFF4B5A50),
 
     error = WrongRed,
     onError = Color.White,
 
-    outline = NeonBlue
+    outline = NeonPurple
 )
 
 // ------------------------------------------------------------
 // TYPOGRAPHY
+// Poppins/Nunito fallback. Add fonts later if you want real files.
 // ------------------------------------------------------------
 
-val NeonTypography = Typography(
+val NeonJungleTypography = Typography(
     displayLarge = TextStyle(
         fontFamily = FontFamily.SansSerif,
         fontWeight = FontWeight.ExtraBold,
@@ -121,7 +138,7 @@ val NeonTypography = Typography(
 // SHAPES
 // ------------------------------------------------------------
 
-val NeonShapes = Shapes(
+val NeonJungleShapes = Shapes(
     small = androidx.compose.foundation.shape.RoundedCornerShape(12),
     medium = androidx.compose.foundation.shape.RoundedCornerShape(20),
     large = androidx.compose.foundation.shape.RoundedCornerShape(28),
@@ -129,45 +146,46 @@ val NeonShapes = Shapes(
 )
 
 // ------------------------------------------------------------
-// CUSTOM THEME OBJECT (Tokens)
+// CUSTOM THEME OBJECT
+// Use this in screens for gradients, glow colors, etc.
 // ------------------------------------------------------------
 
-object NeonTokens {
+object NeonJungleTokens {
 
     val MainGradient = Brush.linearGradient(
         colors = listOf(
             DeepSpace,
             ForestBlack,
-            Color(0xFF0A192F), // Deep Blue
-            Color(0xFF1F0707)  // Deep Red
+            Color(0xFF160A2E),
+            Color(0xFF071F16)
         )
     )
 
-    val HeaderGradient = Brush.linearGradient(
+    val NeonHeaderGradient = Brush.linearGradient(
         colors = listOf(
-            NeonBlue,
-            Color(0xFF60A5FA),
-            NeonRed
+            NeonPink,
+            NeonPurple,
+            JungleGreen
         )
     )
 
     val AnswerSelectedGradient = Brush.horizontalGradient(
         colors = listOf(
-            NeonBlue.copy(alpha = 0.95f),
-            Color(0xFF1E40AF).copy(alpha = 0.95f)
+            NeonPink.copy(alpha = 0.95f),
+            NeonPurple.copy(alpha = 0.95f)
         )
     )
 
     val CorrectGradient = Brush.horizontalGradient(
         colors = listOf(
-            CorrectGreen,
+            JungleGreen,
             Color(0xFF13C967)
         )
     )
 
-    val SkipGradient = Brush.horizontalGradient(
+    val GoldGradient = Brush.horizontalGradient(
         colors = listOf(
-            WarningGold,
+            JungleGold,
             Color(0xFFFFE08A)
         )
     )
@@ -175,14 +193,15 @@ object NeonTokens {
     val CardBrush = Brush.linearGradient(
         colors = listOf(
             CardDark.copy(alpha = 0.96f),
-            Color(0xFF0F1B2E).copy(alpha = 0.90f)
+            CardGreenDark.copy(alpha = 0.90f)
         )
     )
 
     val GlowColors = listOf(
-        NeonBlue,
-        NeonRed,
-        WarningGold
+        NeonPurple,
+        NeonPink,
+        JungleGreen,
+        JungleGold
     )
 }
 
@@ -190,7 +209,8 @@ object NeonTokens {
 // ANIMATION TOKENS
 // ------------------------------------------------------------
 
-object NeonAnimations {
+object NeonJungleAnimations {
+
     const val Fast = 180
     const val Normal = 350
     const val Slow = 700
@@ -200,11 +220,22 @@ object NeonAnimations {
         stiffness = Spring.StiffnessLow
     )
 
+    val SoftSpring = spring<Float>(
+        dampingRatio = Spring.DampingRatioNoBouncy,
+        stiffness = Spring.StiffnessMedium
+    )
+
     val DefaultTween = tween<Float>(
         durationMillis = Normal,
         easing = FastOutSlowInEasing
     )
 }
+
+// ------------------------------------------------------------
+// ANIMATED GLOW VALUE
+// Usage:
+// val glow by rememberNeonPulse()
+// ------------------------------------------------------------
 
 @Composable
 fun rememberNeonPulse(): State<Float> {
@@ -230,23 +261,20 @@ fun rememberNeonPulse(): State<Float> {
 
 @Composable
 fun QuizMasterTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
-    dynamicColor: Boolean = true,
+    darkTheme: Boolean = true,
+    dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
     val colorScheme = when {
-        dynamicColor && Build.VERSION.SDK_INT >= Build.VERSION_CODES.S -> {
-            val context = LocalContext.current
-            if (darkTheme) dynamicDarkColorScheme(context) else dynamicLightColorScheme(context)
-        }
-        darkTheme -> NeonDarkColorScheme
-        else -> NeonLightColorScheme
+        dynamicColor -> NeonJungleDarkColorScheme
+        darkTheme -> NeonJungleDarkColorScheme
+        else -> NeonJungleLightColorScheme
     }
 
     MaterialTheme(
         colorScheme = colorScheme,
-        typography = NeonTypography,
-        shapes = NeonShapes,
+        typography = NeonJungleTypography,
+        shapes = NeonJungleShapes,
         content = content
     )
 }
