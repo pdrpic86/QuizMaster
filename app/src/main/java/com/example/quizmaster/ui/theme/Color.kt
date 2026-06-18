@@ -35,3 +35,9 @@ val QuizCardBlue = DarkBlue
 val QuizCardBlueLight = Color(0xFF14243D)
 val QuizDarkBlue = DarkBlue
 val QuizRedDark = DarkRed
+
+val NeonPurple = Color(0xFF9D4DFF)
+val NeonPink = Color(0xFFFF4DDB)
+val JungleGreen = Color(0xFF39FF8A)
+val JungleGold = Color(0xFFFFB84D)
+val CardGreenDark = Color(0xFF102417)
