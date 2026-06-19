@@ -52,12 +52,17 @@ import androidx.compose.foundation.interaction.MutableInteractionSource
 import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
+import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ProgressIndicatorDefaults
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import com.example.quizmaster.ui.theme.NeonTokens
 import com.example.quizmaster.ui.theme.QuizMasterTheme
@@ -95,6 +100,7 @@ import kotlin.time.Duration.Companion.seconds
 
 private const val QUIZ_LIMIT = 10
 private const val QUESTION_SECONDS = 20
+private const val SKIPPED_ANSWER = "__SKIPPED_ANSWER__"
 
 @Composable
 fun QuizPreviewScreen(
@@ -257,6 +263,11 @@ fun QuizPreviewScreen(
                                 }
                             }
                         },
+                        onSkipQuestion = {
+                            if (selectedAnswer == null) {
+                                selectedAnswer = SKIPPED_ANSWER
+                            }
+                        },
                         onNextClick = {
                             if (currentIndex < questions.lastIndex) {
                                 currentIndex++
@@ -284,17 +295,67 @@ private fun ColumnScope.QuizQuestionContent(
     isDarkTheme: Boolean,
     onThemeToggle: () -> Unit,
     onAnswerSelected: (String) -> Unit,
+    onSkipQuestion: () -> Unit,
     onNextClick: () -> Unit
 ) {
+    var showSkipDialog by remember(question.id) { mutableStateOf(false) }
+
+    if (showSkipDialog) {
+        AlertDialog(
+            onDismissRequest = { showSkipDialog = false },
+            icon = {
+                Icon(
+                    imageVector = Icons.Rounded.SkipNext,
+                    contentDescription = null,
+                    tint = MaterialTheme.colorScheme.tertiary
+                )
+            },
+            title = {
+                Text(
+                    text = "Skip this question?",
+                    style = MaterialTheme.typography.headlineSmall,
+                    fontWeight = FontWeight.Black
+                )
+            },
+            text = {
+                Text(
+                    text = "This question will be marked as unanswered. Your score will stay the same.",
+                    style = MaterialTheme.typography.bodyMedium,
+                    color = MaterialTheme.colorScheme.onSurfaceVariant
+                )
+            },
+            confirmButton = {
+                Button(
+                    onClick = {
+                        showSkipDialog = false
+                        onSkipQuestion()
+                    },
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = MaterialTheme.colorScheme.tertiary,
+                        contentColor = MaterialTheme.colorScheme.onTertiary
+                    )
+                ) {
+                    Text(text = "Skip")
+                }
+            },
+            dismissButton = {
+                TextButton(onClick = { showSkipDialog = false }) {
+                    Text(text = "Stay")
+                }
+            },
+            shape = RoundedCornerShape(28.dp),
+            containerColor = MaterialTheme.colorScheme.surfaceContainerHigh,
+            tonalElevation = 8.dp
+        )
+    }
+
     val answers = remember(question.id) {
-        val list = mutableListOf(
+        listOf(
             question.correctAnswer,
             question.wrongAnswer1,
             question.wrongAnswer2,
             question.wrongAnswer3
-        ).shuffled().toMutableList()
-        list.add("SKIP QUESTION")
-        list
+        ).shuffled()
     }
 
     val progress = (currentIndex + 1).toFloat() / totalQuestions.toFloat()
@@ -428,17 +489,46 @@ private fun ColumnScope.QuizQuestionContent(
         FeedbackFooter(
             isCorrect = selectedAnswer == question.correctAnswer,
             isTimeout = selectedAnswer.isEmpty(),
+            isSkipped = selectedAnswer == SKIPPED_ANSWER,
             isLastQuestion = currentIndex == totalQuestions - 1,
             onNextClick = onNextClick
         )
     } else {
-        Text(
-            text = "Timer locks the question at 0 seconds.",
+        Column(
             modifier = Modifier.fillMaxWidth(),
-            style = MaterialTheme.typography.bodySmall,
-            color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.45f),
-            textAlign = TextAlign.Center
-        )
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Text(
+                text = "Timer locks the question at 0 seconds.",
+                modifier = Modifier.fillMaxWidth(),
+                style = MaterialTheme.typography.bodySmall,
+                color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.48f),
+                textAlign = TextAlign.Center
+            )
+
+            Spacer(modifier = Modifier.height(10.dp))
+
+            FilledTonalButton(
+                onClick = { showSkipDialog = true },
+                shape = RoundedCornerShape(18.dp),
+                colors = ButtonDefaults.filledTonalButtonColors(
+                    containerColor = MaterialTheme.colorScheme.tertiaryContainer.copy(alpha = 0.78f),
+                    contentColor = MaterialTheme.colorScheme.onTertiaryContainer
+                )
+            ) {
+                Icon(
+                    imageVector = Icons.Rounded.SkipNext,
+                    contentDescription = null,
+                    modifier = Modifier.size(18.dp)
+                )
+                Spacer(modifier = Modifier.width(8.dp))
+                Text(
+                    text = "Skip with confirmation",
+                    style = MaterialTheme.typography.labelLarge,
+                    fontWeight = FontWeight.Bold
+                )
+            }
+        }
     }
 }
 
@@ -554,7 +644,6 @@ private fun AnswerButton(
     val isLocked = selectedAnswer != null
     val isSelected = selectedAnswer == text
     val isCorrectAnswer = text == correctAnswer
-    val isSkip = text == "SKIP QUESTION"
 
     val interactionSource = remember { MutableInteractionSource() }
     val isPressed by interactionSource.collectIsPressedAsState()
@@ -567,17 +656,14 @@ private fun AnswerButton(
 
     val backgroundBrush = when {
         isLocked && isCorrectAnswer -> NeonTokens.CorrectGradient
-        isLocked && isSelected && !isSkip -> Brush.linearGradient(
-            colors = listOf(Color(0xFFDC2626), Color(0xFFEF4444)) // Crimson
-        )
-        isSkip -> NeonTokens.SkipGradient
+        isLocked && isSelected -> NeonTokens.WrongGradient
         else -> Brush.linearGradient(
             colors = listOf(Color.White.copy(alpha = 0.08f), Color.White.copy(alpha = 0.03f))
         )
     }
 
     val borderAlpha by animateFloatAsState(
-        targetValue = if (isSelected || (isLocked && isCorrectAnswer) || isSkip) 0.8f else 0.2f,
+        targetValue = if (isSelected || (isLocked && isCorrectAnswer)) 0.8f else 0.2f,
         label = "border alpha"
     )
 
@@ -641,16 +727,20 @@ private fun AnswerButton(
 private fun FeedbackFooter(
     isCorrect: Boolean,
     isTimeout: Boolean,
+    isSkipped: Boolean,
     isLastQuestion: Boolean,
     onNextClick: () -> Unit
 ) {
     val title = when {
+        isSkipped -> "Question skipped"
         isTimeout -> "Time is up"
         isCorrect -> "Correct"
         else -> "Wrong"
     }
 
     val message = when {
+        isSkipped -> "No points changed. Lock in the next one."
+        isTimeout -> "Clock got you this time."
         isCorrect -> "Nice hit. Keep going."
         else -> "Better luck next time."
     }
@@ -663,7 +753,11 @@ private fun FeedbackFooter(
             text = title,
             style = MaterialTheme.typography.titleMedium,
             fontWeight = FontWeight.ExtraBold,
-            color = if (isCorrect) Color(0xFF22C55E) else MaterialTheme.colorScheme.error,
+            color = when {
+                isCorrect -> MaterialTheme.colorScheme.secondary
+                isSkipped -> MaterialTheme.colorScheme.tertiary
+                else -> MaterialTheme.colorScheme.error
+            },
             textAlign = TextAlign.Center
         )
 

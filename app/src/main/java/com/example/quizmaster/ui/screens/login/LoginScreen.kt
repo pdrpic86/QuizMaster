@@ -26,7 +26,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.quizmaster.ui.components.GlowCircle
 import com.example.quizmaster.ui.theme.QuizMasterTheme
-import android.util.Patterns
 
 @Composable
 fun LoginScreen(
@@ -35,11 +34,8 @@ fun LoginScreen(
     var email by remember { mutableStateOf("") }
     var password by remember { mutableStateOf("") }
 
-    val isEmailValid = remember(email) {
-        email.isEmpty() || Patterns.EMAIL_ADDRESS.matcher(email).matches()
-    }
-
-    val canLogin = email.isNotEmpty() && Patterns.EMAIL_ADDRESS.matcher(email).matches() && password.isNotEmpty()
+    // Temporarily relaxed for testing: no email format validation.
+    val canLogin = email.isNotBlank() && password.isNotBlank()
 
     com.example.quizmaster.ui.components.AppBackground {
         Column(
@@ -107,23 +103,13 @@ fun LoginScreen(
                         modifier = Modifier.fillMaxWidth(),
                         placeholder = { Text("Email Address", color = Color.White.copy(alpha = 0.3f)) },
                         leadingIcon = { Icon(Icons.Rounded.Email, null, tint = Color.White.copy(alpha = 0.5f)) },
-                        isError = !isEmailValid,
-                        supportingText = {
-                            if (!isEmailValid) {
-                                Text(
-                                    text = "Invalid email format",
-                                    color = MaterialTheme.colorScheme.error,
-                                    style = MaterialTheme.typography.labelSmall
-                                )
-                            }
-                        },
                         shape = RoundedCornerShape(16.dp),
                         colors = OutlinedTextFieldDefaults.colors(
                             focusedTextColor = Color.White,
                             unfocusedTextColor = Color.White,
-                            focusedBorderColor = Color(0xFF60A5FA),
+                            focusedBorderColor = MaterialTheme.colorScheme.primary,
                             unfocusedBorderColor = Color.White.copy(alpha = 0.1f),
-                            errorBorderColor = MaterialTheme.colorScheme.error
+                            cursorColor = MaterialTheme.colorScheme.primary
                         )
                     )
 
@@ -140,8 +126,9 @@ fun LoginScreen(
                         colors = OutlinedTextFieldDefaults.colors(
                             focusedTextColor = Color.White,
                             unfocusedTextColor = Color.White,
-                            focusedBorderColor = Color(0xFF60A5FA),
-                            unfocusedBorderColor = Color.White.copy(alpha = 0.1f)
+                            focusedBorderColor = MaterialTheme.colorScheme.primary,
+                            unfocusedBorderColor = Color.White.copy(alpha = 0.1f),
+                            cursorColor = MaterialTheme.colorScheme.primary
                         )
                     )
 
@@ -165,8 +152,10 @@ fun LoginScreen(
                             .height(56.dp),
                         shape = RoundedCornerShape(16.dp),
                         colors = ButtonDefaults.buttonColors(
-                            containerColor = Color(0xFF2563EB),
-                            disabledContainerColor = Color(0xFF2563EB).copy(alpha = 0.4f)
+                            containerColor = MaterialTheme.colorScheme.primary,
+                            contentColor = MaterialTheme.colorScheme.onPrimary,
+                            disabledContainerColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.32f),
+                            disabledContentColor = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.48f)
                         )
                     ) {
                         Text(
