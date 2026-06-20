@@ -8,88 +8,82 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
 import com.example.quizmaster.R
 
-val OrbitronFontFamily = FontFamily(
-    Font(
-        resId = R.font.orbitron_regular,
-        weight = FontWeight.Normal
-    ),
-    Font(
-        resId = R.font.orbitron_bold,
-        weight = FontWeight.Bold
-    ),
-    Font(
-        resId = R.font.orbitron_extra_bold,
-        weight = FontWeight.ExtraBold
-    ),
-    Font(
-        resId = R.font.orbitron_black,
-        weight = FontWeight.Black
-    )
+val Sora = FontFamily(
+    Font(R.font.sora_regular, FontWeight.Normal),
+    Font(R.font.sora_medium, FontWeight.Medium),
+    Font(R.font.sora_semibold, FontWeight.SemiBold),
+    Font(R.font.sora_bold, FontWeight.Bold)
 )
 
 val QuizMasterTypography = Typography(
     displayLarge = TextStyle(
-        fontFamily = OrbitronFontFamily,
-        fontWeight = FontWeight.Black,
-        fontSize = 54.sp,
-        lineHeight = 60.sp
-    ),
-    displayMedium = TextStyle(
-        fontFamily = OrbitronFontFamily,
-        fontWeight = FontWeight.Black,
+        fontFamily = Sora,
+        fontWeight = FontWeight.Bold,
         fontSize = 42.sp,
-        lineHeight = 48.sp
+        lineHeight = 48.sp,
+        letterSpacing = (-0.5).sp
     ),
     headlineLarge = TextStyle(
-        fontFamily = OrbitronFontFamily,
-        fontWeight = FontWeight.Black,
+        fontFamily = Sora,
+        fontWeight = FontWeight.Bold,
         fontSize = 32.sp,
-        lineHeight = 38.sp
+        lineHeight = 38.sp,
+        letterSpacing = (-0.3).sp
     ),
     headlineMedium = TextStyle(
-        fontFamily = OrbitronFontFamily,
-        fontWeight = FontWeight.Bold,
+        fontFamily = Sora,
+        fontWeight = FontWeight.SemiBold,
         fontSize = 26.sp,
         lineHeight = 32.sp
     ),
-    headlineSmall = TextStyle(
-        fontFamily = OrbitronFontFamily,
-        fontWeight = FontWeight.Bold,
+    titleLarge = TextStyle(
+        fontFamily = Sora,
+        fontWeight = FontWeight.SemiBold,
         fontSize = 22.sp,
         lineHeight = 28.sp
     ),
-    titleLarge = TextStyle(
-        fontFamily = OrbitronFontFamily,
-        fontWeight = FontWeight.Bold,
-        fontSize = 20.sp,
-        lineHeight = 26.sp
-    ),
     titleMedium = TextStyle(
-        fontFamily = OrbitronFontFamily,
-        fontWeight = FontWeight.Bold,
-        fontSize = 16.sp,
+        fontFamily = Sora,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 18.sp,
+        lineHeight = 24.sp
+    ),
+    titleSmall = TextStyle(
+        fontFamily = Sora,
+        fontWeight = FontWeight.SemiBold,
+        fontSize = 15.sp,
+        lineHeight = 20.sp
+    ),
+    bodyLarge = TextStyle(
+        fontFamily = Sora,
+        fontWeight = FontWeight.Normal,
+        fontSize = 17.sp,
+        lineHeight = 25.sp
+    ),
+    bodyMedium = TextStyle(
+        fontFamily = Sora,
+        fontWeight = FontWeight.Normal,
+        fontSize = 15.sp,
         lineHeight = 22.sp
     ),
-    labelLarge = TextStyle(
-        fontFamily = OrbitronFontFamily,
-        fontWeight = FontWeight.Bold,
+    bodySmall = TextStyle(
+        fontFamily = Sora,
+        fontWeight = FontWeight.Normal,
         fontSize = 13.sp,
         lineHeight = 18.sp
     ),
-    labelMedium = TextStyle(
-        fontFamily = OrbitronFontFamily,
-        fontWeight = FontWeight.Bold,
-        fontSize = 11.sp,
-        lineHeight = 16.sp
-    ),
-    bodyMedium = TextStyle(
-        fontWeight = FontWeight.Normal,
+    labelLarge = TextStyle(
+        fontFamily = Sora,
+        fontWeight = FontWeight.SemiBold,
         fontSize = 14.sp,
-        lineHeight = 20.sp
+        lineHeight = 20.sp,
+        letterSpacing = 0.1.sp
     ),
-    bodySmall = TextStyle(
-        fontWeight = FontWeight.Normal,
+    labelMedium = TextStyle(
+        fontFamily = Sora,
+        fontWeight = FontWeight.Medium,
         fontSize = 12.sp,
-        lineHeight = 17.sp
+        lineHeight = 16.sp,
+        letterSpacing = 0.2.sp
     )
 )
