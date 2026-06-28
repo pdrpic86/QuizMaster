@@ -1,0 +1,52 @@
+package com.example.quizmaster.ui.util
+
+import androidx.compose.runtime.Composable
+import androidx.compose.runtime.CompositionLocalProvider
+import androidx.compose.ui.platform.LocalConfiguration
+import androidx.compose.ui.platform.LocalDensity
+import androidx.compose.ui.unit.Density
+
+data class AdaptiveScale(
+    val scale: Float,
+    val compact: Boolean,
+    val tiny: Boolean
+)
+
+@Composable
+fun rememberAdaptiveScale(): AdaptiveScale {
+    val config = LocalConfiguration.current
+
+    val width = config.screenWidthDp.toFloat()
+    val height = config.screenHeightDp.toFloat()
+
+    val baseWidth = 393f
+    val baseHeight = 852f
+
+    val fitScale = minOf(width / baseWidth, height / baseHeight)
+
+    val scale = fitScale
+        .coerceIn(0.78f, 1.25f)
+
+    return AdaptiveScale(
+        scale = scale,
+        compact = height < 760f,
+        tiny = height < 650f
+    )
+}
+
+@Composable
+fun AdaptiveDensity(
+    content: @Composable () -> Unit
+) {
+    val adaptive = rememberAdaptiveScale()
+    val currentDensity = LocalDensity.current
+
+    CompositionLocalProvider(
+        LocalDensity provides Density(
+            density = currentDensity.density * adaptive.scale,
+            fontScale = currentDensity.fontScale * adaptive.scale
+        )
+    ) {
+        content()
+    }
+}

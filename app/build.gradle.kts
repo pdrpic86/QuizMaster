@@ -71,3 +71,10 @@ dependencies {
 
     debugImplementation(libs.androidx.compose.ui.tooling)
 }
+
+dependencies {
+    androidTestImplementation(platform("androidx.compose:compose-bom:2026.06.00"))
+    androidTestImplementation("androidx.compose.ui:ui-test-junit4")
+    debugImplementation(platform("androidx.compose:compose-bom:2026.06.00"))
+    debugImplementation("androidx.compose.ui:ui-test-manifest")
+}

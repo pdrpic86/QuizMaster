@@ -1,56 +1,96 @@
 package com.example.quizmaster.ui.screens.difficulty
 
-import androidx.compose.animation.core.Animatable
-import androidx.compose.animation.core.EaseOutBack
-import androidx.compose.animation.core.FastOutSlowInEasing
+import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.animation.core.tween
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
+import androidx.compose.foundation.clickable
+import androidx.compose.foundation.interaction.MutableInteractionSource
+import androidx.compose.foundation.interaction.collectIsPressedAsState
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.PaddingValues
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.WindowInsets
-import androidx.compose.foundation.layout.asPaddingValues
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.navigationBars
-import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.safeDrawingPadding
 import androidx.compose.foundation.layout.size
-import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.width
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.shape.CircleShape
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Bolt
-import androidx.compose.material.icons.rounded.Category
-import androidx.compose.material.icons.rounded.PlayArrow
-import androidx.compose.material.icons.rounded.Star
-import androidx.compose.material.icons.rounded.Timer
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.AssistChip
+import androidx.compose.material3.AssistChipDefaults
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
-import androidx.compose.material3.Icon
+import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
-import com.example.quizmaster.ui.components.AppBackground
-import com.example.quizmaster.ui.components.CategoryBadge
-import com.example.quizmaster.ui.components.CategoryHeader
+import androidx.compose.ui.unit.sp
+
+private data class DifficultyUi(
+    val value: String,
+    val title: String,
+    val subtitle: String,
+    val stars: String,
+    val badge: String,
+    val accent: Color
+)
+
+private val difficultyLevels = listOf(
+    DifficultyUi(
+        value = "Easy",
+        title = "Easy",
+        subtitle = "Warm-up round. Good for quick testing and casual play.",
+        stars = "★☆☆☆",
+        badge = "Warm-up",
+        accent = Color(0xFF22C55E)
+    ),
+    DifficultyUi(
+        value = "Medium",
+        title = "Medium",
+        subtitle = "Balanced quiz mode with questions that need actual thinking.",
+        stars = "★★☆☆",
+        badge = "Pub quiz",
+        accent = Color(0xFF38BDF8)
+    ),
+    DifficultyUi(
+        value = "Hard",
+        title = "Hard",
+        subtitle = "Sharper questions, less guessing, more pain. In a good way.",
+        stars = "★★★☆",
+        badge = "Serious",
+        accent = Color(0xFFF59E0B)
+    ),
+    DifficultyUi(
+        value = "Expert",
+        title = "Expert",
+        subtitle = "Millionaire-ish mode. Not impossible, but it should bite.",
+        stars = "★★★★",
+        badge = "Final boss",
+        accent = Color(0xFFEF4444)
+    )
+)
 
 @Composable
 fun DifficultyScreen(
@@ -58,134 +98,174 @@ fun DifficultyScreen(
     onBackClick: () -> Unit,
     onDifficultySelected: (String) -> Unit
 ) {
-    val screenAlpha = remember { Animatable(0f) }
-    val screenScale = remember { Animatable(0.94f) }
-
-    LaunchedEffect(Unit) {
-        screenAlpha.animateTo(
-            targetValue = 1f,
-            animationSpec = tween(
-                durationMillis = 420,
-                easing = FastOutSlowInEasing
-            )
-        )
-
-        screenScale.animateTo(
-            targetValue = 1f,
-            animationSpec = tween(
-                durationMillis = 520,
-                easing = EaseOutBack
-            )
-        )
-    }
-
-    AppBackground {
-        Column(
+    Surface(
+        modifier = Modifier.fillMaxSize(),
+        color = MaterialTheme.colorScheme.background
+    ) {
+        Box(
             modifier = Modifier
                 .fillMaxSize()
-                .padding(WindowInsets.statusBars.asPaddingValues())
-                .padding(WindowInsets.navigationBars.asPaddingValues())
-                .padding(horizontal = 24.dp)
-                .padding(top = 16.dp, bottom = 24.dp)
-                .alpha(screenAlpha.value)
-                .scale(screenScale.value)
+                .background(
+                    Brush.verticalGradient(
+                        listOf(
+                            MaterialTheme.colorScheme.background,
+                            MaterialTheme.colorScheme.surface,
+                            MaterialTheme.colorScheme.background
+                        )
+                    )
+                )
+                .safeDrawingPadding()
         ) {
-            CategoryHeader(
-                title = "Difficulty",
-                subtitle = selectedCategory,
-                onBackClick = onBackClick
-            )
-
-            Spacer(modifier = Modifier.height(28.dp))
-
-            Text(
-                text = "Choose difficulty",
-                style = MaterialTheme.typography.headlineLarge,
-                fontWeight = FontWeight.Black,
-                color = MaterialTheme.colorScheme.onBackground
-            )
-
-            Spacer(modifier = Modifier.height(8.dp))
-
-            Text(
-                text = "Category: $selectedCategory",
-                style = MaterialTheme.typography.titleMedium,
-                color = MaterialTheme.colorScheme.primary
-            )
-
-            Spacer(modifier = Modifier.height(28.dp))
-
             Column(
-                verticalArrangement = Arrangement.spacedBy(16.dp)
+                modifier = Modifier
+                    .fillMaxSize()
+                    .verticalScroll(rememberScrollState())
+                    .padding(horizontal = 16.dp, vertical = 10.dp),
+                verticalArrangement = Arrangement.spacedBy(14.dp)
             ) {
-                DifficultyCard(
-                    title = "Easy",
-                    subtitle = "Simple warm-up questions",
-                    badge = "Difficulty 1",
-                    icon = Icons.Rounded.Star,
-                    onClick = {
-                        onDifficultySelected("Easy")
-                    }
+                PremiumDifficultyHeader(
+                    title = "Choose level",
+                    subtitle = selectedCategory,
+                    onBackClick = onBackClick
                 )
 
-                DifficultyCard(
-                    title = "Medium",
-                    subtitle = "Balanced challenge",
-                    badge = "Difficulty 2",
-                    icon = Icons.Rounded.Bolt,
-                    onClick = {
-                        onDifficultySelected("Medium")
-                    }
-                )
+                DifficultyHeroCard(selectedCategory = selectedCategory)
 
-                DifficultyCard(
-                    title = "Hard",
-                    subtitle = "For serious quiz players",
-                    badge = "Difficulty 3",
-                    icon = Icons.Rounded.Timer,
-                    onClick = {
-                        onDifficultySelected("Hard")
+                Column(
+                    verticalArrangement = Arrangement.spacedBy(12.dp)
+                ) {
+                    difficultyLevels.forEach { level ->
+                        PremiumDifficultyCard(
+                            level = level,
+                            onClick = { onDifficultySelected(level.value) }
+                        )
                     }
-                )
+                }
 
-                DifficultyCard(
-                    title = "Mixed",
-                    subtitle = "Random mix of all difficulties",
-                    badge = "Recommended",
-                    icon = Icons.Rounded.Category,
-                    onClick = {
-                        onDifficultySelected("Mixed")
-                    }
-                )
+                Spacer(modifier = Modifier.height(10.dp))
             }
-
-            Spacer(modifier = Modifier.weight(1f))
-
-            Text(
-                text = "Next: real questions from the database.",
-                modifier = Modifier.fillMaxWidth(),
-                style = MaterialTheme.typography.bodySmall,
-                color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.45f),
-                textAlign = TextAlign.Center
-            )
         }
     }
 }
 
 @Composable
-private fun DifficultyCard(
+private fun PremiumDifficultyHeader(
     title: String,
     subtitle: String,
-    badge: String,
-    icon: ImageVector,
-    onClick: () -> Unit
+    onBackClick: () -> Unit
+) {
+    Row(
+        modifier = Modifier.fillMaxWidth(),
+        verticalAlignment = Alignment.CenterVertically
+    ) {
+        TextButton(
+            onClick = onBackClick,
+            contentPadding = PaddingValues(horizontal = 8.dp, vertical = 0.dp)
+        ) {
+            Text(
+                text = "‹",
+                fontSize = 34.sp,
+                lineHeight = 34.sp,
+                fontWeight = FontWeight.Black
+            )
+        }
+
+        Spacer(modifier = Modifier.width(4.dp))
+
+        Column(
+            modifier = Modifier.weight(1f)
+        ) {
+            Text(
+                text = title,
+                fontSize = 25.sp,
+                lineHeight = 28.sp,
+                fontWeight = FontWeight.Black,
+                color = MaterialTheme.colorScheme.onBackground
+            )
+
+            Text(
+                text = "$subtitle category",
+                fontSize = 12.sp,
+                lineHeight = 16.sp,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                maxLines = 1,
+                overflow = TextOverflow.Ellipsis
+            )
+        }
+
+        CategoryEmojiBadge(category = subtitle)
+    }
+}
+
+@Composable
+private fun DifficultyHeroCard(
+    selectedCategory: String
 ) {
     Card(
-        onClick = onClick,
         modifier = Modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(30.dp),
+        shape = RoundedCornerShape(28.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White.copy(alpha = 0.05f)
+            containerColor = MaterialTheme.colorScheme.primaryContainer.copy(alpha = 0.88f)
+        ),
+        elevation = CardDefaults.cardElevation(defaultElevation = 4.dp)
+    ) {
+        Column(
+            modifier = Modifier.padding(18.dp),
+            verticalArrangement = Arrangement.spacedBy(10.dp)
+        ) {
+            Text(
+                text = selectedCategory,
+                fontSize = 30.sp,
+                lineHeight = 32.sp,
+                fontWeight = FontWeight.Black,
+                color = MaterialTheme.colorScheme.onPrimaryContainer
+            )
+
+            Text(
+                text = "Pick a level. Your database can stay unsorted while testing, then you map questions into these four levels later.",
+                fontSize = 13.sp,
+                lineHeight = 18.sp,
+                color = MaterialTheme.colorScheme.onPrimaryContainer.copy(alpha = 0.76f)
+            )
+
+            Row(
+                horizontalArrangement = Arrangement.spacedBy(8.dp)
+            ) {
+                TinyPill(text = "Easy")
+                TinyPill(text = "Medium")
+                TinyPill(text = "Hard")
+                TinyPill(text = "Expert")
+            }
+        }
+    }
+}
+
+@Composable
+private fun PremiumDifficultyCard(
+    level: DifficultyUi,
+    onClick: () -> Unit
+) {
+    val interactionSource = remember { MutableInteractionSource() }
+    val pressed by interactionSource.collectIsPressedAsState()
+
+    val scale by animateFloatAsState(
+        targetValue = if (pressed) 0.975f else 1f,
+        animationSpec = tween(durationMillis = 110),
+        label = "difficulty card press scale"
+    )
+
+    Card(
+        modifier = Modifier
+            .fillMaxWidth()
+            .scale(scale)
+            .clickable(
+                interactionSource = interactionSource,
+                indication = null,
+                onClick = onClick
+            ),
+        shape = RoundedCornerShape(26.dp),
+        colors = CardDefaults.cardColors(
+            containerColor = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.64f)
         ),
         elevation = CardDefaults.cardElevation(defaultElevation = 0.dp)
     ) {
@@ -193,69 +273,146 @@ private fun DifficultyCard(
             modifier = Modifier
                 .fillMaxWidth()
                 .border(
-                    width = 0.5.dp,
+                    width = 0.8.dp,
                     brush = Brush.linearGradient(
-                        colors = listOf(Color.White.copy(alpha = 0.15f), Color.Transparent)
+                        listOf(
+                            level.accent.copy(alpha = 0.62f),
+                            Color.White.copy(alpha = 0.10f),
+                            Color.Transparent
+                        )
                     ),
-                    shape = RoundedCornerShape(30.dp)
+                    shape = RoundedCornerShape(26.dp)
                 )
-                .padding(18.dp)
+                .padding(15.dp)
         ) {
             Row(
+                modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Box(
                     modifier = Modifier
-                        .size(54.dp)
-                        .clip(RoundedCornerShape(16.dp))
-                        .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.1f))
-                        .border(
-                            1.dp,
-                            MaterialTheme.colorScheme.primary.copy(alpha = 0.3f),
-                            RoundedCornerShape(16.dp)
+                        .size(62.dp)
+                        .clip(RoundedCornerShape(22.dp))
+                        .background(
+                            Brush.linearGradient(
+                                listOf(
+                                    level.accent.copy(alpha = 0.34f),
+                                    level.accent.copy(alpha = 0.10f)
+                                )
+                            )
                         ),
                     contentAlignment = Alignment.Center
                 ) {
-                    Icon(
-                        imageVector = icon,
-                        contentDescription = null,
-                        modifier = Modifier.size(28.dp),
-                        tint = MaterialTheme.colorScheme.primary
+                    Text(
+                        text = level.stars,
+                        fontSize = 16.sp,
+                        lineHeight = 18.sp,
+                        fontWeight = FontWeight.Black,
+                        color = level.accent,
+                        textAlign = TextAlign.Center
                     )
                 }
 
-                Spacer(modifier = Modifier.width(18.dp))
+                Spacer(modifier = Modifier.width(13.dp))
 
                 Column(
-                    modifier = Modifier.weight(1f)
+                    modifier = Modifier.weight(1f),
+                    verticalArrangement = Arrangement.spacedBy(5.dp)
                 ) {
+                    Row(
+                        verticalAlignment = Alignment.CenterVertically
+                    ) {
+                        Text(
+                            text = level.title,
+                            modifier = Modifier.weight(1f),
+                            fontSize = 21.sp,
+                            lineHeight = 23.sp,
+                            fontWeight = FontWeight.Black,
+                            color = MaterialTheme.colorScheme.onSurface
+                        )
+
+                        AssistChip(
+                            onClick = onClick,
+                            label = {
+                                Text(
+                                    text = level.badge,
+                                    fontSize = 10.sp,
+                                    fontWeight = FontWeight.Black
+                                )
+                            },
+                            colors = AssistChipDefaults.assistChipColors(
+                                containerColor = level.accent.copy(alpha = 0.14f),
+                                labelColor = level.accent
+                            ),
+                            border = null
+                        )
+                    }
+
                     Text(
-                        text = title,
-                        style = MaterialTheme.typography.titleLarge,
-                        fontWeight = FontWeight.Black,
-                        color = Color.White
+                        text = level.subtitle,
+                        fontSize = 12.sp,
+                        lineHeight = 16.sp,
+                        color = MaterialTheme.colorScheme.onSurfaceVariant,
+                        maxLines = 2,
+                        overflow = TextOverflow.Ellipsis
                     )
-
-                    Spacer(modifier = Modifier.height(4.dp))
-
-                    Text(
-                        text = subtitle,
-                        style = MaterialTheme.typography.bodySmall,
-                        color = Color.White.copy(alpha = 0.55f)
-                    )
-
-                    Spacer(modifier = Modifier.height(10.dp))
-
-                    CategoryBadge(text = badge)
                 }
 
-                Icon(
-                    imageVector = Icons.Rounded.PlayArrow,
-                    contentDescription = null,
-                    tint = MaterialTheme.colorScheme.primary.copy(alpha = 0.8f),
-                    modifier = Modifier.size(24.dp)
+                Spacer(modifier = Modifier.width(8.dp))
+
+                Text(
+                    text = "›",
+                    fontSize = 32.sp,
+                    lineHeight = 32.sp,
+                    fontWeight = FontWeight.Black,
+                    color = level.accent
                 )
             }
         }
+    }
+}
+
+@Composable
+private fun CategoryEmojiBadge(
+    category: String
+) {
+    val emoji = when (category) {
+        "Sports" -> "⚽"
+        "Movies" -> "🎬"
+        "History" -> "🏛️"
+        "Animals" -> "🐾"
+        else -> "🎯"
+    }
+
+    Box(
+        modifier = Modifier
+            .size(42.dp)
+            .clip(CircleShape)
+            .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.14f)),
+        contentAlignment = Alignment.Center
+    ) {
+        Text(
+            text = emoji,
+            fontSize = 22.sp
+        )
+    }
+}
+
+@Composable
+private fun TinyPill(
+    text: String
+) {
+    Box(
+        modifier = Modifier
+            .clip(RoundedCornerShape(50))
+            .background(Color.White.copy(alpha = 0.14f))
+            .padding(horizontal = 10.dp, vertical = 5.dp)
+    ) {
+        Text(
+            text = text,
+            fontSize = 11.sp,
+            fontWeight = FontWeight.Bold,
+            color = MaterialTheme.colorScheme.onPrimaryContainer
+        )
     }
 }
