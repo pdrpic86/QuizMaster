@@ -1,0 +1,688 @@
+--------- beginning of main
+06-29 13:15:57.903 E/libusbconfigfs( 1817): epoll wait did not return descriptor number
+06-29 13:15:57.904 E/vendor.qti.hardware.perf2-hal-service( 1901): ExtendedPerfBoost: timer_thread_start() 63: timer_thread_start: epoll wait failed, errno = 4
+06-29 13:15:57.906 D/tcmd    ( 2184): waiting on events (-1ms)
+06-29 13:15:57.913 I/AidlSensorManager( 2823): aidl_ssvc_poll: spurious wake up, back to work
+06-29 13:15:57.941 D/ActionExecute( 2823): frozen uid = 10430 reason=check binder
+06-29 13:15:57.941 D/ActionExecute( 2823): setPkgData uid = 10430 time=0
+06-29 13:15:57.942 D/MiSensorServiceImpl( 2823): PowerKeeperSensor stop iUid:10430 but app has Controlled
+06-29 13:15:57.943 D/ActionExecute( 2823): setPkgData uid = 10430 time=3000
+06-29 13:15:57.951 E/PowerInsightClientProxy( 2823): framework 254 WLAN_CE_2 suspendEnd 54862814 suspendDuration 846
+06-29 13:15:57.951 E/PowerInsightPolicy( 2823): sPowerInsightService null!
+06-29 13:15:59.033 E/vendor.qti.hardware.perf2-hal-service( 1901): ExtendedPerfBoost: timer_thread_start() 63: timer_thread_start: epoll wait failed, errno = 4
+06-29 13:15:59.039 D/tcmd    ( 2184): waiting on events (-1ms)
+06-29 13:15:59.043 I/AidlSensorManager( 2823): aidl_ssvc_poll: spurious wake up, back to work
+06-29 13:15:59.044 E/libusbconfigfs( 1817): epoll wait did not return descriptor number
+06-29 13:15:59.082 E/PowerInsightClientProxy( 2823): framework 254 WLAN_CE_2 suspendEnd 54863945 suspendDuration 814
+06-29 13:15:59.083 E/PowerInsightPolicy( 2823): sPowerInsightService null!
+06-29 13:15:59.223 I/adbd    (10515): adbd service requested 'shell,v2,TERM=xterm-256color,raw:monkey -p com.example.quizmaster -c android.intent.category.LAUNCHER 1'
+06-29 13:16:00.463 E/vendor.qti.hardware.perf2-hal-service( 1901): ExtendedPerfBoost: timer_thread_start() 63: timer_thread_start: epoll wait failed, errno = 4
+06-29 13:16:00.463 E/libusbconfigfs( 1817): epoll wait did not return descriptor number
+06-29 13:16:00.464 D/tcmd    ( 2184): waiting on events (-1ms)
+06-29 13:16:00.471 I/AidlSensorManager( 2823): aidl_ssvc_poll: spurious wake up, back to work
+06-29 13:16:00.510 E/PowerInsightClientProxy( 2823): framework 254 WLAN_CE_2 suspendEnd 54865374 suspendDuration 994
+06-29 13:16:00.511 E/PowerInsightPolicy( 2823): sPowerInsightService null!
+06-29 13:16:01.591 E/libusbconfigfs( 1817): epoll wait did not return descriptor number
+06-29 13:16:01.591 E/vendor.qti.hardware.perf2-hal-service( 1901): ExtendedPerfBoost: timer_thread_start() 63: timer_thread_start: epoll wait failed, errno = 4
+06-29 13:16:01.592 D/tcmd    ( 2184): waiting on events (-1ms)
+06-29 13:16:01.600 I/AidlSensorManager( 2823): aidl_ssvc_poll: spurious wake up, back to work
+06-29 13:16:01.620 D/JavaheapMonitor( 5534): Java heap used=29M max=256M, proc: com.google.android.gms.persistent
+06-29 13:16:01.623 V/JavaheapMonitor( 5534): Check java heap usage finished! Next check delay: 300000
+--------- beginning of system
+06-29 13:16:01.624 D/GreezeManager( 2823): THAW uid = 10374 pid = [ 31857 ]  reason : PACKET caller : 1000
+06-29 13:16:01.624 D/ExternalInterface( 2823): setUidState, uid = 10374 allow = true
+06-29 13:16:01.625 D/GreezeCallback( 2823): thawedByOther uid=10374 pid=31857
+06-29 13:16:01.626 D/ActionExecute( 2823): setPkgData uid = 10374 time=3000
+06-29 13:16:01.640 E/PowerInsightClientProxy( 2823): framework 254 WLAN_CE_2 suspendEnd 54866503 suspendDuration 826
+06-29 13:16:01.640 E/PowerInsightPolicy( 2823): sPowerInsightService null!
+06-29 13:16:01.641 E/VRI[StatusBar]( 4790): performDraw: Not drawing due to screen off
+06-29 13:16:01.644 D/ControlCenterHeaderExpandController( 4790): onExpansionChanged: progress =  0.0
+06-29 13:16:01.644 D/ControlCenterHeaderExpandController( 4790): onExpansionChanged: progress =  0.0
+06-29 13:16:01.647 I/ClockDeviceConfig( 4790): get bounds = Rect(0, 0 - 1080, 2392)
+06-29 13:16:01.650 D/ControlCenterHeaderExpandController( 4790): onExpansionChanged: progress =  0.0
+06-29 13:16:01.651 E/VRI[NotificationShade]( 4790): performDraw: Not drawing due to screen off
+06-29 13:16:02.715 E/libusbconfigfs( 1817): epoll wait did not return descriptor number
+06-29 13:16:02.716 E/vendor.qti.hardware.perf2-hal-service( 1901): ExtendedPerfBoost: timer_thread_start() 63: timer_thread_start: epoll wait failed, errno = 4
+06-29 13:16:02.718 D/tcmd    ( 2184): waiting on events (-1ms)
+06-29 13:16:02.726 I/AidlSensorManager( 2823): aidl_ssvc_poll: spurious wake up, back to work
+06-29 13:16:02.764 E/PowerInsightClientProxy( 2823): framework 254 WLAN_CE_2 suspendEnd 54867627 suspendDuration 817
+06-29 13:16:02.764 E/PowerInsightPolicy( 2823): sPowerInsightService null!
+06-29 13:16:02.874 W/libc    ( 6635): Access denied finding property "persist.vendor.audio.cpupror.schedDy"
+06-29 13:16:02.914 D/AndroidRuntime( 6635): >>>>>> START com.android.internal.os.RuntimeInit uid 2000 <<<<<<
+06-29 13:16:02.870 W/app_process( 6635): type=1400 audit(0.0:11259): avc:  denied  { read } for  name="u:object_r:vendor_audio_prop:s0" dev="tmpfs" ino=454 scontext=u:r:shell:s0 tcontext=u:object_r:vendor_audio_prop:s0 tclass=file permissive=0
+06-29 13:16:03.844 E/vendor.qti.hardware.perf2-hal-service( 1901): ExtendedPerfBoost: timer_thread_start() 63: timer_thread_start: epoll wait failed, errno = 4
+06-29 13:16:03.845 E/libusbconfigfs( 1817): epoll wait did not return descriptor number
+06-29 13:16:03.851 D/tcmd    ( 2184): waiting on events (-1ms)
+06-29 13:16:03.853 I/AidlSensorManager( 2823): aidl_ssvc_poll: spurious wake up, back to work
+06-29 13:16:03.859 D/JavaheapMonitor( 3958): Java heap used=15M max=512M, proc: com.miui.home
+06-29 13:16:03.859 V/JavaheapMonitor( 3958): Check java heap usage finished! Next check delay: 300000
+06-29 13:16:03.889 E/PowerInsightClientProxy( 2823): framework 254 WLAN_CE_2 suspendEnd 54868752 suspendDuration 824
+06-29 13:16:03.889 E/PowerInsightPolicy( 2823): sPowerInsightService null!
+06-29 13:16:03.917 I/AndroidRuntime( 6635): Using default boot image
+06-29 13:16:03.917 I/AndroidRuntime( 6635): Leaving lock profiling enabled
+06-29 13:16:03.927 I/app_process( 6635): Using generational CollectorTypeCMC GC.
+06-29 13:16:03.986 D/JavaheapMonitor(11159): Java heap used=2M max=256M, proc: system
+06-29 13:16:03.986 V/JavaheapMonitor(11159): Check java heap usage finished! Next check delay: 300000
+06-29 13:16:04.970 D/vendor.xiaomi.hardware.mimd2( 1638): PsiMonitorManager::Polling: epoll_wait cause a yield
+06-29 13:16:04.970 D/vendor.xiaomi.hardware.mimd2( 1638): PsiMonitorManager::Polling: epoll_wait invalid return errno=4 Interrupted system call
+06-29 13:16:04.971 E/vendor.qti.hardware.perf2-hal-service( 1901): ExtendedPerfBoost: timer_thread_start() 63: timer_thread_start: epoll wait failed, errno = 4
+06-29 13:16:04.971 D/vendor.xiaomi.hardware.mimd2( 1638): TimerManager::Polling: epoll_wait cause a yield, e_num:-1
+06-29 13:16:04.971 D/vendor.xiaomi.hardware.mimd2( 1638): TimerManager::Polling: epoll_wait invalid return errno=4 Interrupted system call
+06-29 13:16:04.976 D/tcmd    ( 2184): waiting on events (-1ms)
+06-29 13:16:04.973 E/libusbconfigfs( 1817): epoll wait did not return descriptor number
+06-29 13:16:04.980 I/AidlSensorManager( 2823): aidl_ssvc_poll: spurious wake up, back to work
+06-29 13:16:05.022 E/PowerInsightClientProxy( 2823): framework 254 WLAN_CE_2 suspendEnd 54869885 suspendDuration 828
+06-29 13:16:05.023 E/PowerInsightPolicy( 2823): sPowerInsightService null!
+06-29 13:16:05.068 D/nativeloader( 6635): InitDefaultPublicLibraries for_preload=1: libandroid.so:libaaudio.so:libamidi.so:libbinder_ndk.so:libc.so:libcamera2ndk.so:libdl.so:libEGL.so:libGLESv1_CM.so:libGLESv2.so:libGLESv3.so:libicu.so:libicui18n.so:libicuuc.so:libjnigraphics.so:liblog.so:libmediandk.so:libm.so:libnativehelper.so:libnativewindow.so:libOpenMAXAL.so:libOpenSLES.so:libRS.so:libstdc++.so:libsync.so:libvulkan.so:libwebviewchromium_plat_support.so:libz.so
+06-29 13:16:05.100 D/nativeloader( 6635): Load libicu_jni.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+06-29 13:16:05.101 D/app_process( 6635): u_setTimeZoneFilesDirectory("/apex/com.android.tzdata/etc/tz/versioned/9/icu") succeeded. 
+06-29 13:16:05.101 D/app_process( 6635): I18n APEX ICU file found: /apex/com.android.i18n/etc/icu/icudt76l.dat
+06-29 13:16:05.105 D/nativeloader( 6635): Load libjavacore.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+06-29 13:16:05.108 D/nativeloader( 6635): Load libopenjdk.so using APEX ns com_android_art for caller /apex/com.android.art/javalib/core-oj.jar: ok
+06-29 13:16:05.109 I/app_process( 6635): Priority-to-niceness mapping: 19, 16, 13, 10, 0, -2, -4, -5, -6, -8
+06-29 13:16:05.154 W/libc    ( 6635): Access denied finding property "ro.vendor.mtk.hbt_binfmt_misc_support"
+06-29 13:16:05.154 W/libc    ( 6635): Access denied finding property "ro.vendor.mtk.app32_boost_support"
+06-29 13:16:05.154 W/libc    ( 6635): Access denied finding property "ro.vendor.mtk.hbt_dyn_type"
+06-29 13:16:05.154 W/libc    ( 6635): Access denied finding property "persist.vendor.mtk.hbt_dyn_type"
+06-29 13:16:05.154 W/libc    ( 6635): Access denied finding property "ro.vendor.mi_fake_32bit_support"
+06-29 13:16:05.253 E/vendor.qti.hardware.perf2-hal-service( 1901): ExtendedPerfBoost: timer_thread_start() 63: timer_thread_start: epoll wait failed, errno = 4
+06-29 13:16:05.254 D/tcmd    ( 2184): waiting on events (-1ms)
+06-29 13:16:05.256 E/libusbconfigfs( 1817): epoll wait did not return descriptor number
+06-29 13:16:05.262 I/AidlSensorManager( 2823): aidl_ssvc_poll: spurious wake up, back to work
+06-29 13:16:05.291 D/JavaheapMonitor(13161): Java heap used=4M max=256M, proc: com.xiaomi.xmsf
+06-29 13:16:05.292 V/JavaheapMonitor(13161): Check java heap usage finished! Next check delay: 300000
+06-29 13:16:05.294 D/JavaheapMonitor(14753): Java heap used=3M max=512M, proc: com.xiaomi.aicr:cognitionService
+06-29 13:16:05.294 V/JavaheapMonitor(14753): Check java heap usage finished! Next check delay: 300000
+06-29 13:16:05.302 D/nativeloader( 6635): Load libframework-connectivity-tiramisu-jni.so using APEX ns com_android_tethering for caller /apex/com.android.tethering/javalib/framework-connectivity-t.jar: ok
+06-29 13:16:05.302 E/PowerInsightClientProxy( 2823): framework Abort: Device alarmtimer.0.auto failed to suspend: error -16 suspendEnd 54870166 suspendDuration 0
+06-29 13:16:05.302 D/AndroidRuntime( 6635): Calling main entry com.android.commands.monkey.Monkey
+06-29 13:16:05.303 E/PowerInsightPolicy( 2823): sPowerInsightService null!
+06-29 13:16:05.306 D/JavaheapMonitor(10755): Java heap used=19M max=256M, proc: com.google.android.inputmethod.latin
+06-29 13:16:05.306 V/JavaheapMonitor(10755): Check java heap usage finished! Next check delay: 300000
+06-29 13:16:05.310 D/nativeloader( 6635): Load /system/lib64/libmonkey_jni.so using ns default for caller /system/framework/monkey.jar in same partition (is_bridged=0): ok
+06-29 13:16:05.310 W/Monkey  ( 6635): args: [-p, com.example.quizmaster, -c, android.intent.category.LAUNCHER, 1]
+06-29 13:16:05.336 W/PlatformAconfigPackage( 6635): android.os.flagging.AconfigStorageReadException: ERROR_CANNOT_READ_STORAGE_FILE: Fail to mmap storage
+06-29 13:16:05.338 I/AconfigPackage( 6635): com.android.appsearch.flags is mapped to com.android.appsearch
+06-29 13:16:05.339 I/AconfigPackage( 6635): com.android.adservices.flags is mapped to com.android.adservices
+06-29 13:16:05.339 I/AconfigPackage( 6635): com.android.sdksandbox.flags is mapped to com.android.adservices
+06-29 13:16:05.340 I/AconfigPackage( 6635): com.android.uwb.flags is mapped to com.android.uwb
+06-29 13:16:05.340 I/AconfigPackage( 6635): com.android.ranging.flags is mapped to com.android.uwb
+06-29 13:16:05.341 I/AconfigPackage( 6635): com.android.os.statsd.flags is mapped to com.android.os.statsd
+06-29 13:16:05.341 I/AconfigPackage( 6635): android.uprobestats.mainline.flags is mapped to com.android.uprobestats
+06-29 13:16:05.342 I/AconfigPackage( 6635): com.android.permission.flags is mapped to com.android.permission
+06-29 13:16:05.342 I/AconfigPackage( 6635): com.android.permissioncontroller.flags is mapped to com.android.permission
+06-29 13:16:05.343 I/AconfigPackage( 6635): android.os.profiling is mapped to com.android.profiling
+06-29 13:16:05.344 I/AconfigPackage( 6635): com.android.ipsec.flags is mapped to com.android.ipsec
+06-29 13:16:05.345 I/AconfigPackage( 6635): com.android.wifi.flags is mapped to com.android.wifi
+06-29 13:16:05.345 I/AconfigPackage( 6635): com.android.cellbroadcastreceiver.flags is mapped to com.android.cellbroadcast
+06-29 13:16:05.346 I/AconfigPackage( 6635): com.android.rkpd.flags is mapped to com.android.rkpd
+06-29 13:16:05.347 I/AconfigPackage( 6635): android.provider.flags is mapped to com.android.configinfrastructure
+06-29 13:16:05.347 I/AconfigPackage( 6635): com.android.server.deviceconfig is mapped to com.android.configinfrastructure
+06-29 13:16:05.348 I/AconfigPackage( 6635): android.media.swcodec.flags is mapped to com.android.media.swcodec
+06-29 13:16:05.348 I/AconfigPackage( 6635): com.android.adservices.ondevicepersonalization.flags is mapped to com.android.ondevicepersonalization
+06-29 13:16:05.349 I/AconfigPackage( 6635): com.android.media.extractor.flags is mapped to com.android.media
+06-29 13:16:05.349 I/AconfigPackage( 6635): com.android.media.metrics.flags is mapped to com.android.media
+06-29 13:16:05.349 I/AconfigPackage( 6635): com.android.media.mainline.flags is mapped to com.android.media
+06-29 13:16:05.350 I/AconfigPackage( 6635): com.android.art.flags is mapped to com.android.art
+06-29 13:16:05.350 I/AconfigPackage( 6635): com.android.art.rw.flags is mapped to com.android.art
+06-29 13:16:05.350 I/AconfigPackage( 6635): com.android.libcore is mapped to com.android.art
+06-29 13:16:05.350 I/AconfigPackage( 6635): android.graphics.pdf.flags is mapped to com.android.mediaprovider
+06-29 13:16:05.350 I/AconfigPackage( 6635): com.android.providers.media.flags is mapped to com.android.mediaprovider
+06-29 13:16:05.350 I/AconfigPackage( 6635): android.graphics.pdf.flags.readonly is mapped to com.android.mediaprovider
+06-29 13:16:05.351 I/AconfigPackage( 6635): com.android.healthfitness.flags is mapped to com.android.healthfitness
+06-29 13:16:05.352 I/AconfigPackage( 6635): com.android.tethering.mainline.beta is mapped to com.android.tethering
+06-29 13:16:05.352 I/AconfigPackage( 6635): android.net.http is mapped to com.android.tethering
+06-29 13:16:05.352 I/AconfigPackage( 6635): com.android.tethering.readonly.flags is mapped to com.android.tethering
+06-29 13:16:05.352 I/AconfigPackage( 6635): android.net.vcn is mapped to com.android.tethering
+06-29 13:16:05.352 I/AconfigPackage( 6635): com.android.net.flags is mapped to com.android.tethering
+06-29 13:16:05.352 I/AconfigPackage( 6635): com.android.tethering.flags is mapped to com.android.tethering
+06-29 13:16:05.352 I/AconfigPackage( 6635): com.android.tethering.beta.test is mapped to com.android.tethering
+06-29 13:16:05.352 I/AconfigPackage( 6635): com.android.nearby.flags is mapped to com.android.tethering
+06-29 13:16:05.352 I/AconfigPackage( 6635): com.android.net.thread.flags is mapped to com.android.tethering
+06-29 13:16:05.352 I/AconfigPackage( 6635): com.android.net.ct.flags is mapped to com.android.tethering
+06-29 13:16:05.353 I/AconfigPackage( 6635): com.android.bluetooth.flags is mapped to com.android.bt
+06-29 13:16:05.353 I/AconfigPackage( 6635): com.android.devicelock.flags is mapped to com.android.devicelock
+06-29 13:16:05.354 I/AconfigPackage( 6635): com.android.icu is mapped to com.android.i18n
+06-29 13:16:05.355 I/AconfigPackage( 6635): com.android.system.virtualmachine.flags is mapped to com.android.virt
+06-29 13:16:05.356 I/AconfigPackage( 6635): com.android.adbd.flags is mapped to com.android.adbd
+06-29 13:16:05.357 I/AconfigPackage( 6635): com.android.org.conscrypt.flags is mapped to com.android.conscrypt
+06-29 13:16:05.357 I/AconfigPackage( 6635): com.android.org.conscrypt.net.flags is mapped to com.android.conscrypt
+06-29 13:16:05.357 E/FeatureFlagsImplExport( 6635): android.os.flagging.AconfigStorageReadException: ERROR_PACKAGE_NOT_FOUND: package android.xr cannot be found on the device
+06-29 13:16:05.359 W/libc    ( 6635): Access denied finding property "qemu.sf.lcd_density"
+06-29 13:16:05.359 W/libc    ( 6635): Access denied finding property "qemu.sf.lcd_density"
+06-29 13:16:05.355 W/commands.monkey( 6635): type=1400 audit(0.0:11260): avc:  denied  { read } for  name="u:object_r:qemu_sf_lcd_density_prop:s0" dev="tmpfs" ino=364 scontext=u:r:shell:s0 tcontext=u:object_r:qemu_sf_lcd_density_prop:s0 tclass=file permissive=0
+06-29 13:16:05.355 W/commands.monkey( 6635): type=1400 audit(0.0:11261): avc:  denied  { read } for  name="u:object_r:qemu_sf_lcd_density_prop:s0" dev="tmpfs" ino=364 scontext=u:r:shell:s0 tcontext=u:object_r:qemu_sf_lcd_density_prop:s0 tclass=file permissive=0
+06-29 13:16:05.363 D/ThemeCompatibility( 6635): START loading theme compatibility config.
+06-29 13:16:05.364 D/ThemeCompatibility( 6635): getVersion(): /data/system/theme_config/theme_compatibility.xml  java.io.FileNotFoundException: /data/system/theme_config/theme_compatibility.xml: open failed: ENOENT (No such file or directory)
+06-29 13:16:05.365 D/ThemeCompatibility( 6635): getConfigDocumentTree(): 140 vs -1
+06-29 13:16:05.365 D/ThemeCompatibility( 6635):     parse file: /product/media/theme/theme_compatibility.xml
+06-29 13:16:05.368 D/ThemeCompatibility( 6635): END loading: version=140 size=71
+06-29 13:16:05.385 D/nativeloader( 6635): Load libjavacrypto.so using APEX ns com_android_conscrypt for caller /apex/com.android.conscrypt/javalib/conscrypt.jar: ok
+06-29 13:16:05.397 I/OverlayConfig( 6635): Sorting partitions in the specified order from partitions_order.xml
+06-29 13:16:05.555 W/commands.monkey( 6635): type=1400 audit(0.0:11262): avc:  denied  { execute } for  name="idmap2" dev="dm-16" ino=8875455 scontext=u:r:shell:s0 tcontext=u:object_r:idmap_exec:s0 tclass=file permissive=0
+06-29 13:16:05.560 W/app_process( 6635): unable to execute idmap2: Permission denied
+06-29 13:16:05.560 W/OverlayConfig( 6635): 'idmap2 create-multiple' failed: no mutable="false" overlays targeting "android" will be loaded
+06-29 13:16:05.560 I/AssetManagerImpl ( 6635): Load libmiui_runtime
+06-29 13:16:05.565 D/nativeloader( 6635): Load libmiui_runtime.so using system ns (caller=/system_ext/framework/miui-framework.jar): ok
+06-29 13:16:05.565 E/app_process( 6635): register_android_view_SurfaceRuntimeShader  
+06-29 13:16:05.565 E/app_process( 6635): register_android_view_SurfaceRuntimeShader  0
+06-29 13:16:05.574 W/asset   ( 6635): unable to execute idmap2: Permission denied
+06-29 13:16:05.574 W/AssetManagerImpl ( 6635): 'idmap2 --scan' failed: no static="true" overlays targeting "miui" will be loaded
+06-29 13:16:05.567 W/commands.monkey( 6635): type=1400 audit(0.0:11263): avc:  denied  { execute } for  name="idmap2" dev="dm-16" ino=8875455 scontext=u:r:shell:s0 tcontext=u:object_r:idmap_exec:s0 tclass=file permissive=0
+06-29 13:16:05.607 I/app_process( 6635): AssetManager2(0xb4000072b6e34df8) locale list changing from [] to [hr-HR]
+06-29 13:16:05.618 W/Monkey  ( 6635):  arg: "-p"
+06-29 13:16:05.619 W/Monkey  ( 6635):  arg: "com.example.quizmaster"
+06-29 13:16:05.619 W/Monkey  ( 6635):  arg: "-c"
+06-29 13:16:05.619 W/Monkey  ( 6635):  arg: "android.intent.category.LAUNCHER"
+06-29 13:16:05.619 W/Monkey  ( 6635):  arg: "1"
+06-29 13:16:05.619 W/Monkey  ( 6635): data="com.example.quizmaster"
+06-29 13:16:05.619 W/Monkey  ( 6635): data="android.intent.category.LAUNCHER"
+06-29 13:16:05.652 D/EventHub( 2823): No input device configuration file found for device 'Monkey touch'.
+06-29 13:16:05.655 I/EventHub( 2823): usingClockIoctl=true
+06-29 13:16:05.655 I/EventHub( 2823): New device: id=13, fd=1105, path='/dev/input/event10', name='Monkey touch', classes=TOUCH | TOUCH_MT, configuration='', keyLayout='', keyCharacterMap='', builtinKeyboard=false, 
+06-29 13:16:05.661 W/MiTouchInputMapperStubImpl( 2823): not found rotate config for device 13
+06-29 13:16:05.661 I/InputReader( 2823): Device reconfigured: id=13, name='Monkey touch', size 1080x2392, orientation Rotation0, mode DIRECT, display id 0
+06-29 13:16:05.661 W/MiTouchInputMapperStubImpl( 2823): not found rotate config for device 13
+06-29 13:16:05.662 I/InputReader( 2823): Device added: id=13, eventHubId=13, name='Monkey touch', descriptor='e1fe28b90f915c7d1febbd52c1ef84b3c4cbed9f',sources=TOUCHSCREEN
+06-29 13:16:05.662 W/MiuiDeviceShareManager( 2823): Device 13 added
+06-29 13:16:05.670 I/ActivityTaskManager( 2823):  setActivityController mController=android.app.IActivityController$Stub$Proxy@177310b, imAMonkey=true, CallingPid=6635 CallingUid=2000
+06-29 13:16:05.670 D/ATMSImpl( 2823): setActivityController callingUid:2000 control=true
+06-29 13:16:05.671 I/LogHelper( 2823): onMonkeyRunning: mOpenCount=3
+06-29 13:16:05.673 D/WmInsetsLogUtilStubStubImpl( 2823): onShellCommand type=enable-text argList=[WM_DEBUG_STATES, WM_DEBUG_TASKS, WM_SHOW_TRANSACTIONS, WM_DEBUG_ANIM, WM_DEBUG_SYNC_ENGINE, WM_DEBUG_WINDOW_TRANSITIONS, WM_DEBUG_FOCUS_LIGHT]
+06-29 13:16:05.675 W/ActivityManager( 2823): registerReceiverWithFeature: no app for null
+06-29 13:16:05.694 E/WindowManager( 2823): Display reconfigured outside of a transition: Display{#0 state=OFF size=1080x2392 ROTATION_0}
+06-29 13:16:05.695 D/BrightnessThermalClamper( 2823): Thermal status observer already started
+06-29 13:16:05.695 I/QLM-Service( 6647): LimitsService daemon started
+06-29 13:16:05.696 E/QLM-Service( 6647): Unknown target identified with soc id 663
+06-29 13:16:05.697 D/WindowManager( 2823): DeferredDisplayUpdater: partially applying DisplayInfo(1080 x 2392) immediately
+06-29 13:16:05.698 W/DisplayContentStubImpl( 2823):  displayMetricsChanged=false physicalDisplayChanged=false displayId=0 newUniqueId=local:4630946610401717122 currentUnique=local:4630946610401717122
+06-29 13:16:05.698 D/DisplayContentStubImpl( 2823): Display{#0 state=OFF size=1080x2392 ROTATION_0} isActivityEmbeddingSplitEnable false
+06-29 13:16:05.698 W/InsetsSource( 2823): Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+06-29 13:16:05.698 D/SchedBoost( 2823): beginSchedThreads is disable or ScreenOff!
+06-29 13:16:05.698 W/InsetsSource( 2823): Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+06-29 13:16:05.699 D/MiuiRefreshRatePolicy( 2823): reset
+06-29 13:16:05.700 I/PkDeviceHelper(10755): PkDeviceHelper.refreshDevices():87 refreshing devices
+06-29 13:16:05.700 E/QLM-Service( 6647): thermal_zone_init: unable to get thermal zone number for sensor sys-therm-0, check qlm sensor configuration, service is exiting..
+06-29 13:16:05.700 W/Launcher( 3958): onDisplayChanged: newRotation=0, mCurrentRotation=0
+06-29 13:16:05.700 W/InsetsSource( 2823): Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+06-29 13:16:05.700 W/InsetsSource( 2823): Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+06-29 13:16:05.700 D/SchedBoost( 2823): beginSchedThreads is disable or ScreenOff!
+06-29 13:16:05.701 D/MiuiRefreshRatePolicy( 2823): reset
+06-29 13:16:05.701 I/Monkey  ( 6635): ** No activities found to run, monkey aborted.
+06-29 13:16:05.701 I/app_process( 6635): System.exit called, status: -4
+06-29 13:16:05.701 I/AndroidRuntime( 6635): VM exiting with result code -4.
+06-29 13:16:05.701 D/AudioFlingerImpl( 2012): setGameParameters keyvalue: screen_state=off
+06-29 13:16:05.702 D/DeviceHalAidl( 2012): [default] setParameters: parameters: "screen_state=off"
+06-29 13:16:05.702 I/PAL: ResourceManager( 1838): setParameter: 8972: Screen State:0
+06-29 13:16:05.702 W/InsetsSource(11396): Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+06-29 13:16:05.702 W/InsetsSource(11396): Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+06-29 13:16:05.702 W/InsetsSource(11396): Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+06-29 13:16:05.702 W/InsetsSource(11396): Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+06-29 13:16:05.703 D/MiuiGxzwAnimView( 4790): onDisplayChanged: oldState = 1, newState = 1
+06-29 13:16:05.704 I/ScanManager( 4286): msg.what = MSG_SCREEN_OFF, msg.arg1 = None
+06-29 13:16:05.705 W/InsetsSource(16873): Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+06-29 13:16:05.705 W/InsetsSource(16873): Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+06-29 13:16:05.705 W/InsetsSource(16873): Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+06-29 13:16:05.705 I/WindowManager( 2823): >>> OPEN TRANSACTION animate
+06-29 13:16:05.705 W/InsetsSource(16873): Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+06-29 13:16:05.705 D/SchedBoost( 2823): beginSchedThreads is disable or ScreenOff!
+06-29 13:16:05.705 I/WindowManager( 2823): <<< CLOSE TRANSACTION animate
+06-29 13:16:05.704 D/HighSpeedTrainModeController( 4725): msg.what = 6
+06-29 13:16:05.706 E/PERFHAL-SSLITE( 1901): PERFHAL-SSLITE: CheckOngoingScenario() 53: SSLite is disabled on this target
+06-29 13:16:05.706 E/PERFHAL-SSLITE( 1901): PERFHAL-SSLITE: StartScenario() 75: SSLite is disabled on this target
+06-29 13:16:05.706 D/NetworkSpeedTracker( 4725): onDisplayChanged mIsScreenOn=false
+06-29 13:16:05.706 D/NetworkSpeedTracker( 4725): onUpdateDeviceState eventType=4,mIsScreenOn=false,mIsMobileDataOn=false
+06-29 13:16:05.706 D/NetworkSpeedTracker( 4725): stopDataPoll
+06-29 13:16:05.706 E/vendor.qti.hardware.perf2-hal-service( 1901): ExtendedPerfBoost: extended_perfboost_acq() 174: extended perfboost acq req->mDuration=13 req->mThermalBoostParams=none req->mHintId=4249 req->mHintType=0 duration=13
+06-29 13:16:05.706 D/DeviceHalAidl( 2012): [usb] setParameters: parameters: "screen_state=off"
+06-29 13:16:05.707 D/AHAL_Module( 1838): updateScreenState: usb: 0
+06-29 13:16:05.707 D/DeviceHalAidl( 2012): [r_submix] setParameters: parameters: "screen_state=off"
+06-29 13:16:05.706 V/AutoDensityController( 4790): on display changed 0 context dpi:440 origin dpi:450 target dpi:440
+06-29 13:16:05.707 D/ControlCenterWindowViewController( 4790): on display changed 0
+06-29 13:16:05.707 D/AHAL_Module( 1838): updateScreenState: r_submix: 0
+06-29 13:16:05.707 V/AODAutoDensityController( 4790): on display changed 0 context dpi:440 origin dpi:450 target dpi:440
+06-29 13:16:05.707 D/DeviceHalAidl( 2012): [bluetooth] setParameters: parameters: "screen_state=off"
+06-29 13:16:05.707 D/AHAL_Module( 1838): updateScreenState: bluetooth: 0
+06-29 13:16:05.709 W/InsetsSource(11362): Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+06-29 13:16:05.709 D/QtiLinkBandwidthEstimator-0( 4725): handleMessage: 1
+06-29 13:16:05.709 D/QtiLinkBandwidthEstimator-1( 4725): handleMessage: 1
+06-29 13:16:05.709 W/InsetsSource(11362): Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+06-29 13:16:05.709 W/InsetsSource(11362): Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+06-29 13:16:05.709 W/InsetsSource(11362): Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+06-29 13:16:05.713 D/MI-SF   ( 2037): isTpIdleScene ,mAverageFrameRate is 24, 0 
+06-29 13:16:05.716 D/JavaheapMonitor( 2823): Java heap used=110M max=512M, proc: system_server
+06-29 13:16:05.716 V/JavaheapMonitor( 2823): Check java heap usage finished! Next check delay: 180000
+06-29 13:16:05.741 I/EventHub( 2823): Removing device Monkey touch due to epoll hang-up event.
+06-29 13:16:05.741 I/EventHub( 2823): Removed device: path=/dev/input/event10 name=Monkey touch id=13 fd=1105 classes=TOUCH | TOUCH_MT
+06-29 13:16:05.743 I/InputReader( 2823): Device removed: id=13, eventHubId=13, name='Monkey touch', descriptor='e1fe28b90f915c7d1febbd52c1ef84b3c4cbed9f', sources=TOUCHSCREEN
+06-29 13:16:05.743 W/MiuiDeviceShareManager( 2823): Device 13 removed
+06-29 13:16:05.773 E/WindowManager( 2823): Display reconfigured outside of a transition: Display{#0 state=OFF size=1080x2392 ROTATION_0}
+06-29 13:16:05.774 D/BrightnessThermalClamper( 2823): Thermal status observer already started
+06-29 13:16:05.775 I/PkDeviceHelper(10755): PkDeviceHelper.refreshDevices():87 refreshing devices
+06-29 13:16:05.775 I/EventHub( 2823): Removing device '/dev/input/event10' due to inotify event
+06-29 13:16:05.777 W/InsetsSource( 2823): Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+06-29 13:16:05.777 W/InsetsSource( 2823): Has no intersection or mTmpFrame.height(), return Insets.NONE mTmpFrame.height() =0 hasIntersection =false
+06-29 13:16:05.777 D/SchedBoost( 2823): beginSchedThreads is disable or ScreenOff!
+06-29 13:16:05.777 D/MiuiRefreshRatePolicy( 2823): reset
+06-29 13:16:05.779 D/NavigationModeController( 4790): getCurrentUserContext: contextUser=0 currentUser=0
+06-29 13:16:05.780 I/WindowManager( 2823): >>> OPEN TRANSACTION animate
+06-29 13:16:05.780 D/SchedBoost( 2823): beginSchedThreads is disable or ScreenOff!
+06-29 13:16:05.780 I/WindowManager( 2823): <<< CLOSE TRANSACTION animate
+06-29 13:16:06.172 D/JavaheapMonitor( 7681): Java heap used=38M max=256M, proc: com.google.android.gms
+06-29 13:16:06.172 V/JavaheapMonitor( 7681): Check java heap usage finished! Next check delay: 300000
+06-29 13:16:06.206 D/LogUtil_LogConfig(32460): getLogFile(): logFilePath = /data/user/0/com.huawei.health/files/com.huawei.health/com.huawei.health/
+06-29 13:16:06.398 W/ActivityManager( 2823): Idling uid u0a102 from package com.android.providers.blockednumber user 0
+06-29 13:16:06.400 I/MiuiNetworkPolicy( 2823): updateUidState uid = 10102, uidState = 15
+06-29 13:16:06.485 E/AlarmManager( 2823): not align this alarm: Alarm{127cf19 type 3 origWhen 55011283 whenElapsed 55011283 com.miui.powerkeeper}, reason=4
+06-29 13:16:06.486 D/AlarmManager( 2823): [xiaomi_power]sending alarm Alarm{633572b type 3 origWhen 54804864 whenElapsed 54804864 android} with listener tag TIME_TICK stats tag *alarm*:TIME_TICK package name android at 54871348 ms
+06-29 13:16:06.488 E/AlarmManager( 2823): not align this alarm: Alarm{562fbde type 3 origWhen 54924864 whenElapsed 54924864 android}, reason=1
+06-29 13:16:06.488 D/AlarmManager( 2823): mBroadcastRefCount -> 1
+06-29 13:16:06.489 D/PowerManagerService( 2823): [xiaomi_power]acquireWakeLockInternal: lock=197778990, flags=0x1, tag="*alarm*", ws=WorkSource{1000 chains=WorkChain{(10185), (1000, JobScheduler)}}, uid=1000, pid=2823
+06-29 13:16:06.493 I/MQSserver( 2823): getData len: 1024 content: {"name":"audio_track_message","audio_event":{"app_name":"audio_app_other", "scenario":"playback","data_format":"AUDIO_FORMAT_PCM_16_BIT", "frame_count":"22050", "sample_rate":"44100", "channel_Mask1":"3", "notif_frame_act":"11025", "transfer_type":"3", "afframe_count":"960", "afsample_rate":"48000", "aflatency":"61", "fcnt_times":"0"},"dgt":"null","audio_ext":"null" }À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€À€
+06-29 13:16:06.494 D/MQSserver( 2823): enter updateCountaudio_track_message
+06-29 13:16:06.494 D/MQSserver( 2823): read count frome file: 13
+06-29 13:16:06.494 D/AlarmManager( 2823): [xiaomi_power]sending alarm Alarm{9e865f0 type 2 origWhen 54811348 whenElapsed 54811348 android} with listener tag DeviceIdleController.deep stats tag *walarm*:DeviceIdleController.deep package name android at 54871348 ms
+06-29 13:16:06.494 D/MQSserver( 2823): update RBI json: {"name":"audio_track_message","audio_event":{"app_name":"audio_app_other","scenario":"playback","data_format":"AUDIO_FORMAT_PCM_16_BIT","frame_count":"22050","sample_rate":"44100","channel_Mask1":"3","notif_frame_act":"11025","transfer_type":"3","afframe_count":"960","afsample_rate":"48000","aflatency":"61","fcnt_times":"0"},"dgt":"null","audio_ext":"null","onetrack_count":"14"}
+06-29 13:16:06.494 D/MQSserver( 2823): updateCount: name: audio_track_message/audio_event : {"app_name":"audio_app_other","scenario":"playback","data_format":"AUDIO_FORMAT_PCM_16_BIT","frame_count":"22050","sample_rate":"44100","channel_Mask1":"3","notif_frame_act":"11025","transfer_type":"3","afframe_count":"960","afsample_rate":"48000","aflatency":"61","fcnt_times":"0"}
+06-29 13:16:06.494 D/AlarmManager( 2823): mBroadcastRefCount -> 2
+06-29 13:16:06.495 D/AlarmManager( 2823): [xiaomi_power]sending alarm Alarm{4d69248 type 3 origWhen 54711283 whenElapsed 54711283 com.miui.powerkeeper} with listener tag null stats tag *alarm*:miui.intent.action.powerkeeper_alarm package name com.miui.powerkeeper at 54871348 ms
+06-29 13:16:06.495 D/MiuiClockController( 4790): Listener updateTime
+06-29 13:16:06.497 E/AnimationHelper( 4790): updateTime sToAod:true mHasNotification: true, mClockType: classic
+06-29 13:16:06.497 D/MiuiClockController( 4790): Listener updateTime
+06-29 13:16:06.501 D/AlarmManager( 2823): mBroadcastRefCount -> 3
+06-29 13:16:06.501 I/PowerKeeperBackgroundService(15666): onStartCommand()
+06-29 13:16:06.501 I/PowerKeeperService(15666): onAlarm
+06-29 13:16:06.503 D/AlarmManager( 2823): mBroadcastRefCount -> 2
+06-29 13:16:06.503 D/AlarmManager( 2823): mPendingIntent -> null
+06-29 13:16:06.506 E/AlarmManager( 2823): not align this alarm: Alarm{374f08c type 2 origWhen 54886369 whenElapsed 54886369 android}, reason=3
+06-29 13:16:06.507 D/AlarmManager( 2823): mBroadcastRefCount -> 1
+06-29 13:16:06.507 D/AlarmManager( 2823): mPendingIntent -> null
+06-29 13:16:06.508 D/AlarmManager( 2823): mBroadcastRefCount -> 0
+06-29 13:16:06.508 D/AlarmManager( 2823): mPendingIntent -> PendingIntent{90a56e: PendingIntentRecord{112240f com.miui.powerkeeper startService}}
+06-29 13:16:06.508 D/PowerManagerService( 2823): [xiaomi_power]releaseWakeLockInternal: lock=197778990 [*alarm*], flags=0x0
+06-29 13:16:06.514 D/DFS-BatteryDataManager(15666): collectData
+06-29 13:16:06.515 D/ClassicTextAreaView( 4790): textWidth=0.0 dateWidth0.0 iconWidth=0.0 pointWidth=0.0 weatherWidth=0.0 iconMarginWidth=0.0
+06-29 13:16:06.516 D/ClassicTextAreaView( 4790): textWidth=0.0 dateWidth0.0 iconWidth=0.0 pointWidth=0.0 weatherWidth=0.0 iconMarginWidth=0.0
+06-29 13:16:06.521 I/ClockDeviceConfig( 4790): get bounds = Rect(0, 0 - 1080, 2392)
+06-29 13:16:06.521 D/DFS-BatteryDataManager(15666): readFileToParcel:/data/miuilog/power/battery-stats/4101499572.xm duration ms:7
+06-29 13:16:06.524 E/VRI[NotificationShade]( 4790): performDraw: Not drawing due to screen off
+06-29 13:16:06.530 D/ClassicTextAreaView( 4790): textWidth=0.0 dateWidth0.0 iconWidth=0.0 pointWidth=0.0 weatherWidth=0.0 iconMarginWidth=0.0
+06-29 13:16:06.531 D/ClassicTextAreaView( 4790): textWidth=0.0 dateWidth0.0 iconWidth=0.0 pointWidth=0.0 weatherWidth=0.0 iconMarginWidth=0.0
+06-29 13:16:06.534 I/ClockDeviceConfig( 4790): get bounds = Rect(0, 0 - 1080, 2392)
+06-29 13:16:06.537 E/VRI[NotificationShade]( 4790): performDraw: Not drawing due to screen off
+06-29 13:16:06.541 D/DFS-BatteryDataManager(15666): version=3, size=0
+06-29 13:16:06.541 D/DFS-DataCommon(15666): readFromParcel:8
+06-29 13:16:06.541 D/DFS-DataCommon(15666): Cm:[1782729280315, 88, 87]
+06-29 13:16:06.545 D/DFS-DataSubsystem(15666): readFromParcel:440128
+06-29 13:16:06.546 D/DFS-DataCommon(15666): build @^_^@
+06-29 13:16:06.546 E/vendor.xiaomi.hardware.micharge-service( 1938): micharge getBatteryCommonInfo
+06-29 13:16:06.547 D/IMiCharge(15666): MiCharge get common method : getRawChargeCounter result : 
+06-29 13:16:06.548 D/NotificationHeaderExpandController( 4790): onExpansionChanged: progress =  1.0
+06-29 13:16:06.549 E/VRI[NotificationShade]( 4790): performDraw: Not drawing due to screen off
+06-29 13:16:06.550 D/NotificationHeaderExpandController( 4790): onExpansionChanged: progress =  1.0
+06-29 13:16:06.550 D/DFS-DataCommon(15666): chargeCounter=4515
+06-29 13:16:06.551 D/DFS-DataCommon(15666): last.chargeCounter=4651
+06-29 13:16:06.551 E/VRI[StatusBar]( 4790): performDraw: Not drawing due to screen off
+06-29 13:16:06.562 D/vendor.qti.bluetooth@1.0-ibs_handler( 1773): SerialClockVote: vote for UART CLK ON
+06-29 13:16:06.564 D/vendor.qti.bluetooth@1.0-wake_lock( 1773): Acquire wakelock is acquired 
+06-29 13:16:06.564 I/vendor.qti.bluetooth@1.0-ibs_handler( 1773): DeviceWakeUp: Writing IBS_WAKE_IND
+06-29 13:16:06.568 I/vendor.qti.bluetooth@1.0-ibs_handler( 1773): ProcessIbsCmd: Received IBS_WAKE_ACK: 0xFC
+06-29 13:16:06.568 I/vendor.qti.bluetooth@1.0-ibs_handler( 1773): ProcessIbsCmd: Signal wack_cond_
+06-29 13:16:06.568 D/vendor.qti.bluetooth@1.0-ibs_handler( 1773): DeviceWakeUp: Unblocked from waiting for FC, pthread_cond_timedwait ret = 0
+06-29 13:16:06.569 I/vendor.qti.bluetooth@1.0-ibs_handler( 1773): ProcessIbsCmd: Received IBS_WAKE_IND: 0xFD
+06-29 13:16:06.569 I/vendor.qti.bluetooth@1.0-ibs_handler( 1773): ProcessIbsCmd: Writing IBS_WAKE_ACK
+06-29 13:16:06.570 V/BluetoothAdapterService( 4286): energyInfoCallback() status = 0 txTime = 152 rxTime = 2495 idleTime = 0 energyUsed = 189545 ctrlState = 0x00012010 traffic = [UidTraffic{mAppUid=10439, mRxBytes=65, mTxBytes=907}, UidTraffic{mAppUid=1002, mRxBytes=0, mTxBytes=0}]
+06-29 13:16:06.571 D/BatteryStatsImpl( 2823): setBluetoothActivityInfoReport info.setIdleTimeMillis(): 23985
+06-29 13:16:06.571 D/BatteryStatsImpl( 2823): setBluetoothActivityInfoReport info.setRxTimeMillis(): 2692559
+06-29 13:16:06.571 D/BatteryStatsImpl( 2823): setBluetoothActivityInfoReport info.setTxTimeMillis(): 188862
+06-29 13:16:06.571 D/BatteryStatsImpl( 2823): setBluetoothActivityInfoReport info.setUidRxTimesMillis(): {1000=2495}
+06-29 13:16:06.571 D/BatteryStatsImpl( 2823): setBluetoothActivityInfoReport info.setUidTxTimesMillis(): {1000=152}
+06-29 13:16:06.571 D/BatteryStatsImpl( 2823): updateBluetoothStateLocked rxTimesMs: {1000=2495} txTimesMs: 
+06-29 13:16:06.587 I/ActivityManager( 2823): unbindService com.android.server.am.ActiveServices@748405a conn=android.os.BinderProxy@ab14b1b callingPid=5534
+06-29 13:16:06.588 I/vendor.qti.hardware.servicetrackeraidl-service( 1910): unbindService is called for service : com.google.android.gms/.chimera.PersistentDirectBootAwareApiService and for client com.google.android.gms.persistent
+06-29 13:16:06.589 D/BoundBrokerSvc( 5534): onUnbind: Intent { act=com.google.android.gms.libs.gmscorelogger.service.START dat=chimera-action:/... xflg=0x4 cmp=com.google.android.gms/.chimera.PersistentDirectBootAwareApiService }
+06-29 13:16:06.592 D/PowerManagerService( 2823): [xiaomi_power]acquireWakeLockInternal: lock=39666645, flags=0x1, tag="*telephony-radio*", ws=null, uid=1001, pid=4725
+06-29 13:16:06.600 D/TelephonyManager( 2823): requestModemActivityInfo: Sending result to app: ModemActivityInfo{ mTimestamp=54871463 mSleepTimeMs=50408095 mIdleTimeMs=594310 mActivityStatsTechSpecificInfo=[{mRat=UNKNOWN,mFrequencyRange=UNKNOWN,mTxTimeMs[]=[45399, 22810, 10592, 14342, 2752],mRxTimeMs=3670438}]}
+06-29 13:16:06.601 D/PowerManagerService( 2823): [xiaomi_power]releaseWakeLockInternal: lock=39666645 [*telephony-radio*], flags=0x0
+06-29 13:16:06.609 I/vendor.qti.bluetooth@1.0-ibs_handler( 1773): ProcessIbsCmd: Received IBS_SLEEP_IND: 0xFE
+06-29 13:16:06.675 I/vendor.qti.bluetooth@1.0-ibs_handler( 1773): ProcessIbsCmd: Received IBS_WAKE_IND: 0xFD
+06-29 13:16:06.675 I/vendor.qti.bluetooth@1.0-ibs_handler( 1773): ProcessIbsCmd: Writing IBS_WAKE_ACK
+06-29 13:16:06.677 V/BluetoothAdapterService( 4286): energyInfoCallback() status = 0 txTime = 0 rxTime = 0 idleTime = 105 energyUsed = 2640 ctrlState = 0x00012010 traffic = [UidTraffic{mAppUid=10439, mRxBytes=0, mTxBytes=0}, UidTraffic{mAppUid=1002, mRxBytes=0, mTxBytes=0}]
+06-29 13:16:06.679 D/BatteryStatsImpl( 2823): setBluetoothActivityInfoReport info.setIdleTimeMillis(): 24090
+06-29 13:16:06.679 D/BatteryStatsImpl( 2823): setBluetoothActivityInfoReport info.setRxTimeMillis(): 2692559
+06-29 13:16:06.679 D/BatteryStatsImpl( 2823): setBluetoothActivityInfoReport info.setTxTimeMillis(): 188862
+06-29 13:16:06.679 D/BatteryStatsImpl( 2823): setBluetoothActivityInfoReport info.setUidRxTimesMillis(): {1000=0}
+06-29 13:16:06.679 D/BatteryStatsImpl( 2823): setBluetoothActivityInfoReport info.setUidTxTimesMillis(): {1000=0}
+06-29 13:16:06.679 D/BatteryStatsImpl( 2823): updateBluetoothStateLocked rxTimesMs: {1000=0} txTimesMs: 
+06-29 13:16:06.702 D/PowerManagerService( 2823): [xiaomi_power]acquireWakeLockInternal: lock=39666645, flags=0x1, tag="*telephony-radio*", ws=null, uid=1001, pid=4725
+06-29 13:16:06.711 D/TelephonyManager( 2823): requestModemActivityInfo: Sending result to app: ModemActivityInfo{ mTimestamp=54871574 mSleepTimeMs=50408095 mIdleTimeMs=594310 mActivityStatsTechSpecificInfo=[{mRat=UNKNOWN,mFrequencyRange=UNKNOWN,mTxTimeMs[]=[45399, 22810, 10592, 14342, 2752],mRxTimeMs=3670438}]}
+06-29 13:16:06.712 D/PowerManagerService( 2823): [xiaomi_power]releaseWakeLockInternal: lock=39666645 [*telephony-radio*], flags=0x0
+06-29 13:16:06.716 I/vendor.qti.bluetooth@1.0-ibs_handler( 1773): ProcessIbsCmd: Received IBS_SLEEP_IND: 0xFE
+06-29 13:16:06.726 D/JavaheapMonitor(13451): Java heap used=5M max=256M, proc: com.xiaomi.mi_connect_service
+06-29 13:16:06.726 V/JavaheapMonitor(13451): Check java heap usage finished! Next check delay: 300000
+06-29 13:16:06.754 I/MiuiNetworkPolicy( 2823): updateUidState uid = 99047, uidState = 15
+06-29 13:16:06.754 I/MiuiNetworkPolicy( 2823): updateUidState uid = 10444, uidState = 15
+06-29 13:16:06.755 I/MiuiNetworkPolicy( 2823): updateUidState uid = 10402, uidState = 18
+06-29 13:16:06.755 I/MiuiNetworkPolicy( 2823): updateUidState uid = 10315, uidState = 19
+06-29 13:16:06.755 I/MiuiNetworkPolicy( 2823): updateUidState uid = 10313, uidState = 19
+06-29 13:16:06.755 I/MiuiNetworkPolicy( 2823): updateUidState uid = 10170, uidState = 15
+06-29 13:16:06.825 I/system_server( 2823): Background young concurrent mark compact GC freed 21MB AllocSpace bytes, 35(700KB) LOS objects, 19% free, 90MB/112MB, paused 1.255ms,4.728ms total 130.245ms
+06-29 13:16:06.835 W/System  ( 2823): A resource failed to call close. 
+06-29 13:16:06.924 I/vendor.qti.bluetooth@1.0-ibs_handler( 1773): DeviceSleep: TX Awake, Sending SLEEP_IND
+06-29 13:16:06.924 D/vendor.qti.bluetooth@1.0-ibs_handler( 1773): SerialClockVote: vote for UART CLK OFF
+06-29 13:16:06.943 W/BpBinder(15666): PerfMonitor binderTransact: time=389ms interface=com.android.internal.app.IBatteryStats code=29
+06-29 13:16:06.961 D/AurogonBandwidthController( 2823): skinTemperature:34.882
+06-29 13:16:06.963 D/AurogonBandwidthController( 2823): skinTemperature:34.882
+06-29 13:16:06.993 W/system_server( 2823): Large reply transaction of 406152 bytes, interface descriptor com.android.internal.app.IBatteryStats, code 141
+06-29 13:16:06.995 D/DFS-getBatteryStats(15666):  version=2, type=64, numUids=195.
+06-29 13:16:07.007 D/DFS-DataSubsystem(15666): build @^_^@
+06-29 13:16:07.007 E/DFS-BatteryDataContainer(15666): Warning!! Build failed for Ss
+06-29 13:16:07.007 D/DFS-BatteryDataManager(15666): Time used for build:461ms
+06-29 13:16:07.018 D/DFS-BatteryDataManager(15666): writeHistoryBuffer currentFile=/data/miuilog/power/battery-stats/4102734902.xm
+06-29 13:16:07.018 D/DFS-BatteryDataManager(15666): writeHistoryBuffer mHistoryBufferStartTime=4102734888
+06-29 13:16:07.018 D/DFS-DataCommon(15666): writeToParcel:8, type=0
+06-29 13:16:07.027 D/DFS-DataSubsystem(15666): writeToParcel:464424, type=4
+06-29 13:16:07.027 D/DFS-BatteryDataManager(15666): writeHistoryBuffer duration ms:9 bytes:464432
+06-29 13:16:07.032 D/DFS-BatteryDataManager(15666): writeParcelToFileLocked file:/data/miuilog/power/battery-stats/4102734902.xm duration ms:5 bytes:464432
+06-29 13:16:07.033 D/DFS-BatteryDataManager(15666): writeHistory took ms:18
+06-29 13:16:07.033 D/DFS-BatteryDataManager(15666): setActiveFile mActiveFile: /data/miuilog/power/battery-stats/4103985957.xm
+06-29 13:16:07.034 D/DFS-BatteryDataManager(15666): Create new history file: /data/miuilog/power/battery-stats/4103985957.xm
+06-29 13:16:07.035 D/DFS-BatteryDataManager(15666): Time used for write:489ms
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): dbusUid is null
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.037 D/BL-ProcStateCpuUsage(15666): totalRunningTime is 0
+06-29 13:16:07.038 W/DFS-DeltaDataManager(15666): Warning! fileIndex is same as last one.
+06-29 13:16:07.040 D/DFS-DetectorManager(15666): detector is com.miui.powerkeeper.dfs.detector.AppDetector@b7d4388
+06-29 13:16:07.041 D/DFS-AppDetector(15666): Skip! totalStateTime is too big, totalStateTime=20874, totalTime=1794
+06-29 13:16:07.041 D/DFS-AppDetector(15666): Skip! totalStateTime is too big, totalStateTime=26391, totalTime=7636
+06-29 13:16:07.041 D/DFS-AppDetector(15666): Skip! totalStateTime is too big, totalStateTime=28321, totalTime=62
+06-29 13:16:07.044 D/JavaheapMonitor(15666): Java heap used=7M max=256M, proc: com.miui.powerkeeper
+06-29 13:16:07.044 V/JavaheapMonitor(15666): Check java heap usage finished! Next check delay: 300000
+06-29 13:16:07.044 I/GID     (21821): PKG: com.google.android.apps.wellbeing IG ? false
+06-29 13:16:07.045 D/DFS-AppDetector(15666): Skip! totalStateTime is too big, totalStateTime=18883, totalTime=5099
+06-29 13:16:07.047 I/GID     (21821): PKG: com.xiaomi.discover IG ? false
+06-29 13:16:07.047 D/DFS-AppDetector(15666): Skip! totalStateTime is too big, totalStateTime=17120, totalTime=4741
+06-29 13:16:07.048 I/GID     (21821): PKG: com.google.android.apps.tachyon IG ? false
+06-29 13:16:07.048 D/DFS-AppDetector(15666): Skip! totalStateTime is too big, totalStateTime=13652, totalTime=1147
+06-29 13:16:07.048 D/DFS-AppDetector(15666): Skip! totalStateTime is too big, totalStateTime=24723, totalTime=3071
+06-29 13:16:07.050 I/GID     (21821): PKG: com.google.android.apps.youtube.music IG ? false
+06-29 13:16:07.051 I/GID     (21821): PKG: hr.asseco.android.zaba.new IG ? false
+06-29 13:16:07.052 I/GID     (21821): PKG: com.restaumatic.restoran_santa_maria IG ? false
+06-29 13:16:07.052 D/DFS-AppDetector(15666): Skip! totalStateTime is too big, totalStateTime=120627, totalTime=96642
+06-29 13:16:07.053 E/vendor.xiaomi.hardware.micharge-service( 1938): micharge getBatteryCommonInfo
+06-29 13:16:07.054 D/IMiCharge(15666): MiCharge get common method : getRawChargeFull result : 
+06-29 13:16:07.056 D/BL-BSHelper(15666): getTotalBatteryCapacity charge_full=5383000,sChargeFullShift=1000
+06-29 13:16:07.056 D/DFS-DetectorManager(15666): detector is com.miui.powerkeeper.dfs.detector.SystemDetector@ec9946
+06-29 13:16:07.056 D/DFS-FaultReporter(15666): reportFault:Fault:[eventId=903000000:W-CPU, level=1, faultClass=0, multiple=false, duration=1250872, endTime=1782731766546, endTimeString=2026-06-29 13:16:07.053, chargeCounter=5383.0, screenOnTime=1175477, screenOffTime=75395, onBatteryTime=1250872, discharge=167, avgCurrent=480, logFlags=4354179, startLevel=87, endLevel=84, chargeFull=5383, descArray=0:CPU#cache ratio , version=3106010, desc=CPU#cache ratio] ## AppFault[uid=10444, pkg='com.duckduckgo.mobile.android', appFaultType=1[CPU, null, null, null, null, null, null, null, null, null, null, null], power=40.207043999999996, cpuInfo=CpuInfo{totalTime=369593, power=22.221622999999994, userTime=270780, systemTime=98813, cpuUsage=54, fgTime=171475, fgUsage=42, fgsTime=0, fgsUsage=0, bgTime=99369, bgUsage=0, cacheTime=105600, cacheUsage=38, bigCoreUsage=58}, runningInfo=RunningInfo{totalRunningTime=675788, fgActivityTime=402794, fgServiceTime=0, bgTime=31, cacheTime=272963}, wifiInfo=null, mobileInfo=null, audioDuration=null, videoDuration=null, alarmCount=0, cameraDuration=null, flashlightDuration=null, wakelockInfo=null, sensorInfo=null, gpsInfo=null, btInfo=null]
+06-29 13:16:07.057 D/MiSight:(15666):  sendEvent id=903000002
+06-29 13:16:07.057 D/MiSightJni(15666): MiSight: Java_com_miui_misight_MiSight_nativeSendEvent enter called. '{"packageName":"com.duckduckgo.mobile.android","appPower":40,"uid":10444,"appVersion":"5.285.0","appFaultType":["CPU"],"logRequired":"abhmnorw","checkScene":0,"desc":"CPU#cache ratio","commonInfo":{"discharged":167,"avgCurrent":480,"duration":1250872,"endTime":"2026-06-29 13:16:07.053","screenOnTime":1175477,"screenOffTime":75395,"onBatteryTime":1250872,"startLevel":87,"endLevel":84,"chargeFull":5383,"temperature":36206,"multiple":false,"version":3106010},"runningInfo":{"fgActivityTime":402794,"fgServiceTime":0,"bgTime":31,"cacheTime":272963,"totalRunningTime":675788},"cpu":{"power":22,"totalTime":369593,"userTime":270780,"systemTime":98813,"fgRatio":42,"fgsRatio":0,"bgRatio":0,"cacheRatio":38,"totalRatio":54,"bigCoreRatio":58,"energyDetail":0,"powerDetail":0}}'
+06-29 13:16:07.057 D/MiEvent (15666): MiEvent: this 0x7cb98427f0, paylod=0xb400007d7c2cd2c0
+06-29 13:16:07.057 D/MiEvent (15666): flatten EventId 903000002 -t 1782731767 -paraList {"appFaultType":["CPU"],"appPower":40,"appVersion":"5.285.0","checkScene":0,"commonInfo":{"avgCurrent":480,"chargeFull":5383,"discharged":167,"duration":1250872,"endLevel":84,"endTime":"2026-06-29 13:16:07.053","multiple":false,"onBatteryTime":1250872,"screenOffTime":75395,"screenOnTime":1175477,"startLevel":87,"temperature":36206,"version":3106010},"cpu":{"bgRatio":0,"bigCoreRatio":58,"cacheRatio":38,"energyDetail":0,"fgRatio":42,"fgsRatio":0,"power":22,"powerDetail":0,"systemTime":98813,"totalRatio":54,"totalTime":369593,"userTime":270780},"desc":"CPU#cache ratio","logRequired":"abhmnorw","packageName":"com.duckduckgo.mobile.android","runningInfo":{"bgTime":31,"cacheTime":272963,"fgActivityTime":402794,"fgServiceTime":0,"totalRunningTime":675788},"uid":10444}
+06-29 13:16:07.057 D/MiEvent (15666): report:EventId 903000002 -t 1782731767 -paraList {"appFaultType":["CPU"],"appPower":40,"appVersion":"5.285.0","checkScene":0,"commonInfo":{"avgCurrent":480,"chargeFull":5383,"discharged":167,"duration":1250872,"endLevel":84,"endTime":"2026-06-29 13:16:07.053","multiple":false,"onBatteryTime":1250872,"screenOffTime":75395,"screenOnTime":1175477,"startLevel":87,"temperature":36206,"version":3106010},"cpu":{"bgRatio":0,"bigCoreRatio":58,"cacheRatio":38,"energyDetail":0,"fgRatio":42,"fgsRatio":0,"power":22,"powerDetail":0,"systemTime":98813,"totalRatio":54,"totalTime":369593,"userTime":270780},"desc":"CPU#cache ratio","logRequired":"abhmnorw","packageName":"com.duckduckgo.mobile.android","runningInfo":{"bgTime":31,"cacheTime":272963,"fgActivityTime":402794,"fgServiceTime":0,"totalRunningTime":675788},"uid":10444} success
+06-29 13:16:07.057 D/MiEvent (15666): ~MiEvent: this 0x7cb98427f0, paylod=0xb400007d7c2cd2c0
+06-29 13:16:07.057 D/DFS-DetectorManager(15666): doCheck finished.
+06-29 13:16:07.058 I/misight ( 2248): OnEvent EventPrivacyCompliance event=903000002
+06-29 13:16:07.058 D/misight ( 2248): ProcessEvent devVersion==OS3.0.301.0.WPQEUXM,faultLevel=2,prv=3 region=eea
+06-29 13:16:07.059 D/misight ( 2248): ProcessEvent devVersion==OS3.0.301.0.WPQEUXM,faultLevel=2,prv=3 region=eea
+06-29 13:16:07.059 D/misight ( 2248): ProcessEvent devVersion==OS3.0.301.0.WPQEUXM,faultLevel=2,prv=3 region=eea
+06-29 13:16:07.060 D/misight ( 2248): ProcessEvent devVersion==OS3.0.301.0.WPQEUXM,faultLevel=2,prv=3 region=eea
+06-29 13:16:07.060 D/misight ( 2248): GetDefJsonValue not include bluetooth
+06-29 13:16:07.060 D/misight ( 2248): GetDefJsonValue not include wifi
+06-29 13:16:07.060 D/misight ( 2248): GetDefJsonValue not include modem
+06-29 13:16:07.061 D/misight ( 2248): GetDefJsonValue not include sensor
+06-29 13:16:07.061 D/misight ( 2248): GetDefJsonValue not include audio
+06-29 13:16:07.061 D/misight ( 2248): GetDefJsonValue not include video
+06-29 13:16:07.061 D/misight ( 2248): GetDefJsonValue not include camera
+06-29 13:16:07.061 D/misight ( 2248): GetDefJsonValue not include flashlight
+06-29 13:16:07.061 D/misight ( 2248): GetDefJsonValue not include gps
+06-29 13:16:07.061 D/misight ( 2248): GetDefJsonValue not include wakelock
+06-29 13:16:07.061 D/misight ( 2248): GetDefJsonValue not include alarm
+06-29 13:16:07.061 I/misight ( 2248): OnEvent EventStorageManager event=903000002,2
+06-29 13:16:07.061 D/misight ( 2248): ProcessNewDayEvent event happen time 1782731767,start time=1782684000,restart=1
+06-29 13:16:07.062 D/misight ( 2248): ProcessNewDayEvent event happen time 1782731767, last=1782731691,start time=1782684000,next day =1782770400, interval=39574
+06-29 13:16:07.062 D/misight ( 2248): Execute start execute sql /data/miuilog/misight/event.db:select id,event_id,daily_cnt,over_cnt,hour_cnt,next_expire_time,last_happen_time,last_log_time from event_daily where event_id = '903000002' limit 1
+06-29 13:16:07.062 D/misight ( 2248): GetEventQuota parser retrun sub domain 903000002 in [903000000,903114999]
+06-29 13:16:07.062 D/misight ( 2248): IsPluginInPipeline not find plugin EventLogProcessor
+06-29 13:16:07.062 D/misight ( 2248): CheckAndGetLogTime plugin log catch not exist, no check upload xml
+06-29 13:16:07.063 D/misight ( 2248): Execute start execute sql /data/miuilog/misight/event.db:insert into event_daily (event_id,daily_cnt,over_cnt,hour_cnt,next_expire_time,last_happen_time,last_log_time)  values ( 903000002,1,0,1,1782735367,1782731767,0) 
+06-29 13:16:07.064 D/DFS-DebugDataManager(15666): createFileIfNeeded, file not exists: /data/miuilog/power/dfs_debug_data/260629.131606/CPU.csv
+06-29 13:16:07.065 D/misight ( 2248): Execute start execute sql /data/miuilog/misight/event.db:select id,occured_cnt from event_info where event_id = '903000002' and version_id = '4' and param_list = '{"appFaultType":["CPU"],"appPower":40,"appVersion":"5.285.0","checkScene":0,"commonInfo":{"avgCurrent":480,"chargeFull":5383,"discharged":167,"duration":1250872,"endLevel":84,"endTime":"2026-06-29 13:16:07.053","multiple":0,"onBatteryTime":1250872,"screenOffTime":75395,"screenOnTime":1175477,"startLevel":87,"temperature":36206,"version":3106010},"cpu":{"bgRatio":0,"bigCoreRatio":58,"cacheRatio":38,"energyDetail":0,"fgRatio":42,"fgsRatio":0,"power":22,"powerDetail":0,"systemTime":98813,"totalRatio":54,"totalTime":369593,"userTime":270780},"desc":"CPU#cache ratio","logRequired":"abhmnorw","packageName":"com.duckduckgo.mobile.android","runningInfo":{"bgTime":31,"cacheTime":272963,"fgActivityTime":402794,"fgServiceTime":0,"totalRunningTime":675788},"uid":10444}' and time_id = '52' limit 1
+06-29 13:16:07.073 D/misight ( 2248): Execute start execute sql /data/miuilog/misight/event.db:insert into event_info (event_id,version_id,occured_cnt,first_time,param_list,expire,visible,time_id)  values ( 903000002,4,1,1782731767,'{"appFaultType":["CPU"],"appPower":40,"appVersion":"5.285.0","checkScene":0,"commonInfo":{"avgCurrent":480,"chargeFull":5383,"discharged":167,"duration":1250872,"endLevel":84,"endTime":"2026-06-29 13:16:07.053","multiple":0,"onBatteryTime":1250872,"screenOffTime":75395,"screenOnTime":1175477,"startLevel":87,"temperature":36206,"version":3106010},"cpu":{"bgRatio":0,"bigCoreRatio":58,"cacheRatio":38,"energyDetail":0,"fgRatio":42,"fgsRatio":0,"power":22,"powerDetail":0,"systemTime":98813,"totalRatio":54,"totalTime":369593,"userTime":270780},"desc":"CPU#cache ratio","logRequired":"abhmnorw","packageName":"com.duckduckgo.mobile.android","runningInfo":{"bgTime":31,"cacheTime":272963,"fgActivityTime":402794,"fgServiceTime":0,"totalRunningTime":675788},"uid":10444}',0,0,52) 
+06-29 13:16:07.075 D/vendor.qti.bluetooth@1.0-wake_lock( 1773): Release wakelock is released 
+06-29 13:16:07.075 E/h:DaemonService(32134): hiddenapi: Accessing hidden method Landroid/os/Debug$MemoryInfo;->getOtherSwappedOutPss(I)I (runtime_flags=0, domain=platform, api=max-target-o) from Lhealth/compact/a/ReflectionUtils; (domain=app, TargetSdkVersion=34) using reflection: denied
+06-29 13:16:07.075 E/h:DaemonService(32134): hiddenapi: Accessing hidden method Landroid/os/Debug$MemoryInfo;->getOtherSwappedOutPss(I)I (runtime_flags=0, domain=platform, api=max-target-o) from Lhealth/compact/a/ReflectionUtils; (domain=app, TargetSdkVersion=34) using reflection: denied
+06-29 13:16:07.075 E/h:DaemonService(32134): hiddenapi: Accessing hidden method Landroid/os/Debug$MemoryInfo;->getOtherSwappedOutPss(I)I (runtime_flags=0, domain=platform, api=max-target-o) from Lhealth/compact/a/ReflectionUtils; (domain=app, TargetSdkVersion=34) using reflection: denied
+06-29 13:16:07.075 E/h:DaemonService(32134): hiddenapi: Accessing hidden method Landroid/os/Debug$MemoryInfo;->getOtherSwappedOutPss(I)I (runtime_flags=0, domain=platform, api=max-target-o) from Lhealth/compact/a/ReflectionUtils; (domain=app, TargetSdkVersion=34) using reflection: denied
+06-29 13:16:07.075 E/h:DaemonService(32134): hiddenapi: Accessing hidden method Landroid/os/Debug$MemoryInfo;->getOtherSwappedOut(I)I (runtime_flags=0, domain=platform, api=max-target-o) from Lhealth/compact/a/ReflectionUtils; (domain=app, TargetSdkVersion=34) using reflection: denied
+06-29 13:16:07.075 E/h:DaemonService(32134): hiddenapi: Accessing hidden method Landroid/os/Debug$MemoryInfo;->getOtherSwappedOut(I)I (runtime_flags=0, domain=platform, api=max-target-o) from Lhealth/compact/a/ReflectionUtils; (domain=app, TargetSdkVersion=34) using reflection: denied
+06-29 13:16:07.076 I/HAF_MemoryUtils(32134): 1600104310|R|I|total-pss=62518, java-heap=19224, native-heap=14204, code=3600, system=20742, threads=67, importance=(125, 0), dex-mmap=(18978, 2908, 0, 0), ver=16.1.4.310
+06-29 13:16:07.077 I/HAF_ScreenUtil(32134): 1600104310|R|I|isScreenOn false
+06-29 13:16:07.077 I/misight ( 2248): OnEvent EventInfoPack event 903000002
+06-29 13:16:07.078 E/th:PhoneService(32237): hiddenapi: Accessing hidden method Landroid/os/Debug$MemoryInfo;->getOtherSwappedOutPss(I)I (runtime_flags=0, domain=platform, api=max-target-o) from Lhealth/compact/a/ReflectionUtils; (domain=app, TargetSdkVersion=34) using reflection: denied
+06-29 13:16:07.078 E/th:PhoneService(32237): hiddenapi: Accessing hidden method Landroid/os/Debug$MemoryInfo;->getOtherSwappedOutPss(I)I (runtime_flags=0, domain=platform, api=max-target-o) from Lhealth/compact/a/ReflectionUtils; (domain=app, TargetSdkVersion=34) using reflection: denied
+06-29 13:16:07.206 I/ActivityManager( 2823): unbindService com.android.server.am.ActiveServices@748405a conn=android.os.BinderProxy@fdc5f05 callingPid=446
+06-29 13:16:07.207 I/vendor.qti.hardware.servicetrackeraidl-service( 1910): unbindService is called for service : com.google.android.gms/.chimera.PersistentDirectBootAwareApiService and for client com.google.android.gm
+06-29 13:16:07.207 I/vendor.qti.hardware.servicetrackeraidl-service( 1910): size of client connections for client: com.google.android.gmafter removal is 4
+06-29 13:16:07.935 D/vendor.xiaomi.hardware.mimd2( 1638): TimerManager::Polling: epoll_wait cause a yield, e_num:-1
+06-29 13:16:07.935 D/vendor.xiaomi.hardware.mimd2( 1638): PsiMonitorManager::Polling: epoll_wait cause a yield
+06-29 13:16:07.935 D/vendor.xiaomi.hardware.mimd2( 1638): PsiMonitorManager::Polling: epoll_wait invalid return errno=4 Interrupted system call
+06-29 13:16:07.935 D/vendor.xiaomi.hardware.mimd2( 1638): TimerManager::Polling: epoll_wait invalid return errno=4 Interrupted system call
+06-29 13:16:07.937 E/vendor.qti.hardware.perf2-hal-service( 1901): ExtendedPerfBoost: timer_thread_start() 63: timer_thread_start: epoll wait failed, errno = 4
+06-29 13:16:07.938 E/libusbconfigfs( 1817): epoll wait did not return descriptor number
+06-29 13:16:07.939 D/tcmd    ( 2184): waiting on events (-1ms)
+06-29 13:16:07.945 I/AidlSensorManager( 2823): aidl_ssvc_poll: spurious wake up, back to work
+06-29 13:16:07.983 W/libc    ( 1014): Access denied finding property "suspend.debug.wakestats_log.enabled"
+06-29 13:16:07.984 I/QLM-Service( 6647): LimitsService daemon exited
+06-29 13:16:07.984 E/PowerInsightClientProxy( 2823): framework 254 WLAN_CE_2 suspendEnd 54872848 suspendDuration 567
+06-29 13:16:07.986 I/libc    (    1): kill: send 9 to pid -6647
+06-29 13:16:07.986 I/libc    (    1): debug pid reuse, real pid -6647
+06-29 13:16:07.986 E/PowerInsightPolicy( 2823): sPowerInsightService null!
+06-29 13:16:08.227 E/vendor.qti.hardware.perf2-hal-service( 1901): ExtendedPerfBoost: timer_thread_start() 63: timer_thread_start: epoll wait failed, errno = 4
+06-29 13:16:08.228 D/tcmd    ( 2184): waiting on events (-1ms)
+06-29 13:16:08.228 E/libusbconfigfs( 1817): epoll wait did not return descriptor number
+06-29 13:16:08.236 I/AidlSensorManager( 2823): aidl_ssvc_poll: spurious wake up, back to work
+06-29 13:16:08.272 W/libc    ( 1014): Access denied finding property "suspend.debug.wakestats_log.enabled"
+06-29 13:16:08.273 E/PowerInsightClientProxy( 2823): framework Abort: Device alarmtimer.0.auto failed to suspend: error -16 suspendEnd 54873136 suspendDuration 0
+06-29 13:16:08.273 E/PowerInsightPolicy( 2823): sPowerInsightService null!
+06-29 13:16:08.618 D/ActionExecute( 2823): frozen uid = 10430 reason=check binder
+06-29 13:16:08.619 D/ActionExecute( 2823): setPkgData uid = 10430 time=0
+06-29 13:16:08.619 D/ExternalInterface( 2823): setUidState, uid = 10430 allow = false
+06-29 13:16:08.620 D/MiSensorServiceImpl( 2823): PowerKeeperSensor stop iUid:10430 but app has Controlled
+06-29 13:16:08.620 D/ActionExecute( 2823): setPkgData uid = 10430 time=3000
+06-29 13:16:08.681 E/VRI[StatusBar]( 4790): performDraw: Not drawing due to screen off
+06-29 13:16:08.686 D/ControlCenterHeaderExpandController( 4790): onExpansionChanged: progress =  0.0
+06-29 13:16:08.687 D/ControlCenterHeaderExpandController( 4790): onExpansionChanged: progress =  0.0
+06-29 13:16:08.691 I/ClockDeviceConfig( 4790): get bounds = Rect(0, 0 - 1080, 2392)
+06-29 13:16:08.696 D/ControlCenterHeaderExpandController( 4790): onExpansionChanged: progress =  0.0
+06-29 13:16:08.697 E/VRI[NotificationShade]( 4790): performDraw: Not drawing due to screen off
+06-29 13:16:09.207 D/LogUtil_LogConfig(32237): getLogFile(): logFilePath = /data/user/0/com.huawei.health/files/com.huawei.health/com.huawei.health_PhoneService/
+06-29 13:16:09.208 D/LogUtil_LogConfig(32237): acquireMaxLogFileLengthContainsOffset describe: com.huawei.health:PhoneService result:10485760
+06-29 13:16:09.363 D/AlarmManager( 2823): [xiaomi_power]sending alarm Alarm{457c8df type 2 origWhen 54874225 whenElapsed 54874225 com.xiaomi.xmsf} with listener tag null stats tag *walarm*:com.xiaomi.push.PING_TIMER package name com.xiaomi.xmsf at 54874225 ms
+06-29 13:16:09.366 D/AlarmManager( 2823): mBroadcastRefCount -> 1
+06-29 13:16:09.367 D/PowerManagerService( 2823): [xiaomi_power]acquireWakeLockInternal: lock=197778990, flags=0x1, tag="*alarm*", ws=WorkSource{10224 chains=WorkChain{(10185), (1000, JobScheduler)}}, uid=1000, pid=2823
+06-29 13:16:09.370 I/whetstone.activity( 2823): Power Event callback listener is empty for resId=128
+06-29 13:16:09.371 D/BatteryStatsManagerStub( 2823): notifyEvent for resId=128 used 1ms
+06-29 13:16:09.395 W/PushService(13161): [Tid:2] onStart() with intent.Action = com.xiaomi.push.timer, chid = null, pkg = null|null
+06-29 13:16:09.396 W/PushService(13161): [Tid:492] [Job] Handle intent action = com.xiaomi.push.timer
+06-29 13:16:09.397 W/PushService(13161): [Tid:492] [Alarm] Service called on timer
+06-29 13:16:09.397 W/PushService(13161): [Tid:492] [Alarm] register alarm. (false)
+06-29 13:16:09.397 W/PushService(13161): [Tid:492] [HB] ping interval:600000
+06-29 13:16:09.403 W/PushService(13161): [Tid:492] [Slim] SND ping id=0
+06-29 13:16:09.406 W/PushService(13161): [Tid:484] [Alarm] heartbeat alarm finish in 22
+06-29 13:16:09.409 D/AlarmManager( 2823): mBroadcastRefCount -> 0
+06-29 13:16:09.409 D/AlarmManager( 2823): mPendingIntent -> PendingIntent{30d3a75: PendingIntentRecord{4203114 com.xiaomi.xmsf broadcastIntent}}
+06-29 13:16:09.409 D/PowerManagerService( 2823): [xiaomi_power]releaseWakeLockInternal: lock=197778990 [*alarm*], flags=0x0
+06-29 13:16:09.677 D/GreezeManager( 2823): FZ uid = 10374 reason =from system success !
+06-29 13:16:09.679 D/ActionExecute( 2823): frozen uid = 10374 reason=from system
+06-29 13:16:09.680 D/ActionExecute( 2823): setPkgData uid = 10374 time=0
+06-29 13:16:09.681 D/ExternalInterface( 2823): setUidState, uid = 10374 allow = false
+06-29 13:16:09.682 D/ActionExecute( 2823): setPkgData uid = 10374 time=3000
+06-29 13:16:09.821 D/LogUtil_LogConfig(32134): getLogFile(): logFilePath = /data/user/0/com.huawei.health/files/com.huawei.health/com.huawei.health_DaemonService/
+06-29 13:16:09.931 W/PushService(13161): [Tid:862] [Slim] RCV ping id=0
+06-29 13:16:09.972 D/SLM-SRV-SLAService( 2823): checktemp temperature = 34882 temperature_average = 35611 isPerformanceMode = false thermal_enable_slm = true
+06-29 13:16:09.998 I/MiuiNetworkPolicy( 2823): updateUidState uid = 10102, uidState = 19
+06-29 13:16:10.017 D/JavaheapMonitor(12090): Java heap used=39M max=256M, proc: com.google.android.apps.messaging
+06-29 13:16:10.017 V/JavaheapMonitor(12090): Check java heap usage finished! Next check delay: 300000
+06-29 13:16:11.217 D/vendor.xiaomi.hardware.mimd2( 1638): TimerManager::Polling: epoll_wait cause a yield, e_num:-1
+06-29 13:16:11.217 D/vendor.xiaomi.hardware.mimd2( 1638): TimerManager::Polling: epoll_wait invalid return errno=4 Interrupted system call
+06-29 13:16:11.219 E/vendor.qti.hardware.perf2-hal-service( 1901): ExtendedPerfBoost: timer_thread_start() 63: timer_thread_start: epoll wait failed, errno = 4
+06-29 13:16:11.219 E/libusbconfigfs( 1817): epoll wait did not return descriptor number
+06-29 13:16:11.219 D/vendor.xiaomi.hardware.mimd2( 1638): PsiMonitorManager::Polling: epoll_wait cause a yield
+06-29 13:16:11.220 D/vendor.xiaomi.hardware.mimd2( 1638): PsiMonitorManager::Polling: epoll_wait invalid return errno=4 Interrupted system call
+06-29 13:16:11.222 D/tcmd    ( 2184): waiting on events (-1ms)
+06-29 13:16:11.228 I/AidlSensorManager( 2823): aidl_ssvc_poll: spurious wake up, back to work
+06-29 13:16:11.265 D/JavaheapMonitor(14462): Java heap used=2M max=256M, proc: android.process.media
+06-29 13:16:11.265 V/JavaheapMonitor(14462): Check java heap usage finished! Next check delay: 300000
+06-29 13:16:11.266 E/PowerInsightClientProxy( 2823): framework 254 WLAN_CE_2 suspendEnd 54876129 suspendDuration 861
+06-29 13:16:11.266 E/PowerInsightPolicy( 2823): sPowerInsightService null!
+06-29 13:16:11.377 D/JavaheapMonitor(10513): Java heap used=8M max=512M, proc: android.process.acore
+06-29 13:16:11.378 V/JavaheapMonitor(10513): Check java heap usage finished! Next check delay: 300000
+06-29 13:16:11.937 E/vendor.qti.hardware.perf2-hal-service( 1901): ExtendedPerfBoost: timer_thread_start() 63: timer_thread_start: epoll wait failed, errno = 4
+06-29 13:16:11.937 E/libusbconfigfs( 1817): epoll wait did not return descriptor number
+06-29 13:16:11.939 D/tcmd    ( 2184): waiting on events (-1ms)
+06-29 13:16:11.946 I/AidlSensorManager( 2823): aidl_ssvc_poll: spurious wake up, back to work
+06-29 13:16:11.979 I/adbd    (10515): adbd service requested 'shell,v2:export ANDROID_LOG_TAGS=''; exec logcat '-d' '-v' 'time''
+06-29 13:16:11.987 E/PowerInsightClientProxy( 2823): framework 254 WLAN_CE_2 suspendEnd 54876850 suspendDuration 411
+06-29 13:16:11.988 E/PowerInsightPolicy( 2823): sPowerInsightService null!

@@ -44,23 +44,7 @@ fun LoginScreen(
                 .padding(24.dp),
             horizontalAlignment = Alignment.CenterHorizontally,
             verticalArrangement = Arrangement.Center
-        ) {
-            // Logo area
-            Box(
-                modifier = Modifier
-                    .size(100.dp)
-                    .clip(CircleShape)
-                    .background(Color.White.copy(alpha = 0.05f))
-                    .border(1.dp, Color.White.copy(alpha = 0.15f), CircleShape),
-                contentAlignment = Alignment.Center
-            ) {
-                Icon(
-                    imageVector = Icons.AutoMirrored.Rounded.Login,
-                    contentDescription = null,
-                    tint = Color(0xFF60A5FA),
-                    modifier = Modifier.size(48.dp)
-                )
-            }
+        ) {
 
             Spacer(modifier = Modifier.height(24.dp))
 
@@ -263,3 +247,4 @@ fun LoginScreenPreview() {
         LoginScreen(onLoginClick = {})
     }
 }
+

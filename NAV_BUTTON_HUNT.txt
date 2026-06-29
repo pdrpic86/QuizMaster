@@ -1,0 +1,3820 @@
+=== QUIZMASTER NAV / LOGIN BUTTON HUNT ===
+Generated: 06/29/2026 13:32:52
+
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\MainActivity.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster
+    2: import com.example.quizmaster.ui.components.QuizMasterExitBackGuard
+    3: import android.os.Bundle
+    4: import androidx.activity.ComponentActivity
+    5: import androidx.activity.compose.setContent
+    6: import androidx.activity.enableEdgeToEdge
+    7: import androidx.compose.foundation.background
+    8: import androidx.compose.foundation.border
+    9: import androidx.compose.foundation.clickable
+   10: import androidx.compose.foundation.layout.Arrangement
+   11: import androidx.compose.foundation.layout.Box
+   12: import androidx.compose.foundation.layout.Column
+   13: import androidx.compose.foundation.layout.fillMaxSize
+
+--- HIT: 'QuizMaster' around line 2 ---
+    1: package com.example.quizmaster
+    2: import com.example.quizmaster.ui.components.QuizMasterExitBackGuard
+    3: import android.os.Bundle
+    4: import androidx.activity.ComponentActivity
+    5: import androidx.activity.compose.setContent
+    6: import androidx.activity.enableEdgeToEdge
+    7: import androidx.compose.foundation.background
+    8: import androidx.compose.foundation.border
+    9: import androidx.compose.foundation.clickable
+   10: import androidx.compose.foundation.layout.Arrangement
+   11: import androidx.compose.foundation.layout.Box
+   12: import androidx.compose.foundation.layout.Column
+   13: import androidx.compose.foundation.layout.fillMaxSize
+   14: import androidx.compose.foundation.layout.fillMaxWidth
+
+--- HIT: 'CircleShape' around line 22 ---
+   14: import androidx.compose.foundation.layout.fillMaxWidth
+   15: import androidx.compose.foundation.layout.height
+   16: import androidx.compose.foundation.layout.padding
+   17: import androidx.compose.foundation.layout.Row
+   18: import androidx.compose.foundation.layout.safeDrawingPadding
+   19: import androidx.compose.foundation.layout.size
+   20: import androidx.compose.foundation.layout.Spacer
+   21: import androidx.compose.foundation.layout.width
+   22: import androidx.compose.foundation.shape.CircleShape
+   23: import androidx.compose.foundation.shape.RoundedCornerShape
+   24: import androidx.compose.material3.Card
+   25: import androidx.compose.material3.CardDefaults
+   26: import androidx.compose.material3.darkColorScheme
+   27: import androidx.compose.material3.MaterialTheme
+   28: import androidx.compose.material3.Surface
+   29: import androidx.compose.material3.Switch
+   30: import androidx.compose.material3.Text
+   31: import androidx.compose.runtime.Composable
+   32: import androidx.compose.runtime.getValue
+   33: import androidx.compose.runtime.mutableStateOf
+   34: import androidx.compose.runtime.remember
+
+--- HIT: 'QuizMaster' around line 47 ---
+   39: import androidx.compose.ui.graphics.Color
+   40: import androidx.compose.ui.Modifier
+   41: import androidx.compose.ui.platform.LocalConfiguration
+   42: import androidx.compose.ui.text.font.FontWeight
+   43: import androidx.compose.ui.text.style.TextOverflow
+   44: import androidx.compose.ui.unit.dp
+   45: import androidx.compose.ui.unit.sp
+   46: import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+   47: import com.example.quizmaster.ui.theme.QuizMasterTheme
+   48: import com.example.quizmaster.ui.util.AdaptiveDensity
+   49: 
+   50: 
+   51: 
+   52: 
+   53: 
+   54: 
+   55: 
+   56: 
+   57: 
+   58: 
+   59: 
+
+--- HIT: 'QuizMaster' around line 48 ---
+   40: import androidx.compose.ui.Modifier
+   41: import androidx.compose.ui.platform.LocalConfiguration
+   42: import androidx.compose.ui.text.font.FontWeight
+   43: import androidx.compose.ui.text.style.TextOverflow
+   44: import androidx.compose.ui.unit.dp
+   45: import androidx.compose.ui.unit.sp
+   46: import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
+   47: import com.example.quizmaster.ui.theme.QuizMasterTheme
+   48: import com.example.quizmaster.ui.util.AdaptiveDensity
+   49: 
+   50: 
+   51: 
+   52: 
+   53: 
+   54: 
+   55: 
+   56: 
+   57: 
+   58: 
+   59: 
+   60: 
+
+--- HIT: 'QuizMaster' around line 102 ---
+   94: 
+   95:         enableEdgeToEdge()
+   96: 
+   97:         setContent {
+   98:         if (DEBUG_UI_LAB) {
+   99:             MainActivityUiTestLab()
+  100:         } else {
+  101: 
+  102:             QuizMasterTheme {
+  103:                 Surface(
+  104:                     modifier = Modifier.fillMaxSize(),
+  105:                     color = MaterialTheme.colorScheme.background
+  106:                 ) {
+  107:                     QuizMasterApp()
+  108:                 }
+  109:             }
+  110:         
+  111:         }
+  112:     
+  113:             QuizMasterExitBackGuard()
+  114: }
+
+--- HIT: 'QuizMaster' around line 107 ---
+   99:             MainActivityUiTestLab()
+  100:         } else {
+  101: 
+  102:             QuizMasterTheme {
+  103:                 Surface(
+  104:                     modifier = Modifier.fillMaxSize(),
+  105:                     color = MaterialTheme.colorScheme.background
+  106:                 ) {
+  107:                     QuizMasterApp()
+  108:                 }
+  109:             }
+  110:         
+  111:         }
+  112:     
+  113:             QuizMasterExitBackGuard()
+  114: }
+  115:     }
+  116: }
+  117: 
+  118: 
+  119: 
+
+--- HIT: 'QuizMaster' around line 113 ---
+  105:                     color = MaterialTheme.colorScheme.background
+  106:                 ) {
+  107:                     QuizMasterApp()
+  108:                 }
+  109:             }
+  110:         
+  111:         }
+  112:     
+  113:             QuizMasterExitBackGuard()
+  114: }
+  115:     }
+  116: }
+  117: 
+  118: 
+  119: 
+  120: @Composable
+  121: private fun MainActivityUiTestLab() {
+  122:     MaterialTheme(
+  123:         colorScheme = darkColorScheme()
+  124:     ) {
+  125:         Surface(
+
+--- HIT: 'QuizMaster' around line 180 ---
+  172:         config.screenWidthDp <= 411 || config.screenHeightDp <= 891 -> "NORMAL"
+  173:         else -> "LARGE"
+  174:     }
+  175: 
+  176:     Column(
+  177:         verticalArrangement = Arrangement.spacedBy(4.dp)
+  178:     ) {
+  179:         Text(
+  180:             text = "QuizMaster UI Lab",
+  181:             fontSize = 26.sp,
+  182:             lineHeight = 28.sp,
+  183:             fontWeight = FontWeight.Black,
+  184:             color = Color.White
+  185:         )
+  186: 
+  187:         Text(
+  188:             text = "$profile screen • ${config.screenWidthDp}dp x ${config.screenHeightDp}dp",
+  189:             fontSize = 12.sp,
+  190:             color = Color.White.copy(alpha = 0.62f)
+  191:         )
+  192:     }
+
+--- HIT: 'CircleShape' around line 387 ---
+  379:         ) {
+  380:             Row(
+  381:                 modifier = Modifier.fillMaxWidth(),
+  382:                 verticalAlignment = Alignment.CenterVertically
+  383:             ) {
+  384:                 Box(
+  385:                     modifier = Modifier
+  386:                         .size(38.dp)
+  387:                         .clip(CircleShape)
+  388:                         .background(accent.copy(alpha = 0.18f)),
+  389:                     contentAlignment = Alignment.Center
+  390:                 ) {
+  391:                     Text(
+  392:                         text = icon,
+  393:                         fontSize = 18.sp,
+  394:                         fontWeight = FontWeight.Black,
+  395:                         color = accent
+  396:                     )
+  397:                 }
+  398: 
+  399:                 Spacer(modifier = Modifier.width(10.dp))
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\QuizMasterApp.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster
+    2: 
+    3: import com.example.quizmaster.ui.components.FloatingThemeModeSwitcher
+    4: 
+    5: import androidx.compose.ui.platform.LocalContext
+    6: 
+    7: import androidx.compose.runtime.LaunchedEffect
+    8: 
+    9: import android.content.Context
+   10: 
+   11: import androidx.compose.animation.AnimatedContent
+   12: import androidx.compose.animation.core.tween
+   13: import androidx.compose.animation.fadeIn
+
+--- HIT: 'QuizMaster' around line 3 ---
+    1: package com.example.quizmaster
+    2: 
+    3: import com.example.quizmaster.ui.components.FloatingThemeModeSwitcher
+    4: 
+    5: import androidx.compose.ui.platform.LocalContext
+    6: 
+    7: import androidx.compose.runtime.LaunchedEffect
+    8: 
+    9: import android.content.Context
+   10: 
+   11: import androidx.compose.animation.AnimatedContent
+   12: import androidx.compose.animation.core.tween
+   13: import androidx.compose.animation.fadeIn
+   14: import androidx.compose.animation.fadeOut
+   15: import androidx.compose.animation.togetherWith
+
+--- HIT: 'QuizMaster' around line 21 ---
+   13: import androidx.compose.animation.fadeIn
+   14: import androidx.compose.animation.fadeOut
+   15: import androidx.compose.animation.togetherWith
+   16: import androidx.compose.runtime.Composable
+   17: import androidx.compose.runtime.getValue
+   18: import androidx.compose.runtime.mutableStateOf
+   19: import androidx.compose.runtime.remember
+   20: import androidx.compose.runtime.setValue
+   21: import com.example.quizmaster.navigation.AppScreen
+   22: import com.example.quizmaster.ui.screens.category.CategoryScreen
+   23: import com.example.quizmaster.ui.screens.difficulty.DifficultyScreen
+   24: import com.example.quizmaster.ui.screens.home.HomeScreen
+   25: import com.example.quizmaster.ui.screens.login.LoginScreen
+   26: import com.example.quizmaster.ui.screens.quiz.QuizPreviewScreen
+   27: import com.example.quizmaster.ui.theme.QuizMasterTheme
+   28: 
+   29: @Composable
+   30: fun QuizMasterApp() {
+   31:     val context = LocalContext.current
+   32:     val themePrefs = remember {
+   33:         context.getSharedPreferences("quizmaster_settings", Context.MODE_PRIVATE)
+
+--- HIT: 'QuizMaster' around line 22 ---
+   14: import androidx.compose.animation.fadeOut
+   15: import androidx.compose.animation.togetherWith
+   16: import androidx.compose.runtime.Composable
+   17: import androidx.compose.runtime.getValue
+   18: import androidx.compose.runtime.mutableStateOf
+   19: import androidx.compose.runtime.remember
+   20: import androidx.compose.runtime.setValue
+   21: import com.example.quizmaster.navigation.AppScreen
+   22: import com.example.quizmaster.ui.screens.category.CategoryScreen
+   23: import com.example.quizmaster.ui.screens.difficulty.DifficultyScreen
+   24: import com.example.quizmaster.ui.screens.home.HomeScreen
+   25: import com.example.quizmaster.ui.screens.login.LoginScreen
+   26: import com.example.quizmaster.ui.screens.quiz.QuizPreviewScreen
+   27: import com.example.quizmaster.ui.theme.QuizMasterTheme
+   28: 
+   29: @Composable
+   30: fun QuizMasterApp() {
+   31:     val context = LocalContext.current
+   32:     val themePrefs = remember {
+   33:         context.getSharedPreferences("quizmaster_settings", Context.MODE_PRIVATE)
+   34:     }
+
+--- HIT: 'QuizMaster' around line 23 ---
+   15: import androidx.compose.animation.togetherWith
+   16: import androidx.compose.runtime.Composable
+   17: import androidx.compose.runtime.getValue
+   18: import androidx.compose.runtime.mutableStateOf
+   19: import androidx.compose.runtime.remember
+   20: import androidx.compose.runtime.setValue
+   21: import com.example.quizmaster.navigation.AppScreen
+   22: import com.example.quizmaster.ui.screens.category.CategoryScreen
+   23: import com.example.quizmaster.ui.screens.difficulty.DifficultyScreen
+   24: import com.example.quizmaster.ui.screens.home.HomeScreen
+   25: import com.example.quizmaster.ui.screens.login.LoginScreen
+   26: import com.example.quizmaster.ui.screens.quiz.QuizPreviewScreen
+   27: import com.example.quizmaster.ui.theme.QuizMasterTheme
+   28: 
+   29: @Composable
+   30: fun QuizMasterApp() {
+   31:     val context = LocalContext.current
+   32:     val themePrefs = remember {
+   33:         context.getSharedPreferences("quizmaster_settings", Context.MODE_PRIVATE)
+   34:     }
+   35:     var isDarkTheme by remember {
+
+--- HIT: 'QuizMaster' around line 24 ---
+   16: import androidx.compose.runtime.Composable
+   17: import androidx.compose.runtime.getValue
+   18: import androidx.compose.runtime.mutableStateOf
+   19: import androidx.compose.runtime.remember
+   20: import androidx.compose.runtime.setValue
+   21: import com.example.quizmaster.navigation.AppScreen
+   22: import com.example.quizmaster.ui.screens.category.CategoryScreen
+   23: import com.example.quizmaster.ui.screens.difficulty.DifficultyScreen
+   24: import com.example.quizmaster.ui.screens.home.HomeScreen
+   25: import com.example.quizmaster.ui.screens.login.LoginScreen
+   26: import com.example.quizmaster.ui.screens.quiz.QuizPreviewScreen
+   27: import com.example.quizmaster.ui.theme.QuizMasterTheme
+   28: 
+   29: @Composable
+   30: fun QuizMasterApp() {
+   31:     val context = LocalContext.current
+   32:     val themePrefs = remember {
+   33:         context.getSharedPreferences("quizmaster_settings", Context.MODE_PRIVATE)
+   34:     }
+   35:     var isDarkTheme by remember {
+   36:         mutableStateOf(themePrefs.getBoolean("dark_theme", true))
+
+--- HIT: 'QuizMaster' around line 25 ---
+   17: import androidx.compose.runtime.getValue
+   18: import androidx.compose.runtime.mutableStateOf
+   19: import androidx.compose.runtime.remember
+   20: import androidx.compose.runtime.setValue
+   21: import com.example.quizmaster.navigation.AppScreen
+   22: import com.example.quizmaster.ui.screens.category.CategoryScreen
+   23: import com.example.quizmaster.ui.screens.difficulty.DifficultyScreen
+   24: import com.example.quizmaster.ui.screens.home.HomeScreen
+   25: import com.example.quizmaster.ui.screens.login.LoginScreen
+   26: import com.example.quizmaster.ui.screens.quiz.QuizPreviewScreen
+   27: import com.example.quizmaster.ui.theme.QuizMasterTheme
+   28: 
+   29: @Composable
+   30: fun QuizMasterApp() {
+   31:     val context = LocalContext.current
+   32:     val themePrefs = remember {
+   33:         context.getSharedPreferences("quizmaster_settings", Context.MODE_PRIVATE)
+   34:     }
+   35:     var isDarkTheme by remember {
+   36:         mutableStateOf(themePrefs.getBoolean("dark_theme", true))
+   37:     }
+
+--- HIT: 'QuizMaster' around line 26 ---
+   18: import androidx.compose.runtime.mutableStateOf
+   19: import androidx.compose.runtime.remember
+   20: import androidx.compose.runtime.setValue
+   21: import com.example.quizmaster.navigation.AppScreen
+   22: import com.example.quizmaster.ui.screens.category.CategoryScreen
+   23: import com.example.quizmaster.ui.screens.difficulty.DifficultyScreen
+   24: import com.example.quizmaster.ui.screens.home.HomeScreen
+   25: import com.example.quizmaster.ui.screens.login.LoginScreen
+   26: import com.example.quizmaster.ui.screens.quiz.QuizPreviewScreen
+   27: import com.example.quizmaster.ui.theme.QuizMasterTheme
+   28: 
+   29: @Composable
+   30: fun QuizMasterApp() {
+   31:     val context = LocalContext.current
+   32:     val themePrefs = remember {
+   33:         context.getSharedPreferences("quizmaster_settings", Context.MODE_PRIVATE)
+   34:     }
+   35:     var isDarkTheme by remember {
+   36:         mutableStateOf(themePrefs.getBoolean("dark_theme", true))
+   37:     }
+   38:     var currentScreen by remember { mutableStateOf(AppScreen.Login) }
+
+--- HIT: 'QuizMaster' around line 27 ---
+   19: import androidx.compose.runtime.remember
+   20: import androidx.compose.runtime.setValue
+   21: import com.example.quizmaster.navigation.AppScreen
+   22: import com.example.quizmaster.ui.screens.category.CategoryScreen
+   23: import com.example.quizmaster.ui.screens.difficulty.DifficultyScreen
+   24: import com.example.quizmaster.ui.screens.home.HomeScreen
+   25: import com.example.quizmaster.ui.screens.login.LoginScreen
+   26: import com.example.quizmaster.ui.screens.quiz.QuizPreviewScreen
+   27: import com.example.quizmaster.ui.theme.QuizMasterTheme
+   28: 
+   29: @Composable
+   30: fun QuizMasterApp() {
+   31:     val context = LocalContext.current
+   32:     val themePrefs = remember {
+   33:         context.getSharedPreferences("quizmaster_settings", Context.MODE_PRIVATE)
+   34:     }
+   35:     var isDarkTheme by remember {
+   36:         mutableStateOf(themePrefs.getBoolean("dark_theme", true))
+   37:     }
+   38:     var currentScreen by remember { mutableStateOf(AppScreen.Login) }
+   39: 
+
+--- HIT: 'QuizMaster' around line 30 ---
+   22: import com.example.quizmaster.ui.screens.category.CategoryScreen
+   23: import com.example.quizmaster.ui.screens.difficulty.DifficultyScreen
+   24: import com.example.quizmaster.ui.screens.home.HomeScreen
+   25: import com.example.quizmaster.ui.screens.login.LoginScreen
+   26: import com.example.quizmaster.ui.screens.quiz.QuizPreviewScreen
+   27: import com.example.quizmaster.ui.theme.QuizMasterTheme
+   28: 
+   29: @Composable
+   30: fun QuizMasterApp() {
+   31:     val context = LocalContext.current
+   32:     val themePrefs = remember {
+   33:         context.getSharedPreferences("quizmaster_settings", Context.MODE_PRIVATE)
+   34:     }
+   35:     var isDarkTheme by remember {
+   36:         mutableStateOf(themePrefs.getBoolean("dark_theme", true))
+   37:     }
+   38:     var currentScreen by remember { mutableStateOf(AppScreen.Login) }
+   39: 
+   40:     LaunchedEffect(isDarkTheme) {
+   41:         themePrefs.edit().putBoolean("dark_theme", isDarkTheme).apply()
+   42:     }
+
+--- HIT: 'QuizMaster' around line 33 ---
+   25: import com.example.quizmaster.ui.screens.login.LoginScreen
+   26: import com.example.quizmaster.ui.screens.quiz.QuizPreviewScreen
+   27: import com.example.quizmaster.ui.theme.QuizMasterTheme
+   28: 
+   29: @Composable
+   30: fun QuizMasterApp() {
+   31:     val context = LocalContext.current
+   32:     val themePrefs = remember {
+   33:         context.getSharedPreferences("quizmaster_settings", Context.MODE_PRIVATE)
+   34:     }
+   35:     var isDarkTheme by remember {
+   36:         mutableStateOf(themePrefs.getBoolean("dark_theme", true))
+   37:     }
+   38:     var currentScreen by remember { mutableStateOf(AppScreen.Login) }
+   39: 
+   40:     LaunchedEffect(isDarkTheme) {
+   41:         themePrefs.edit().putBoolean("dark_theme", isDarkTheme).apply()
+   42:     }
+   43: 
+   44:     // Temporary state for selected category and difficulty.
+   45:     // This can move to a ViewModel when the app grows.
+
+--- HIT: 'Login' around line 38 ---
+   30: fun QuizMasterApp() {
+   31:     val context = LocalContext.current
+   32:     val themePrefs = remember {
+   33:         context.getSharedPreferences("quizmaster_settings", Context.MODE_PRIVATE)
+   34:     }
+   35:     var isDarkTheme by remember {
+   36:         mutableStateOf(themePrefs.getBoolean("dark_theme", true))
+   37:     }
+   38:     var currentScreen by remember { mutableStateOf(AppScreen.Login) }
+   39: 
+   40:     LaunchedEffect(isDarkTheme) {
+   41:         themePrefs.edit().putBoolean("dark_theme", isDarkTheme).apply()
+   42:     }
+   43: 
+   44:     // Temporary state for selected category and difficulty.
+   45:     // This can move to a ViewModel when the app grows.
+   46:     var selectedCategory by remember { mutableStateOf("Sports") }
+   47:     var selectedDifficulty by remember { mutableStateOf("Mixed") }
+   48: 
+   49:     QuizMasterTheme(darkTheme = isDarkTheme) {
+   50:         AnimatedContent(
+
+--- HIT: 'QuizMaster' around line 49 ---
+   41:         themePrefs.edit().putBoolean("dark_theme", isDarkTheme).apply()
+   42:     }
+   43: 
+   44:     // Temporary state for selected category and difficulty.
+   45:     // This can move to a ViewModel when the app grows.
+   46:     var selectedCategory by remember { mutableStateOf("Sports") }
+   47:     var selectedDifficulty by remember { mutableStateOf("Mixed") }
+   48: 
+   49:     QuizMasterTheme(darkTheme = isDarkTheme) {
+   50:         AnimatedContent(
+   51:             targetState = currentScreen,
+   52:             transitionSpec = {
+   53:                 fadeIn(
+   54:                     animationSpec = tween(250)
+   55:                 ) togetherWith fadeOut(
+   56:                     animationSpec = tween(180)
+   57:                 )
+   58:             },
+   59:             label = "Screen transition"
+   60:         ) { screen ->
+   61:             when (screen) {
+
+--- HIT: 'Login' around line 62 ---
+   54:                     animationSpec = tween(250)
+   55:                 ) togetherWith fadeOut(
+   56:                     animationSpec = tween(180)
+   57:                 )
+   58:             },
+   59:             label = "Screen transition"
+   60:         ) { screen ->
+   61:             when (screen) {
+   62:                 AppScreen.Login -> {
+   63:                     LoginScreen(
+   64:                         onLoginClick = {
+   65:                             currentScreen = AppScreen.Home
+   66:                         }
+   67:                     )
+   68:                 }
+   69: 
+   70:                 AppScreen.Home -> {
+   71:                     HomeScreen(
+   72:                         onCategoriesClick = {
+   73:                             currentScreen = AppScreen.Categories
+   74:                         }
+
+--- HIT: 'Login' around line 63 ---
+   55:                 ) togetherWith fadeOut(
+   56:                     animationSpec = tween(180)
+   57:                 )
+   58:             },
+   59:             label = "Screen transition"
+   60:         ) { screen ->
+   61:             when (screen) {
+   62:                 AppScreen.Login -> {
+   63:                     LoginScreen(
+   64:                         onLoginClick = {
+   65:                             currentScreen = AppScreen.Home
+   66:                         }
+   67:                     )
+   68:                 }
+   69: 
+   70:                 AppScreen.Home -> {
+   71:                     HomeScreen(
+   72:                         onCategoriesClick = {
+   73:                             currentScreen = AppScreen.Categories
+   74:                         }
+   75:                     )
+
+--- HIT: 'Login' around line 64 ---
+   56:                     animationSpec = tween(180)
+   57:                 )
+   58:             },
+   59:             label = "Screen transition"
+   60:         ) { screen ->
+   61:             when (screen) {
+   62:                 AppScreen.Login -> {
+   63:                     LoginScreen(
+   64:                         onLoginClick = {
+   65:                             currentScreen = AppScreen.Home
+   66:                         }
+   67:                     )
+   68:                 }
+   69: 
+   70:                 AppScreen.Home -> {
+   71:                     HomeScreen(
+   72:                         onCategoriesClick = {
+   73:                             currentScreen = AppScreen.Categories
+   74:                         }
+   75:                     )
+   76:                 }
+
+--- HIT: 'Login' around line 116 ---
+  108:                             currentScreen = AppScreen.Difficulty
+  109:                         },
+  110:                         isDarkTheme = isDarkTheme,
+  111:                         onThemeToggle = { isDarkTheme = !isDarkTheme }
+  112:                     )
+  113:                 }
+  114:             }
+  115:         }
+  116:         if (currentScreen == AppScreen.Login || currentScreen == AppScreen.Home) {
+  117:             FloatingThemeModeSwitcher(
+  118:                 isDarkTheme = isDarkTheme,
+  119:                 onThemeChange = { isDarkTheme = it }
+  120:             )
+  121:         }
+  122: 
+  123:     }
+  124: }
+  125: 
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\data\local\CategoryCount.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.data.local
+    2: 
+    3: import androidx.room.ColumnInfo
+    4: 
+    5: data class CategoryCount(
+    6:     @ColumnInfo(name = "category")
+    7:     val category: String,
+    8: 
+    9:     @ColumnInfo(name = "count")
+   10:     val count: Int
+   11: )
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\data\local\QuestionDao.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.data.local
+    2: 
+    3: import androidx.room.Dao
+    4: import androidx.room.Insert
+    5: import androidx.room.OnConflictStrategy
+    6: import androidx.room.Query
+    7: 
+    8: @Dao
+    9: interface QuestionDao {
+   10: 
+   11:     @Query("SELECT COUNT(*) FROM questions")
+   12:     suspend fun getQuestionCount(): Int
+   13: 
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\data\local\QuestionEntity.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.data.local
+    2: 
+    3: import androidx.room.ColumnInfo
+    4: import androidx.room.Entity
+    5: import androidx.room.Index
+    6: import androidx.room.PrimaryKey
+    7: 
+    8: @Entity(
+    9:     tableName = "questions",
+   10:     indices = [
+   11:         Index(value = ["category"], name = "index_questions_category"),
+   12:         Index(value = ["difficulty"], name = "index_questions_difficulty"),
+   13:         Index(value = ["category", "difficulty"], name = "index_questions_category_difficulty")
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\data\local\QuizDatabase.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.data.local
+    2: 
+    3: import android.content.Context
+    4: import androidx.room.Database
+    5: import androidx.room.Room
+    6: import androidx.room.RoomDatabase
+    7: import androidx.sqlite.db.SupportSQLiteDatabase
+    8: import kotlinx.coroutines.CoroutineScope
+    9: import kotlinx.coroutines.Dispatchers
+   10: import kotlinx.coroutines.launch
+   11: 
+   12: @Database(
+   13:     entities = [QuestionEntity::class],
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\data\remote\QuizApiService.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.data.remote
+    2: 
+    3: import io.ktor.client.HttpClient
+    4: import io.ktor.client.call.body
+    5: import io.ktor.client.engine.okhttp.OkHttp
+    6: import io.ktor.client.plugins.contentnegotiation.ContentNegotiation
+    7: import io.ktor.client.plugins.logging.LogLevel
+    8: import io.ktor.client.plugins.logging.Logging
+    9: import io.ktor.client.request.get
+   10: import io.ktor.client.request.parameter
+   11: import io.ktor.serialization.kotlinx.json.json
+   12: import kotlinx.serialization.Serializable
+   13: import kotlinx.serialization.json.Json
+
+--- HIT: 'QuizMaster' around line 47 ---
+   39:             })
+   40:         }
+   41:         install(Logging) {
+   42:             level = LogLevel.INFO
+   43:         }
+   44:     }
+   45: 
+   46:     // Replace with your actual Ktor server URL
+   47:     private val baseUrl = "https://api.quizmaster.example.com"
+   48: 
+   49:     suspend fun getCategories(): List<RemoteCategory> {
+   50:         return try {
+   51:             client.get("$baseUrl/categories").body()
+   52:         } catch (e: Exception) {
+   53:             emptyList()
+   54:         }
+   55:     }
+   56: 
+   57:     suspend fun getQuestions(category: String, difficulty: Int): List<RemoteQuestion> {
+   58:         return try {
+   59:             client.get("$baseUrl/questions") {
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\data\repository\QuestionRepository.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.data.repository
+    2: 
+    3: import com.example.quizmaster.data.local.CategoryCount
+    4: import com.example.quizmaster.data.local.QuestionDao
+    5: import com.example.quizmaster.data.local.QuestionEntity
+    6: import com.example.quizmaster.data.remote.QuizApiService
+    7: import kotlinx.coroutines.Dispatchers
+    8: import kotlinx.coroutines.withContext
+    9: 
+   10: class QuestionRepository(
+   11:     private val questionDao: QuestionDao,
+   12:     private val apiService: QuizApiService = QuizApiService()
+   13: ) {
+
+--- HIT: 'QuizMaster' around line 3 ---
+    1: package com.example.quizmaster.data.repository
+    2: 
+    3: import com.example.quizmaster.data.local.CategoryCount
+    4: import com.example.quizmaster.data.local.QuestionDao
+    5: import com.example.quizmaster.data.local.QuestionEntity
+    6: import com.example.quizmaster.data.remote.QuizApiService
+    7: import kotlinx.coroutines.Dispatchers
+    8: import kotlinx.coroutines.withContext
+    9: 
+   10: class QuestionRepository(
+   11:     private val questionDao: QuestionDao,
+   12:     private val apiService: QuizApiService = QuizApiService()
+   13: ) {
+   14:     suspend fun syncQuestions(category: String, difficulty: String) {
+   15:         val difficultyNumber = when (difficulty) {
+
+--- HIT: 'QuizMaster' around line 4 ---
+    1: package com.example.quizmaster.data.repository
+    2: 
+    3: import com.example.quizmaster.data.local.CategoryCount
+    4: import com.example.quizmaster.data.local.QuestionDao
+    5: import com.example.quizmaster.data.local.QuestionEntity
+    6: import com.example.quizmaster.data.remote.QuizApiService
+    7: import kotlinx.coroutines.Dispatchers
+    8: import kotlinx.coroutines.withContext
+    9: 
+   10: class QuestionRepository(
+   11:     private val questionDao: QuestionDao,
+   12:     private val apiService: QuizApiService = QuizApiService()
+   13: ) {
+   14:     suspend fun syncQuestions(category: String, difficulty: String) {
+   15:         val difficultyNumber = when (difficulty) {
+   16:             "Easy" -> 1
+
+--- HIT: 'QuizMaster' around line 5 ---
+    1: package com.example.quizmaster.data.repository
+    2: 
+    3: import com.example.quizmaster.data.local.CategoryCount
+    4: import com.example.quizmaster.data.local.QuestionDao
+    5: import com.example.quizmaster.data.local.QuestionEntity
+    6: import com.example.quizmaster.data.remote.QuizApiService
+    7: import kotlinx.coroutines.Dispatchers
+    8: import kotlinx.coroutines.withContext
+    9: 
+   10: class QuestionRepository(
+   11:     private val questionDao: QuestionDao,
+   12:     private val apiService: QuizApiService = QuizApiService()
+   13: ) {
+   14:     suspend fun syncQuestions(category: String, difficulty: String) {
+   15:         val difficultyNumber = when (difficulty) {
+   16:             "Easy" -> 1
+   17:             "Medium" -> 2
+
+--- HIT: 'QuizMaster' around line 6 ---
+    1: package com.example.quizmaster.data.repository
+    2: 
+    3: import com.example.quizmaster.data.local.CategoryCount
+    4: import com.example.quizmaster.data.local.QuestionDao
+    5: import com.example.quizmaster.data.local.QuestionEntity
+    6: import com.example.quizmaster.data.remote.QuizApiService
+    7: import kotlinx.coroutines.Dispatchers
+    8: import kotlinx.coroutines.withContext
+    9: 
+   10: class QuestionRepository(
+   11:     private val questionDao: QuestionDao,
+   12:     private val apiService: QuizApiService = QuizApiService()
+   13: ) {
+   14:     suspend fun syncQuestions(category: String, difficulty: String) {
+   15:         val difficultyNumber = when (difficulty) {
+   16:             "Easy" -> 1
+   17:             "Medium" -> 2
+   18:             "Hard" -> 3
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\navigation\AppScreen.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.navigation
+    2: 
+    3: enum class AppScreen {
+    4:     Login,
+    5:     Home,
+    6:     Categories,
+    7:     Difficulty,
+    8:     QuizPreview
+    9: }
+
+--- HIT: 'Login' around line 4 ---
+    1: package com.example.quizmaster.navigation
+    2: 
+    3: enum class AppScreen {
+    4:     Login,
+    5:     Home,
+    6:     Categories,
+    7:     Difficulty,
+    8:     QuizPreview
+    9: }
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\ui\DesignGallery.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.ui
+    2: 
+    3: import androidx.compose.foundation.background
+    4: import androidx.compose.foundation.border
+    5: import androidx.compose.foundation.layout.*
+    6: import androidx.compose.foundation.shape.CircleShape
+    7: import androidx.compose.foundation.shape.RoundedCornerShape
+    8: import androidx.compose.material.icons.Icons
+    9: import androidx.compose.material.icons.rounded.CheckCircle
+   10: import androidx.compose.material.icons.rounded.Close
+   11: import androidx.compose.material.icons.rounded.EmojiEvents
+   12: import androidx.compose.material3.*
+   13: import androidx.compose.runtime.Composable
+
+--- HIT: 'CircleShape' around line 6 ---
+    1: package com.example.quizmaster.ui
+    2: 
+    3: import androidx.compose.foundation.background
+    4: import androidx.compose.foundation.border
+    5: import androidx.compose.foundation.layout.*
+    6: import androidx.compose.foundation.shape.CircleShape
+    7: import androidx.compose.foundation.shape.RoundedCornerShape
+    8: import androidx.compose.material.icons.Icons
+    9: import androidx.compose.material.icons.rounded.CheckCircle
+   10: import androidx.compose.material.icons.rounded.Close
+   11: import androidx.compose.material.icons.rounded.EmojiEvents
+   12: import androidx.compose.material3.*
+   13: import androidx.compose.runtime.Composable
+   14: import androidx.compose.ui.Alignment
+   15: import androidx.compose.ui.Modifier
+   16: import androidx.compose.ui.draw.blur
+   17: import androidx.compose.ui.draw.clip
+   18: import androidx.compose.ui.draw.scale
+
+--- HIT: 'QuizMaster' around line 25 ---
+   17: import androidx.compose.ui.draw.clip
+   18: import androidx.compose.ui.draw.scale
+   19: import androidx.compose.ui.graphics.Brush
+   20: import androidx.compose.ui.graphics.Color
+   21: import androidx.compose.ui.text.font.FontWeight
+   22: import androidx.compose.ui.tooling.preview.Preview
+   23: import androidx.compose.ui.unit.dp
+   24: import androidx.compose.ui.unit.sp
+   25: import com.example.quizmaster.ui.theme.QuizMasterTheme
+   26: 
+   27: @Composable
+   28: fun GlassCardSample() {
+   29:     Box(
+   30:         modifier = Modifier
+   31:             .fillMaxWidth()
+   32:             .height(180.dp)
+   33:             .clip(RoundedCornerShape(32.dp))
+   34:             .background(Color(0xFF050816)) // Background simulator
+   35:     ) {
+   36:         // Background Glow
+   37:         Box(
+
+--- HIT: 'CircleShape' around line 42 ---
+   34:             .background(Color(0xFF050816)) // Background simulator
+   35:     ) {
+   36:         // Background Glow
+   37:         Box(
+   38:             modifier = Modifier
+   39:                 .offset(x = 100.dp, y = (-20).dp)
+   40:                 .size(150.dp)
+   41:                 .blur(50.dp)
+   42:                 .background(Color(0xFF2563EB).copy(alpha = 0.3f), CircleShape)
+   43:         )
+   44: 
+   45:         // Glass Surface
+   46:         Surface(
+   47:             modifier = Modifier
+   48:                 .fillMaxSize()
+   49:                 .border(
+   50:                     width = 0.5.dp,
+   51:                     brush = Brush.linearGradient(
+   52:                         colors = listOf(Color.White.copy(alpha = 0.2f), Color.Transparent)
+   53:                     ),
+   54:                     shape = RoundedCornerShape(32.dp)
+
+--- HIT: 'Icon(' around line 69 ---
+   61:                 verticalAlignment = Alignment.CenterVertically
+   62:             ) {
+   63:                 Column(modifier = Modifier.weight(1f)) {
+   64:                     Text("GLASSMORPHIC", color = Color(0xFF60A5FA), style = MaterialTheme.typography.labelMedium, fontWeight = FontWeight.Bold)
+   65:                     Spacer(modifier = Modifier.height(8.dp))
+   66:                     Text("Premium Look", color = Color.White, style = MaterialTheme.typography.headlineSmall, fontWeight = FontWeight.Black)
+   67:                     Text("M3 Tonal Surface", color = Color.White.copy(alpha = 0.6f), fontSize = 14.sp)
+   68:                 }
+   69:                 Icon(Icons.Rounded.EmojiEvents, null, modifier = Modifier.size(60.dp), tint = Color(0xFF2563EB))
+   70:             }
+   71:         }
+   72:     }
+   73: }
+   74: 
+   75: @Composable
+   76: fun InteractiveButtonSample(state: String) {
+   77:     val (containerColor, contentColor, icon) = when (state) {
+   78:         "Correct" -> Triple(Color(0xFF064E3B), Color(0xFF34D399), Icons.Rounded.CheckCircle)
+   79:         "Wrong" -> Triple(Color(0xFF7F1D1D), Color(0xFFF87171), Icons.Rounded.Close)
+   80:         else -> Triple(Color(0xFF1E293B), Color.White, null)
+   81:     }
+
+--- HIT: 'Icon(' around line 96 ---
+   88:         shape = RoundedCornerShape(20.dp)
+   89:     ) {
+   90:         Row(
+   91:             modifier = Modifier.padding(18.dp),
+   92:             verticalAlignment = Alignment.CenterVertically
+   93:         ) {
+   94:             Text("Sample Answer Option", modifier = Modifier.weight(1f), color = Color.White, fontWeight = FontWeight.Medium)
+   95:             if (icon != null) {
+   96:                 Icon(icon, null, tint = contentColor, modifier = Modifier.size(24.dp))
+   97:             }
+   98:         }
+   99:     }
+  100: }
+  101: 
+  102: @Preview
+  103: @Composable
+  104: fun DesignGalleryPreview() {
+  105:     QuizMasterTheme {
+  106:         Column(
+  107:             modifier = Modifier
+  108:                 .background(Color(0xFF050816))
+
+--- HIT: 'QuizMaster' around line 105 ---
+   97:             }
+   98:         }
+   99:     }
+  100: }
+  101: 
+  102: @Preview
+  103: @Composable
+  104: fun DesignGalleryPreview() {
+  105:     QuizMasterTheme {
+  106:         Column(
+  107:             modifier = Modifier
+  108:                 .background(Color(0xFF050816))
+  109:                 .padding(20.dp),
+  110:             verticalArrangement = Arrangement.spacedBy(20.dp)
+  111:         ) {
+  112:             Text("Visual Samples", color = Color.White, style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Black)
+  113:             
+  114:             Text("1. Glassmorphism", color = Color.White.copy(alpha = 0.5f))
+  115:             GlassCardSample()
+  116: 
+  117:             Text("2. Answer States", color = Color.White.copy(alpha = 0.5f))
+
+--- HIT: 'size(80.dp' around line 125 ---
+  117:             Text("2. Answer States", color = Color.White.copy(alpha = 0.5f))
+  118:             InteractiveButtonSample("Normal")
+  119:             InteractiveButtonSample("Correct")
+  120:             InteractiveButtonSample("Wrong")
+  121:             
+  122:             Text("3. Neon Timer Warning", color = Color.White.copy(alpha = 0.5f))
+  123:             Box(
+  124:                 modifier = Modifier
+  125:                     .size(80.dp)
+  126:                     .scale(1.1f)
+  127:                     .background(Color(0xFFEF4444).copy(alpha = 0.1f), CircleShape)
+  128:                     .border(2.dp, Color(0xFFEF4444), CircleShape),
+  129:                 contentAlignment = Alignment.Center
+  130:             ) {
+  131:                 Text("04", color = Color(0xFFEF4444), style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Black)
+  132:             }
+  133:         }
+  134:     }
+  135: }
+
+--- HIT: 'CircleShape' around line 127 ---
+  119:             InteractiveButtonSample("Correct")
+  120:             InteractiveButtonSample("Wrong")
+  121:             
+  122:             Text("3. Neon Timer Warning", color = Color.White.copy(alpha = 0.5f))
+  123:             Box(
+  124:                 modifier = Modifier
+  125:                     .size(80.dp)
+  126:                     .scale(1.1f)
+  127:                     .background(Color(0xFFEF4444).copy(alpha = 0.1f), CircleShape)
+  128:                     .border(2.dp, Color(0xFFEF4444), CircleShape),
+  129:                 contentAlignment = Alignment.Center
+  130:             ) {
+  131:                 Text("04", color = Color(0xFFEF4444), style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Black)
+  132:             }
+  133:         }
+  134:     }
+  135: }
+
+--- HIT: 'CircleShape' around line 128 ---
+  120:             InteractiveButtonSample("Wrong")
+  121:             
+  122:             Text("3. Neon Timer Warning", color = Color.White.copy(alpha = 0.5f))
+  123:             Box(
+  124:                 modifier = Modifier
+  125:                     .size(80.dp)
+  126:                     .scale(1.1f)
+  127:                     .background(Color(0xFFEF4444).copy(alpha = 0.1f), CircleShape)
+  128:                     .border(2.dp, Color(0xFFEF4444), CircleShape),
+  129:                 contentAlignment = Alignment.Center
+  130:             ) {
+  131:                 Text("04", color = Color(0xFFEF4444), style = MaterialTheme.typography.headlineMedium, fontWeight = FontWeight.Black)
+  132:             }
+  133:         }
+  134:     }
+  135: }
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\ui\components\AppBackground.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.ui.components
+    2: 
+    3: import androidx.compose.animation.core.FastOutSlowInEasing
+    4: import androidx.compose.animation.core.RepeatMode
+    5: import androidx.compose.animation.core.animateFloat
+    6: import androidx.compose.animation.core.infiniteRepeatable
+    7: import androidx.compose.animation.core.rememberInfiniteTransition
+    8: import androidx.compose.animation.core.tween
+    9: import androidx.compose.foundation.background
+   10: import androidx.compose.foundation.layout.Box
+   11: import androidx.compose.foundation.layout.fillMaxSize
+   12: import androidx.compose.foundation.layout.offset
+   13: import androidx.compose.material3.MaterialTheme
+
+--- HIT: 'QuizMaster' around line 23 ---
+   15: import androidx.compose.runtime.getValue
+   16: import androidx.compose.ui.Alignment
+   17: import androidx.compose.ui.Modifier
+   18: import androidx.compose.ui.draw.scale
+   19: import androidx.compose.ui.graphics.Brush
+   20: import androidx.compose.ui.graphics.Color
+   21: import androidx.compose.ui.graphics.luminance
+   22: import androidx.compose.ui.unit.dp
+   23: import com.example.quizmaster.ui.theme.AquaCyan
+   24: import com.example.quizmaster.ui.theme.JungleGreen
+   25: import com.example.quizmaster.ui.theme.NeonPink
+   26: import com.example.quizmaster.ui.theme.NeonPurple
+   27: import com.example.quizmaster.ui.theme.NeonTokens
+   28: 
+   29: @Composable
+   30: fun AppBackground(
+   31:     content: @Composable () -> Unit
+   32: ) {
+   33:     val transition = rememberInfiniteTransition(label = "ambient background")
+   34:     val pulse by transition.animateFloat(
+   35:         initialValue = 0.92f,
+
+--- HIT: 'QuizMaster' around line 24 ---
+   16: import androidx.compose.ui.Alignment
+   17: import androidx.compose.ui.Modifier
+   18: import androidx.compose.ui.draw.scale
+   19: import androidx.compose.ui.graphics.Brush
+   20: import androidx.compose.ui.graphics.Color
+   21: import androidx.compose.ui.graphics.luminance
+   22: import androidx.compose.ui.unit.dp
+   23: import com.example.quizmaster.ui.theme.AquaCyan
+   24: import com.example.quizmaster.ui.theme.JungleGreen
+   25: import com.example.quizmaster.ui.theme.NeonPink
+   26: import com.example.quizmaster.ui.theme.NeonPurple
+   27: import com.example.quizmaster.ui.theme.NeonTokens
+   28: 
+   29: @Composable
+   30: fun AppBackground(
+   31:     content: @Composable () -> Unit
+   32: ) {
+   33:     val transition = rememberInfiniteTransition(label = "ambient background")
+   34:     val pulse by transition.animateFloat(
+   35:         initialValue = 0.92f,
+   36:         targetValue = 1.08f,
+
+--- HIT: 'QuizMaster' around line 25 ---
+   17: import androidx.compose.ui.Modifier
+   18: import androidx.compose.ui.draw.scale
+   19: import androidx.compose.ui.graphics.Brush
+   20: import androidx.compose.ui.graphics.Color
+   21: import androidx.compose.ui.graphics.luminance
+   22: import androidx.compose.ui.unit.dp
+   23: import com.example.quizmaster.ui.theme.AquaCyan
+   24: import com.example.quizmaster.ui.theme.JungleGreen
+   25: import com.example.quizmaster.ui.theme.NeonPink
+   26: import com.example.quizmaster.ui.theme.NeonPurple
+   27: import com.example.quizmaster.ui.theme.NeonTokens
+   28: 
+   29: @Composable
+   30: fun AppBackground(
+   31:     content: @Composable () -> Unit
+   32: ) {
+   33:     val transition = rememberInfiniteTransition(label = "ambient background")
+   34:     val pulse by transition.animateFloat(
+   35:         initialValue = 0.92f,
+   36:         targetValue = 1.08f,
+   37:         animationSpec = infiniteRepeatable(
+
+--- HIT: 'QuizMaster' around line 26 ---
+   18: import androidx.compose.ui.draw.scale
+   19: import androidx.compose.ui.graphics.Brush
+   20: import androidx.compose.ui.graphics.Color
+   21: import androidx.compose.ui.graphics.luminance
+   22: import androidx.compose.ui.unit.dp
+   23: import com.example.quizmaster.ui.theme.AquaCyan
+   24: import com.example.quizmaster.ui.theme.JungleGreen
+   25: import com.example.quizmaster.ui.theme.NeonPink
+   26: import com.example.quizmaster.ui.theme.NeonPurple
+   27: import com.example.quizmaster.ui.theme.NeonTokens
+   28: 
+   29: @Composable
+   30: fun AppBackground(
+   31:     content: @Composable () -> Unit
+   32: ) {
+   33:     val transition = rememberInfiniteTransition(label = "ambient background")
+   34:     val pulse by transition.animateFloat(
+   35:         initialValue = 0.92f,
+   36:         targetValue = 1.08f,
+   37:         animationSpec = infiniteRepeatable(
+   38:             animation = tween(durationMillis = 4200, easing = FastOutSlowInEasing),
+
+--- HIT: 'QuizMaster' around line 27 ---
+   19: import androidx.compose.ui.graphics.Brush
+   20: import androidx.compose.ui.graphics.Color
+   21: import androidx.compose.ui.graphics.luminance
+   22: import androidx.compose.ui.unit.dp
+   23: import com.example.quizmaster.ui.theme.AquaCyan
+   24: import com.example.quizmaster.ui.theme.JungleGreen
+   25: import com.example.quizmaster.ui.theme.NeonPink
+   26: import com.example.quizmaster.ui.theme.NeonPurple
+   27: import com.example.quizmaster.ui.theme.NeonTokens
+   28: 
+   29: @Composable
+   30: fun AppBackground(
+   31:     content: @Composable () -> Unit
+   32: ) {
+   33:     val transition = rememberInfiniteTransition(label = "ambient background")
+   34:     val pulse by transition.animateFloat(
+   35:         initialValue = 0.92f,
+   36:         targetValue = 1.08f,
+   37:         animationSpec = infiniteRepeatable(
+   38:             animation = tween(durationMillis = 4200, easing = FastOutSlowInEasing),
+   39:             repeatMode = RepeatMode.Reverse
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\ui\components\CategoryBadge.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.ui.components
+    2: 
+    3: import androidx.compose.foundation.background
+    4: import androidx.compose.foundation.border
+    5: import androidx.compose.foundation.layout.Box
+    6: import androidx.compose.foundation.layout.padding
+    7: import androidx.compose.foundation.shape.RoundedCornerShape
+    8: import androidx.compose.material3.MaterialTheme
+    9: import androidx.compose.material3.Text
+   10: import androidx.compose.runtime.Composable
+   11: import androidx.compose.ui.Modifier
+   12: import androidx.compose.ui.text.font.FontWeight
+   13: import androidx.compose.ui.unit.dp
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\ui\components\CategoryHeader.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.ui.components
+    2: 
+    3: import androidx.compose.foundation.background
+    4: import androidx.compose.foundation.border
+    5: import androidx.compose.foundation.layout.Column
+    6: import androidx.compose.foundation.layout.Row
+    7: import androidx.compose.foundation.layout.Spacer
+    8: import androidx.compose.foundation.layout.size
+    9: import androidx.compose.foundation.shape.CircleShape
+   10: import androidx.compose.material.icons.Icons
+   11: import androidx.compose.material.icons.rounded.KeyboardArrowLeft
+   12: import androidx.compose.material3.Icon
+   13: import androidx.compose.material3.IconButton
+
+--- HIT: 'CircleShape' around line 9 ---
+    1: package com.example.quizmaster.ui.components
+    2: 
+    3: import androidx.compose.foundation.background
+    4: import androidx.compose.foundation.border
+    5: import androidx.compose.foundation.layout.Column
+    6: import androidx.compose.foundation.layout.Row
+    7: import androidx.compose.foundation.layout.Spacer
+    8: import androidx.compose.foundation.layout.size
+    9: import androidx.compose.foundation.shape.CircleShape
+   10: import androidx.compose.material.icons.Icons
+   11: import androidx.compose.material.icons.rounded.KeyboardArrowLeft
+   12: import androidx.compose.material3.Icon
+   13: import androidx.compose.material3.IconButton
+   14: import androidx.compose.material3.MaterialTheme
+   15: import androidx.compose.material3.Text
+   16: import androidx.compose.runtime.Composable
+   17: import androidx.compose.ui.Alignment
+   18: import androidx.compose.ui.Modifier
+   19: import androidx.compose.ui.text.font.FontWeight
+   20: import androidx.compose.ui.unit.dp
+   21: 
+
+--- HIT: 'KeyboardArrow' around line 11 ---
+    3: import androidx.compose.foundation.background
+    4: import androidx.compose.foundation.border
+    5: import androidx.compose.foundation.layout.Column
+    6: import androidx.compose.foundation.layout.Row
+    7: import androidx.compose.foundation.layout.Spacer
+    8: import androidx.compose.foundation.layout.size
+    9: import androidx.compose.foundation.shape.CircleShape
+   10: import androidx.compose.material.icons.Icons
+   11: import androidx.compose.material.icons.rounded.KeyboardArrowLeft
+   12: import androidx.compose.material3.Icon
+   13: import androidx.compose.material3.IconButton
+   14: import androidx.compose.material3.MaterialTheme
+   15: import androidx.compose.material3.Text
+   16: import androidx.compose.runtime.Composable
+   17: import androidx.compose.ui.Alignment
+   18: import androidx.compose.ui.Modifier
+   19: import androidx.compose.ui.text.font.FontWeight
+   20: import androidx.compose.ui.unit.dp
+   21: 
+   22: @Composable
+   23: fun CategoryHeader(
+
+--- HIT: 'IconButton' around line 13 ---
+    5: import androidx.compose.foundation.layout.Column
+    6: import androidx.compose.foundation.layout.Row
+    7: import androidx.compose.foundation.layout.Spacer
+    8: import androidx.compose.foundation.layout.size
+    9: import androidx.compose.foundation.shape.CircleShape
+   10: import androidx.compose.material.icons.Icons
+   11: import androidx.compose.material.icons.rounded.KeyboardArrowLeft
+   12: import androidx.compose.material3.Icon
+   13: import androidx.compose.material3.IconButton
+   14: import androidx.compose.material3.MaterialTheme
+   15: import androidx.compose.material3.Text
+   16: import androidx.compose.runtime.Composable
+   17: import androidx.compose.ui.Alignment
+   18: import androidx.compose.ui.Modifier
+   19: import androidx.compose.ui.text.font.FontWeight
+   20: import androidx.compose.ui.unit.dp
+   21: 
+   22: @Composable
+   23: fun CategoryHeader(
+   24:     title: String = "Categories",
+   25:     subtitle: String = "Quiz Master",
+
+--- HIT: 'Quiz Master' around line 25 ---
+   17: import androidx.compose.ui.Alignment
+   18: import androidx.compose.ui.Modifier
+   19: import androidx.compose.ui.text.font.FontWeight
+   20: import androidx.compose.ui.unit.dp
+   21: 
+   22: @Composable
+   23: fun CategoryHeader(
+   24:     title: String = "Categories",
+   25:     subtitle: String = "Quiz Master",
+   26:     onBackClick: () -> Unit
+   27: ) {
+   28:     Row(
+   29:         verticalAlignment = Alignment.CenterVertically
+   30:     ) {
+   31:         IconButton(
+   32:             onClick = onBackClick,
+   33:             modifier = Modifier
+   34:                 .size(46.dp)
+   35:                 .background(
+   36:                     color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.8f),
+   37:                     shape = CircleShape
+
+--- HIT: 'IconButton' around line 31 ---
+   23: fun CategoryHeader(
+   24:     title: String = "Categories",
+   25:     subtitle: String = "Quiz Master",
+   26:     onBackClick: () -> Unit
+   27: ) {
+   28:     Row(
+   29:         verticalAlignment = Alignment.CenterVertically
+   30:     ) {
+   31:         IconButton(
+   32:             onClick = onBackClick,
+   33:             modifier = Modifier
+   34:                 .size(46.dp)
+   35:                 .background(
+   36:                     color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.8f),
+   37:                     shape = CircleShape
+   38:                 )
+   39:                 .border(
+   40:                     width = 1.dp,
+   41:                     color = MaterialTheme.colorScheme.primary.copy(alpha = 0.25f),
+   42:                     shape = CircleShape
+   43:                 )
+
+--- HIT: 'CircleShape' around line 37 ---
+   29:         verticalAlignment = Alignment.CenterVertically
+   30:     ) {
+   31:         IconButton(
+   32:             onClick = onBackClick,
+   33:             modifier = Modifier
+   34:                 .size(46.dp)
+   35:                 .background(
+   36:                     color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.8f),
+   37:                     shape = CircleShape
+   38:                 )
+   39:                 .border(
+   40:                     width = 1.dp,
+   41:                     color = MaterialTheme.colorScheme.primary.copy(alpha = 0.25f),
+   42:                     shape = CircleShape
+   43:                 )
+   44:         ) {
+   45:             Icon(
+   46:                 imageVector = Icons.Rounded.KeyboardArrowLeft,
+   47:                 contentDescription = "Back",
+   48:                 tint = MaterialTheme.colorScheme.onSurfaceVariant
+   49:             )
+
+--- HIT: 'CircleShape' around line 42 ---
+   34:                 .size(46.dp)
+   35:                 .background(
+   36:                     color = MaterialTheme.colorScheme.surfaceVariant.copy(alpha = 0.8f),
+   37:                     shape = CircleShape
+   38:                 )
+   39:                 .border(
+   40:                     width = 1.dp,
+   41:                     color = MaterialTheme.colorScheme.primary.copy(alpha = 0.25f),
+   42:                     shape = CircleShape
+   43:                 )
+   44:         ) {
+   45:             Icon(
+   46:                 imageVector = Icons.Rounded.KeyboardArrowLeft,
+   47:                 contentDescription = "Back",
+   48:                 tint = MaterialTheme.colorScheme.onSurfaceVariant
+   49:             )
+   50:         }
+   51: 
+   52:         Spacer(modifier = Modifier.size(14.dp))
+   53: 
+   54:         Column {
+
+--- HIT: 'Icon(' around line 45 ---
+   37:                     shape = CircleShape
+   38:                 )
+   39:                 .border(
+   40:                     width = 1.dp,
+   41:                     color = MaterialTheme.colorScheme.primary.copy(alpha = 0.25f),
+   42:                     shape = CircleShape
+   43:                 )
+   44:         ) {
+   45:             Icon(
+   46:                 imageVector = Icons.Rounded.KeyboardArrowLeft,
+   47:                 contentDescription = "Back",
+   48:                 tint = MaterialTheme.colorScheme.onSurfaceVariant
+   49:             )
+   50:         }
+   51: 
+   52:         Spacer(modifier = Modifier.size(14.dp))
+   53: 
+   54:         Column {
+   55:             Text(
+   56:                 text = title,
+   57:                 style = MaterialTheme.typography.titleLarge,
+
+--- HIT: 'KeyboardArrow' around line 46 ---
+   38:                 )
+   39:                 .border(
+   40:                     width = 1.dp,
+   41:                     color = MaterialTheme.colorScheme.primary.copy(alpha = 0.25f),
+   42:                     shape = CircleShape
+   43:                 )
+   44:         ) {
+   45:             Icon(
+   46:                 imageVector = Icons.Rounded.KeyboardArrowLeft,
+   47:                 contentDescription = "Back",
+   48:                 tint = MaterialTheme.colorScheme.onSurfaceVariant
+   49:             )
+   50:         }
+   51: 
+   52:         Spacer(modifier = Modifier.size(14.dp))
+   53: 
+   54:         Column {
+   55:             Text(
+   56:                 text = title,
+   57:                 style = MaterialTheme.typography.titleLarge,
+   58:                 fontWeight = FontWeight.ExtraBold,
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\ui\components\GlowCircle.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.ui.components
+    2: 
+    3: import androidx.compose.foundation.background
+    4: import androidx.compose.foundation.layout.Box
+    5: import androidx.compose.foundation.layout.size
+    6: import androidx.compose.foundation.shape.CircleShape
+    7: import androidx.compose.material3.MaterialTheme
+    8: import androidx.compose.runtime.Composable
+    9: import androidx.compose.ui.Modifier
+   10: import androidx.compose.ui.draw.blur
+   11: import androidx.compose.ui.unit.dp
+   12: 
+   13: @Composable
+
+--- HIT: 'CircleShape' around line 6 ---
+    1: package com.example.quizmaster.ui.components
+    2: 
+    3: import androidx.compose.foundation.background
+    4: import androidx.compose.foundation.layout.Box
+    5: import androidx.compose.foundation.layout.size
+    6: import androidx.compose.foundation.shape.CircleShape
+    7: import androidx.compose.material3.MaterialTheme
+    8: import androidx.compose.runtime.Composable
+    9: import androidx.compose.ui.Modifier
+   10: import androidx.compose.ui.draw.blur
+   11: import androidx.compose.ui.unit.dp
+   12: 
+   13: @Composable
+   14: fun GlowCircle(
+   15:     modifier: Modifier = Modifier
+   16: ) {
+   17:     Box(
+   18:         modifier = modifier
+
+--- HIT: 'CircleShape' around line 23 ---
+   15:     modifier: Modifier = Modifier
+   16: ) {
+   17:     Box(
+   18:         modifier = modifier
+   19:             .size(180.dp)
+   20:             .blur(55.dp)
+   21:             .background(
+   22:                 color = MaterialTheme.colorScheme.primary.copy(alpha = 0.28f),
+   23:                 shape = CircleShape
+   24:             )
+   25:     )
+   26: }
+   27: 
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\ui\components\QuizMasterExitBackGuard.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.ui.components
+    2: 
+    3: import android.app.Activity
+    4: import androidx.activity.compose.BackHandler
+    5: import androidx.compose.foundation.background
+    6: import androidx.compose.foundation.border
+    7: import androidx.compose.foundation.layout.Box
+    8: import androidx.compose.foundation.layout.Column
+    9: import androidx.compose.foundation.layout.Row
+   10: import androidx.compose.foundation.layout.Spacer
+   11: import androidx.compose.foundation.layout.fillMaxWidth
+   12: import androidx.compose.foundation.layout.height
+   13: import androidx.compose.foundation.layout.padding
+
+--- HIT: 'CircleShape' around line 15 ---
+    7: import androidx.compose.foundation.layout.Box
+    8: import androidx.compose.foundation.layout.Column
+    9: import androidx.compose.foundation.layout.Row
+   10: import androidx.compose.foundation.layout.Spacer
+   11: import androidx.compose.foundation.layout.fillMaxWidth
+   12: import androidx.compose.foundation.layout.height
+   13: import androidx.compose.foundation.layout.padding
+   14: import androidx.compose.foundation.layout.width
+   15: import androidx.compose.foundation.shape.CircleShape
+   16: import androidx.compose.foundation.shape.RoundedCornerShape
+   17: import androidx.compose.material3.AlertDialog
+   18: import androidx.compose.material3.Button
+   19: import androidx.compose.material3.ButtonDefaults
+   20: import androidx.compose.material3.MaterialTheme
+   21: import androidx.compose.material3.Surface
+   22: import androidx.compose.material3.Text
+   23: import androidx.compose.material3.TextButton
+   24: import androidx.compose.runtime.Composable
+   25: import androidx.compose.runtime.getValue
+   26: import androidx.compose.runtime.mutableLongStateOf
+   27: import androidx.compose.runtime.mutableStateOf
+
+--- HIT: 'QuizMaster' around line 41 ---
+   33: import androidx.compose.ui.platform.LocalContext
+   34: import androidx.compose.ui.text.font.FontWeight
+   35: import androidx.compose.ui.text.style.TextAlign
+   36: import androidx.compose.ui.unit.dp
+   37: import androidx.compose.ui.unit.sp
+   38: import androidx.compose.ui.window.DialogProperties
+   39: 
+   40: @Composable
+   41: fun QuizMasterExitBackGuard() {
+   42:     val context = LocalContext.current
+   43:     val activity = context as? Activity
+   44: 
+   45:     var showExitDialog by remember { mutableStateOf(false) }
+   46:     var lastBackPressedAt by remember { mutableLongStateOf(0L) }
+   47: 
+   48:     fun exitApp() {
+   49:         activity?.finish()
+   50:     }
+   51: 
+   52:     BackHandler(enabled = !showExitDialog) {
+   53:         val now = System.currentTimeMillis()
+
+--- HIT: 'CircleShape' around line 87 ---
+   79:             tonalElevation = 8.dp,
+   80:             title = {
+   81:                 Column(
+   82:                     modifier = Modifier.fillMaxWidth(),
+   83:                     horizontalAlignment = Alignment.CenterHorizontally
+   84:                 ) {
+   85:                     Box(
+   86:                         modifier = Modifier
+   87:                             .clip(CircleShape)
+   88:                             .background(MaterialTheme.colorScheme.primaryContainer)
+   89:                             .border(
+   90:                                 width = 1.dp,
+   91:                                 color = MaterialTheme.colorScheme.primary.copy(alpha = 0.45f),
+   92:                                 shape = CircleShape
+   93:                             )
+   94:                             .padding(16.dp),
+   95:                         contentAlignment = Alignment.Center
+   96:                     ) {
+   97:                         Text(
+   98:                             text = "QM",
+   99:                             fontSize = 20.sp,
+
+--- HIT: 'CircleShape' around line 92 ---
+   84:                 ) {
+   85:                     Box(
+   86:                         modifier = Modifier
+   87:                             .clip(CircleShape)
+   88:                             .background(MaterialTheme.colorScheme.primaryContainer)
+   89:                             .border(
+   90:                                 width = 1.dp,
+   91:                                 color = MaterialTheme.colorScheme.primary.copy(alpha = 0.45f),
+   92:                                 shape = CircleShape
+   93:                             )
+   94:                             .padding(16.dp),
+   95:                         contentAlignment = Alignment.Center
+   96:                     ) {
+   97:                         Text(
+   98:                             text = "QM",
+   99:                             fontSize = 20.sp,
+  100:                             fontWeight = FontWeight.Black,
+  101:                             color = MaterialTheme.colorScheme.onPrimaryContainer
+  102:                         )
+  103:                     }
+  104: 
+
+--- HIT: 'QuizMaster' around line 108 ---
+  100:                             fontWeight = FontWeight.Black,
+  101:                             color = MaterialTheme.colorScheme.onPrimaryContainer
+  102:                         )
+  103:                     }
+  104: 
+  105:                     Spacer(modifier = Modifier.height(14.dp))
+  106: 
+  107:                     Text(
+  108:                         text = "Exit QuizMaster?",
+  109:                         fontSize = 22.sp,
+  110:                         lineHeight = 25.sp,
+  111:                         fontWeight = FontWeight.Black,
+  112:                         color = MaterialTheme.colorScheme.onSurface,
+  113:                         textAlign = TextAlign.Center
+  114:                     )
+  115:                 }
+  116:             },
+  117:             text = {
+  118:                 Text(
+  119:                     text = "Are you sure you want to exit the App?",
+  120:                     modifier = Modifier.fillMaxWidth(),
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\ui\components\ThemeModeSwitcher.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.ui.components
+    2: 
+    3: import androidx.compose.animation.animateColorAsState
+    4: import androidx.compose.animation.core.animateDpAsState
+    5: import androidx.compose.foundation.BorderStroke
+    6: import androidx.compose.foundation.layout.Arrangement
+    7: import androidx.compose.foundation.layout.Row
+    8: import androidx.compose.foundation.layout.padding
+    9: import androidx.compose.foundation.layout.size
+   10: import androidx.compose.foundation.layout.statusBarsPadding
+   11: import androidx.compose.foundation.shape.RoundedCornerShape
+   12: import androidx.compose.material.icons.Icons
+   13: import androidx.compose.material.icons.rounded.DarkMode
+
+--- HIT: 'QuizMaster' around line 30 ---
+   22: import androidx.compose.runtime.getValue
+   23: import androidx.compose.ui.Alignment
+   24: import androidx.compose.ui.Modifier
+   25: import androidx.compose.ui.draw.shadow
+   26: import androidx.compose.ui.graphics.Color
+   27: import androidx.compose.ui.unit.dp
+   28: import androidx.compose.ui.window.Popup
+   29: import androidx.compose.ui.window.PopupProperties
+   30: import com.example.quizmaster.ui.theme.AquaCyan
+   31: import com.example.quizmaster.ui.theme.JungleGold
+   32: import com.example.quizmaster.ui.theme.NeonPink
+   33: import com.example.quizmaster.ui.theme.NeonPurple
+   34: 
+   35: @Composable
+   36: fun FloatingThemeModeSwitcher(
+   37:     isDarkTheme: Boolean,
+   38:     onThemeChange: (Boolean) -> Unit,
+   39:     modifier: Modifier = Modifier
+   40: ) {
+   41:     Popup(
+   42:         alignment = Alignment.TopEnd,
+
+--- HIT: 'QuizMaster' around line 31 ---
+   23: import androidx.compose.ui.Alignment
+   24: import androidx.compose.ui.Modifier
+   25: import androidx.compose.ui.draw.shadow
+   26: import androidx.compose.ui.graphics.Color
+   27: import androidx.compose.ui.unit.dp
+   28: import androidx.compose.ui.window.Popup
+   29: import androidx.compose.ui.window.PopupProperties
+   30: import com.example.quizmaster.ui.theme.AquaCyan
+   31: import com.example.quizmaster.ui.theme.JungleGold
+   32: import com.example.quizmaster.ui.theme.NeonPink
+   33: import com.example.quizmaster.ui.theme.NeonPurple
+   34: 
+   35: @Composable
+   36: fun FloatingThemeModeSwitcher(
+   37:     isDarkTheme: Boolean,
+   38:     onThemeChange: (Boolean) -> Unit,
+   39:     modifier: Modifier = Modifier
+   40: ) {
+   41:     Popup(
+   42:         alignment = Alignment.TopEnd,
+   43:         properties = PopupProperties(
+
+--- HIT: 'QuizMaster' around line 32 ---
+   24: import androidx.compose.ui.Modifier
+   25: import androidx.compose.ui.draw.shadow
+   26: import androidx.compose.ui.graphics.Color
+   27: import androidx.compose.ui.unit.dp
+   28: import androidx.compose.ui.window.Popup
+   29: import androidx.compose.ui.window.PopupProperties
+   30: import com.example.quizmaster.ui.theme.AquaCyan
+   31: import com.example.quizmaster.ui.theme.JungleGold
+   32: import com.example.quizmaster.ui.theme.NeonPink
+   33: import com.example.quizmaster.ui.theme.NeonPurple
+   34: 
+   35: @Composable
+   36: fun FloatingThemeModeSwitcher(
+   37:     isDarkTheme: Boolean,
+   38:     onThemeChange: (Boolean) -> Unit,
+   39:     modifier: Modifier = Modifier
+   40: ) {
+   41:     Popup(
+   42:         alignment = Alignment.TopEnd,
+   43:         properties = PopupProperties(
+   44:             focusable = false,
+
+--- HIT: 'QuizMaster' around line 33 ---
+   25: import androidx.compose.ui.draw.shadow
+   26: import androidx.compose.ui.graphics.Color
+   27: import androidx.compose.ui.unit.dp
+   28: import androidx.compose.ui.window.Popup
+   29: import androidx.compose.ui.window.PopupProperties
+   30: import com.example.quizmaster.ui.theme.AquaCyan
+   31: import com.example.quizmaster.ui.theme.JungleGold
+   32: import com.example.quizmaster.ui.theme.NeonPink
+   33: import com.example.quizmaster.ui.theme.NeonPurple
+   34: 
+   35: @Composable
+   36: fun FloatingThemeModeSwitcher(
+   37:     isDarkTheme: Boolean,
+   38:     onThemeChange: (Boolean) -> Unit,
+   39:     modifier: Modifier = Modifier
+   40: ) {
+   41:     Popup(
+   42:         alignment = Alignment.TopEnd,
+   43:         properties = PopupProperties(
+   44:             focusable = false,
+   45:             dismissOnBackPress = false,
+
+--- HIT: 'Icon(' around line 95 ---
+   87:         color = MaterialTheme.colorScheme.surfaceContainerHigh.copy(alpha = 0.94f),
+   88:         border = BorderStroke(1.dp, borderColor)
+   89:     ) {
+   90:         Row(
+   91:             modifier = Modifier.padding(start = 12.dp, top = 8.dp, end = 10.dp, bottom = 8.dp),
+   92:             verticalAlignment = Alignment.CenterVertically,
+   93:             horizontalArrangement = Arrangement.spacedBy(8.dp)
+   94:         ) {
+   95:             Icon(
+   96:                 imageVector = icon,
+   97:                 contentDescription = label,
+   98:                 tint = if (isDarkTheme) AquaCyan else JungleGold,
+   99:                 modifier = Modifier.size(18.dp)
+  100:             )
+  101: 
+  102:             Text(
+  103:                 text = label,
+  104:                 style = MaterialTheme.typography.labelMedium,
+  105:                 color = MaterialTheme.colorScheme.onSurface
+  106:             )
+  107: 
+
+--- HIT: 'Icon(' around line 112 ---
+  104:                 style = MaterialTheme.typography.labelMedium,
+  105:                 color = MaterialTheme.colorScheme.onSurface
+  106:             )
+  107: 
+  108:             Switch(
+  109:                 checked = isDarkTheme,
+  110:                 onCheckedChange = onThemeChange,
+  111:                 thumbContent = {
+  112:                     Icon(
+  113:                         imageVector = icon,
+  114:                         contentDescription = null,
+  115:                         modifier = Modifier.size(SwitchDefaults.IconSize),
+  116:                         tint = Color.Unspecified
+  117:                     )
+  118:                 },
+  119:                 colors = SwitchDefaults.colors(
+  120:                     checkedThumbColor = AquaCyan,
+  121:                     checkedTrackColor = NeonPurple.copy(alpha = 0.72f),
+  122:                     checkedBorderColor = AquaCyan.copy(alpha = 0.65f),
+  123:                     uncheckedThumbColor = JungleGold,
+  124:                     uncheckedTrackColor = MaterialTheme.colorScheme.surfaceVariant,
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\ui\responsive\WindowClass.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.ui.responsive
+    2: 
+    3: import androidx.compose.runtime.Composable
+    4: import androidx.compose.ui.platform.LocalConfiguration
+    5: import androidx.compose.ui.unit.Dp
+    6: import androidx.compose.ui.unit.dp
+    7: 
+    8: enum class WindowClass {
+    9:     Compact,
+   10:     Medium,
+   11:     Expanded
+   12: }
+   13: 
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\ui\screens\category\CategoryScreen.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.ui.screens.category
+    2: 
+    3: import androidx.compose.animation.core.animateFloatAsState
+    4: import androidx.compose.animation.core.tween
+    5: import androidx.compose.foundation.background
+    6: import androidx.compose.foundation.border
+    7: import androidx.compose.foundation.clickable
+    8: import androidx.compose.foundation.interaction.MutableInteractionSource
+    9: import androidx.compose.foundation.interaction.collectIsPressedAsState
+   10: import androidx.compose.foundation.layout.Arrangement
+   11: import androidx.compose.foundation.layout.Box
+   12: import androidx.compose.foundation.layout.Column
+   13: import androidx.compose.foundation.layout.PaddingValues
+
+--- HIT: 'CircleShape' around line 25 ---
+   17: import androidx.compose.foundation.layout.fillMaxWidth
+   18: import androidx.compose.foundation.layout.height
+   19: import androidx.compose.foundation.layout.heightIn
+   20: import androidx.compose.foundation.layout.padding
+   21: import androidx.compose.foundation.layout.safeDrawingPadding
+   22: import androidx.compose.foundation.layout.size
+   23: import androidx.compose.foundation.layout.width
+   24: import androidx.compose.foundation.rememberScrollState
+   25: import androidx.compose.foundation.shape.CircleShape
+   26: import androidx.compose.foundation.shape.RoundedCornerShape
+   27: import androidx.compose.foundation.verticalScroll
+   28: import androidx.compose.material3.AssistChip
+   29: import androidx.compose.material3.AssistChipDefaults
+   30: import androidx.compose.material3.Card
+   31: import androidx.compose.material3.CardDefaults
+   32: import androidx.compose.material3.MaterialTheme
+   33: import androidx.compose.material3.Surface
+   34: import androidx.compose.material3.Text
+   35: import androidx.compose.material3.TextButton
+   36: import androidx.compose.runtime.Composable
+   37: import androidx.compose.runtime.Immutable
+
+--- HIT: 'CircleShape' around line 369 ---
+  361:                 maxLines = 2,
+  362:                 overflow = TextOverflow.Ellipsis
+  363:             )
+  364:         }
+  365: 
+  366:         Box(
+  367:             modifier = Modifier
+  368:                 .size(tokens.logoSize)
+  369:                 .clip(CircleShape)
+  370:                 .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.14f)),
+  371:             contentAlignment = Alignment.Center
+  372:         ) {
+  373:             Text(
+  374:                 text = "QM",
+  375:                 fontSize = tokens.logoFont,
+  376:                 fontWeight = FontWeight.Black,
+  377:                 color = MaterialTheme.colorScheme.primary
+  378:             )
+  379:         }
+  380:     }
+  381: }
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\ui\screens\difficulty\DifficultyScreen.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.ui.screens.difficulty
+    2: 
+    3: import androidx.compose.animation.core.animateFloatAsState
+    4: import androidx.compose.animation.core.tween
+    5: import androidx.compose.foundation.background
+    6: import androidx.compose.foundation.border
+    7: import androidx.compose.foundation.clickable
+    8: import androidx.compose.foundation.interaction.MutableInteractionSource
+    9: import androidx.compose.foundation.interaction.collectIsPressedAsState
+   10: import androidx.compose.foundation.layout.Arrangement
+   11: import androidx.compose.foundation.layout.Box
+   12: import androidx.compose.foundation.layout.Column
+   13: import androidx.compose.foundation.layout.PaddingValues
+
+--- HIT: 'CircleShape' around line 24 ---
+   16: import androidx.compose.foundation.layout.fillMaxSize
+   17: import androidx.compose.foundation.layout.fillMaxWidth
+   18: import androidx.compose.foundation.layout.height
+   19: import androidx.compose.foundation.layout.padding
+   20: import androidx.compose.foundation.layout.safeDrawingPadding
+   21: import androidx.compose.foundation.layout.size
+   22: import androidx.compose.foundation.layout.width
+   23: import androidx.compose.foundation.rememberScrollState
+   24: import androidx.compose.foundation.shape.CircleShape
+   25: import androidx.compose.foundation.shape.RoundedCornerShape
+   26: import androidx.compose.foundation.verticalScroll
+   27: import androidx.compose.material3.AssistChip
+   28: import androidx.compose.material3.AssistChipDefaults
+   29: import androidx.compose.material3.Card
+   30: import androidx.compose.material3.CardDefaults
+   31: import androidx.compose.material3.FilledTonalButton
+   32: import androidx.compose.material3.MaterialTheme
+   33: import androidx.compose.material3.Surface
+   34: import androidx.compose.material3.Text
+   35: import androidx.compose.material3.TextButton
+   36: import androidx.compose.runtime.Composable
+
+--- HIT: 'CircleShape' around line 390 ---
+  382:         "History" -> "🏛️"
+  383:         "Animals" -> "🐾"
+  384:         else -> "🎯"
+  385:     }
+  386: 
+  387:     Box(
+  388:         modifier = Modifier
+  389:             .size(42.dp)
+  390:             .clip(CircleShape)
+  391:             .background(MaterialTheme.colorScheme.primary.copy(alpha = 0.14f)),
+  392:         contentAlignment = Alignment.Center
+  393:     ) {
+  394:         Text(
+  395:             text = emoji,
+  396:             fontSize = 22.sp
+  397:         )
+  398:     }
+  399: }
+  400: 
+  401: @Composable
+  402: private fun TinyPill(
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\ui\screens\home\HomeScreen.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.ui.screens.home
+    2: 
+    3: import androidx.compose.animation.core.Animatable
+    4: import androidx.compose.animation.core.EaseOutBack
+    5: import androidx.compose.animation.core.FastOutSlowInEasing
+    6: import androidx.compose.animation.core.RepeatMode
+    7: import androidx.compose.animation.core.animateFloat
+    8: import androidx.compose.animation.core.infiniteRepeatable
+    9: import androidx.compose.animation.core.rememberInfiniteTransition
+   10: import androidx.compose.animation.core.tween
+   11: import androidx.compose.foundation.background
+   12: import androidx.compose.foundation.border
+   13: import androidx.compose.foundation.layout.Arrangement
+
+--- HIT: 'CircleShape' around line 28 ---
+   20: import androidx.compose.foundation.layout.fillMaxSize
+   21: import androidx.compose.foundation.layout.fillMaxWidth
+   22: import androidx.compose.foundation.layout.height
+   23: import androidx.compose.foundation.layout.navigationBars
+   24: import androidx.compose.foundation.layout.offset
+   25: import androidx.compose.foundation.layout.padding
+   26: import androidx.compose.foundation.layout.size
+   27: import androidx.compose.foundation.layout.statusBars
+   28: import androidx.compose.foundation.shape.CircleShape
+   29: import androidx.compose.foundation.shape.RoundedCornerShape
+   30: import androidx.compose.material.icons.Icons
+   31: import androidx.compose.material.icons.rounded.BarChart
+   32: import androidx.compose.material.icons.rounded.Bolt
+   33: import androidx.compose.material.icons.rounded.Category
+   34: import androidx.compose.material.icons.rounded.EmojiEvents
+   35: import androidx.compose.material.icons.rounded.KeyboardArrowRight
+   36: import androidx.compose.material.icons.rounded.PlayArrow
+   37: import androidx.compose.material.icons.rounded.QuestionMark
+   38: import androidx.compose.material.icons.rounded.Settings
+   39: import androidx.compose.material.icons.rounded.Shield
+   40: import androidx.compose.material.icons.rounded.Star
+
+--- HIT: 'KeyboardArrow' around line 35 ---
+   27: import androidx.compose.foundation.layout.statusBars
+   28: import androidx.compose.foundation.shape.CircleShape
+   29: import androidx.compose.foundation.shape.RoundedCornerShape
+   30: import androidx.compose.material.icons.Icons
+   31: import androidx.compose.material.icons.rounded.BarChart
+   32: import androidx.compose.material.icons.rounded.Bolt
+   33: import androidx.compose.material.icons.rounded.Category
+   34: import androidx.compose.material.icons.rounded.EmojiEvents
+   35: import androidx.compose.material.icons.rounded.KeyboardArrowRight
+   36: import androidx.compose.material.icons.rounded.PlayArrow
+   37: import androidx.compose.material.icons.rounded.QuestionMark
+   38: import androidx.compose.material.icons.rounded.Settings
+   39: import androidx.compose.material.icons.rounded.Shield
+   40: import androidx.compose.material.icons.rounded.Star
+   41: import androidx.compose.material.icons.rounded.Whatshot
+   42: import androidx.compose.material3.Card
+   43: import androidx.compose.material3.CardDefaults
+   44: import androidx.compose.material3.Icon
+   45: import androidx.compose.material3.MaterialTheme
+   46: import androidx.compose.material3.Text
+   47: import androidx.compose.runtime.Composable
+
+--- HIT: 'QuizMaster' around line 63 ---
+   55: import androidx.compose.ui.draw.scale
+   56: import androidx.compose.ui.graphics.Brush
+   57: import androidx.compose.ui.graphics.Color
+   58: import androidx.compose.ui.graphics.vector.ImageVector
+   59: import androidx.compose.ui.text.font.FontFamily
+   60: import androidx.compose.ui.text.font.FontWeight
+   61: import androidx.compose.ui.text.style.TextAlign
+   62: import androidx.compose.ui.unit.dp
+   63: import com.example.quizmaster.ui.components.AppBackground
+   64: import com.example.quizmaster.ui.theme.QuizMasterTheme
+   65: 
+   66: @Composable
+   67: fun HomeScreen(
+   68:     onCategoriesClick: () -> Unit
+   69: ) {
+   70:     val screenAlpha = remember { Animatable(0f) }
+   71:     val screenScale = remember { Animatable(0.94f) }
+   72: 
+   73:     LaunchedEffect(Unit) {
+   74:         screenAlpha.animateTo(
+   75:             targetValue = 1f,
+
+--- HIT: 'QuizMaster' around line 64 ---
+   56: import androidx.compose.ui.graphics.Brush
+   57: import androidx.compose.ui.graphics.Color
+   58: import androidx.compose.ui.graphics.vector.ImageVector
+   59: import androidx.compose.ui.text.font.FontFamily
+   60: import androidx.compose.ui.text.font.FontWeight
+   61: import androidx.compose.ui.text.style.TextAlign
+   62: import androidx.compose.ui.unit.dp
+   63: import com.example.quizmaster.ui.components.AppBackground
+   64: import com.example.quizmaster.ui.theme.QuizMasterTheme
+   65: 
+   66: @Composable
+   67: fun HomeScreen(
+   68:     onCategoriesClick: () -> Unit
+   69: ) {
+   70:     val screenAlpha = remember { Animatable(0f) }
+   71:     val screenScale = remember { Animatable(0.94f) }
+   72: 
+   73:     LaunchedEffect(Unit) {
+   74:         screenAlpha.animateTo(
+   75:             targetValue = 1f,
+   76:             animationSpec = tween(
+
+--- HIT: 'IconButton' around line 168 ---
+  160: }
+  161: 
+  162: @Composable
+  163: private fun TopBar() {
+  164:     Row(
+  165:         modifier = Modifier.fillMaxWidth(),
+  166:         verticalAlignment = Alignment.CenterVertically
+  167:     ) {
+  168:         GlassIconButton(
+  169:             icon = Icons.Rounded.Bolt
+  170:         )
+  171: 
+  172:         Spacer(modifier = Modifier.weight(1f))
+  173: 
+  174:         GlassIconButton(
+  175:             icon = Icons.Rounded.Star,
+  176:             showDot = true
+  177:         )
+  178:     }
+  179: }
+  180: 
+
+--- HIT: 'IconButton' around line 174 ---
+  166:         verticalAlignment = Alignment.CenterVertically
+  167:     ) {
+  168:         GlassIconButton(
+  169:             icon = Icons.Rounded.Bolt
+  170:         )
+  171: 
+  172:         Spacer(modifier = Modifier.weight(1f))
+  173: 
+  174:         GlassIconButton(
+  175:             icon = Icons.Rounded.Star,
+  176:             showDot = true
+  177:         )
+  178:     }
+  179: }
+  180: 
+  181: @Composable
+  182: private fun GlassIconButton(
+  183:     icon: ImageVector,
+  184:     showDot: Boolean = false
+  185: ) {
+  186:     Box(
+
+--- HIT: 'IconButton' around line 182 ---
+  174:         GlassIconButton(
+  175:             icon = Icons.Rounded.Star,
+  176:             showDot = true
+  177:         )
+  178:     }
+  179: }
+  180: 
+  181: @Composable
+  182: private fun GlassIconButton(
+  183:     icon: ImageVector,
+  184:     showDot: Boolean = false
+  185: ) {
+  186:     Box(
+  187:         modifier = Modifier
+  188:             .size(50.dp)
+  189:             .background(
+  190:                 color = Color.White.copy(alpha = 0.06f),
+  191:                 shape = RoundedCornerShape(18.dp)
+  192:             )
+  193:             .border(
+  194:                 width = 0.5.dp,
+
+--- HIT: 'Icon(' around line 202 ---
+  194:                 width = 0.5.dp,
+  195:                 brush = Brush.linearGradient(
+  196:                     colors = listOf(Color.White.copy(alpha = 0.25f), Color.Transparent)
+  197:                 ),
+  198:                 shape = RoundedCornerShape(18.dp)
+  199:             ),
+  200:         contentAlignment = Alignment.Center
+  201:     ) {
+  202:         Icon(
+  203:             imageVector = icon,
+  204:             contentDescription = null,
+  205:             tint = Color.White.copy(alpha = 0.85f),
+  206:             modifier = Modifier.size(24.dp)
+  207:         )
+  208: 
+  209:         if (showDot) {
+  210:             Box(
+  211:                 modifier = Modifier
+  212:                     .align(Alignment.TopEnd)
+  213:                     .offset(x = 4.dp, y = (-4).dp)
+  214:                     .size(12.dp)
+
+--- HIT: 'CircleShape' around line 217 ---
+  209:         if (showDot) {
+  210:             Box(
+  211:                 modifier = Modifier
+  212:                     .align(Alignment.TopEnd)
+  213:                     .offset(x = 4.dp, y = (-4).dp)
+  214:                     .size(12.dp)
+  215:                     .background(
+  216:                         color = MaterialTheme.colorScheme.tertiary,
+  217:                         shape = CircleShape
+  218:                     )
+  219:             )
+  220:         }
+  221:     }
+  222: }
+  223: 
+  224: @Composable
+  225: private fun LogoTitle() {
+  226:     Column(
+  227:         horizontalAlignment = Alignment.CenterHorizontally
+  228:     ) {
+  229:         Text(
+
+--- HIT: 'CircleShape' around line 303 ---
+  295:             Box(
+  296:                 modifier = Modifier
+  297:                     .align(Alignment.CenterEnd)
+  298:                     .offset(x = 20.dp)
+  299:                     .size(150.dp)
+  300:                     .blur(40.dp)
+  301:                     .background(
+  302:                         color = MaterialTheme.colorScheme.primary.copy(alpha = 0.18f),
+  303:                         shape = CircleShape
+  304:                     )
+  305:             )
+  306: 
+  307:             Row(
+  308:                 modifier = Modifier.fillMaxWidth(),
+  309:                 verticalAlignment = Alignment.CenterVertically
+  310:             ) {
+  311:                 Column(
+  312:                     modifier = Modifier.weight(1.1f)
+  313:                 ) {
+  314:                     Text(
+  315:                         text = "TODAY'S CHALLENGE",
+
+--- HIT: 'Quiz Master' around line 333 ---
+  325:                         style = MaterialTheme.typography.headlineMedium,
+  326:                         fontWeight = FontWeight.Black,
+  327:                         color = MaterialTheme.colorScheme.onBackground
+  328:                     )
+  329: 
+  330:                     Spacer(modifier = Modifier.height(12.dp))
+  331: 
+  332:                     Text(
+  333:                         text = "New questions. New you.\nReady to become the Quiz Master?",
+  334:                         style = MaterialTheme.typography.bodyMedium,
+  335:                         color = MaterialTheme.colorScheme.onBackground.copy(alpha = 0.68f)
+  336:                     )
+  337: 
+  338:                     Spacer(modifier = Modifier.height(18.dp))
+  339: 
+  340:                     StreakPill()
+  341:                 }
+  342: 
+  343:                 Box(
+  344:                     modifier = Modifier
+  345:                         .weight(0.9f)
+
+--- HIT: 'CircleShape' around line 360 ---
+  352:                             .background(
+  353:                                 brush = Brush.radialGradient(
+  354:                                     colors = listOf(
+  355:                                         MaterialTheme.colorScheme.primary.copy(alpha = 0.42f),
+  356:                                         MaterialTheme.colorScheme.tertiary.copy(alpha = 0.18f),
+  357:                                         MaterialTheme.colorScheme.background.copy(alpha = 0f)
+  358:                                     )
+  359:                                 ),
+  360:                                 shape = CircleShape
+  361:                             )
+  362:                     )
+  363: 
+  364:                     Icon(
+  365:                         imageVector = Icons.Rounded.EmojiEvents,
+  366:                         contentDescription = null,
+  367:                         modifier = Modifier.size(94.dp),
+  368:                         tint = MaterialTheme.colorScheme.primary
+  369:                     )
+  370:                 }
+  371:             }
+  372:         }
+
+--- HIT: 'Icon(' around line 364 ---
+  356:                                         MaterialTheme.colorScheme.tertiary.copy(alpha = 0.18f),
+  357:                                         MaterialTheme.colorScheme.background.copy(alpha = 0f)
+  358:                                     )
+  359:                                 ),
+  360:                                 shape = CircleShape
+  361:                             )
+  362:                     )
+  363: 
+  364:                     Icon(
+  365:                         imageVector = Icons.Rounded.EmojiEvents,
+  366:                         contentDescription = null,
+  367:                         modifier = Modifier.size(94.dp),
+  368:                         tint = MaterialTheme.colorScheme.primary
+  369:                     )
+  370:                 }
+  371:             }
+  372:         }
+  373:     }
+  374: }
+  375: 
+  376: @Composable
+
+--- HIT: 'Icon(' around line 394 ---
+  386:                 color = MaterialTheme.colorScheme.tertiary.copy(alpha = 0.45f),
+  387:                 shape = RoundedCornerShape(18.dp)
+  388:             )
+  389:             .padding(horizontal = 14.dp, vertical = 10.dp)
+  390:     ) {
+  391:         Row(
+  392:             verticalAlignment = Alignment.CenterVertically
+  393:         ) {
+  394:             Icon(
+  395:                 imageVector = Icons.Rounded.Whatshot,
+  396:                 contentDescription = null,
+  397:                 tint = MaterialTheme.colorScheme.tertiary,
+  398:                 modifier = Modifier.size(22.dp)
+  399:             )
+  400: 
+  401:             Spacer(modifier = Modifier.size(8.dp))
+  402: 
+  403:             Text(
+  404:                 text = "Daily Streak",
+  405:                 style = MaterialTheme.typography.labelLarge,
+  406:                 fontWeight = FontWeight.Bold,
+
+--- HIT: 'Icon(' around line 464 ---
+  456:                 )
+  457:                 .padding(horizontal = 22.dp),
+  458:             contentAlignment = Alignment.Center
+  459:         ) {
+  460:             Row(
+  461:                 modifier = Modifier.fillMaxWidth(),
+  462:                 verticalAlignment = Alignment.CenterVertically
+  463:             ) {
+  464:                 Icon(
+  465:                     imageVector = Icons.Rounded.PlayArrow,
+  466:                     contentDescription = null,
+  467:                     modifier = Modifier.size(34.dp),
+  468:                     tint = MaterialTheme.colorScheme.onPrimary
+  469:                 )
+  470: 
+  471:                 Spacer(modifier = Modifier.weight(1f))
+  472: 
+  473:                 Text(
+  474:                     text = "START QUIZ",
+  475:                     style = MaterialTheme.typography.headlineSmall,
+  476:                     fontWeight = FontWeight.Black,
+
+--- HIT: 'Icon(' around line 483 ---
+  475:                     style = MaterialTheme.typography.headlineSmall,
+  476:                     fontWeight = FontWeight.Black,
+  477:                     color = MaterialTheme.colorScheme.onPrimary,
+  478:                     letterSpacing = androidx.compose.ui.unit.TextUnit.Unspecified
+  479:                 )
+  480: 
+  481:                 Spacer(modifier = Modifier.weight(1f))
+  482: 
+  483:                 Icon(
+  484:                     imageVector = Icons.Rounded.KeyboardArrowRight,
+  485:                     contentDescription = null,
+  486:                     modifier = Modifier.size(34.dp),
+  487:                     tint = MaterialTheme.colorScheme.onPrimary
+  488:                 )
+  489:             }
+  490:         }
+  491:     }
+  492: }
+  493: 
+  494: @Composable
+  495: private fun MiniMenuCard(
+
+--- HIT: 'KeyboardArrow' around line 484 ---
+  476:                     fontWeight = FontWeight.Black,
+  477:                     color = MaterialTheme.colorScheme.onPrimary,
+  478:                     letterSpacing = androidx.compose.ui.unit.TextUnit.Unspecified
+  479:                 )
+  480: 
+  481:                 Spacer(modifier = Modifier.weight(1f))
+  482: 
+  483:                 Icon(
+  484:                     imageVector = Icons.Rounded.KeyboardArrowRight,
+  485:                     contentDescription = null,
+  486:                     modifier = Modifier.size(34.dp),
+  487:                     tint = MaterialTheme.colorScheme.onPrimary
+  488:                 )
+  489:             }
+  490:         }
+  491:     }
+  492: }
+  493: 
+  494: @Composable
+  495: private fun MiniMenuCard(
+  496:     modifier: Modifier = Modifier,
+
+--- HIT: 'Icon(' around line 526 ---
+  518:                     ),
+  519:                     shape = RoundedCornerShape(24.dp)
+  520:                 )
+  521:                 .padding(16.dp)
+  522:         ) {
+  523:             Column(
+  524:                 modifier = Modifier.align(Alignment.CenterStart)
+  525:             ) {
+  526:                 Icon(
+  527:                     imageVector = icon,
+  528:                     contentDescription = null,
+  529:                     tint = MaterialTheme.colorScheme.primary,
+  530:                     modifier = Modifier.size(30.dp)
+  531:                 )
+  532: 
+  533:                 Spacer(modifier = Modifier.height(18.dp))
+  534: 
+  535:                 Text(
+  536:                     text = title,
+  537:                     style = MaterialTheme.typography.labelLarge,
+  538:                     fontWeight = FontWeight.Black,
+
+--- HIT: 'Icon(' around line 551 ---
+  543: 
+  544:                 Text(
+  545:                     text = subtitle,
+  546:                     style = MaterialTheme.typography.bodySmall,
+  547:                     color = Color.White.copy(alpha = 0.55f)
+  548:                 )
+  549:             }
+  550: 
+  551:             Icon(
+  552:                 imageVector = Icons.Rounded.KeyboardArrowRight,
+  553:                 contentDescription = null,
+  554:                 tint = MaterialTheme.colorScheme.primary,
+  555:                 modifier = Modifier
+  556:                     .align(Alignment.BottomEnd)
+  557:                     .size(22.dp)
+  558:             )
+  559:         }
+  560:     }
+  561: }
+  562: 
+  563: @Composable
+
+--- HIT: 'KeyboardArrow' around line 552 ---
+  544:                 Text(
+  545:                     text = subtitle,
+  546:                     style = MaterialTheme.typography.bodySmall,
+  547:                     color = Color.White.copy(alpha = 0.55f)
+  548:                 )
+  549:             }
+  550: 
+  551:             Icon(
+  552:                 imageVector = Icons.Rounded.KeyboardArrowRight,
+  553:                 contentDescription = null,
+  554:                 tint = MaterialTheme.colorScheme.primary,
+  555:                 modifier = Modifier
+  556:                     .align(Alignment.BottomEnd)
+  557:                     .size(22.dp)
+  558:             )
+  559:         }
+  560:     }
+  561: }
+  562: 
+  563: @Composable
+  564: private fun BottomStatsCard() {
+
+--- HIT: 'CircleShape' around line 640 ---
+  632:         verticalAlignment = Alignment.CenterVertically,
+  633:         horizontalArrangement = Arrangement.Center
+  634:     ) {
+  635:         Box(
+  636:             modifier = Modifier
+  637:                 .size(48.dp)
+  638:                 .background(
+  639:                     color = color.copy(alpha = 0.12f),
+  640:                     shape = CircleShape
+  641:                 )
+  642:                 .border(
+  643:                     width = 1.dp,
+  644:                     color = color.copy(alpha = 0.55f),
+  645:                     shape = CircleShape
+  646:                 ),
+  647:             contentAlignment = Alignment.Center
+  648:         ) {
+  649:             Icon(
+  650:                 imageVector = icon,
+  651:                 contentDescription = null,
+  652:                 tint = color,
+
+--- HIT: 'CircleShape' around line 645 ---
+  637:                 .size(48.dp)
+  638:                 .background(
+  639:                     color = color.copy(alpha = 0.12f),
+  640:                     shape = CircleShape
+  641:                 )
+  642:                 .border(
+  643:                     width = 1.dp,
+  644:                     color = color.copy(alpha = 0.55f),
+  645:                     shape = CircleShape
+  646:                 ),
+  647:             contentAlignment = Alignment.Center
+  648:         ) {
+  649:             Icon(
+  650:                 imageVector = icon,
+  651:                 contentDescription = null,
+  652:                 tint = color,
+  653:                 modifier = Modifier.size(26.dp)
+  654:             )
+  655:         }
+  656: 
+  657:         Spacer(modifier = Modifier.size(14.dp))
+
+--- HIT: 'Icon(' around line 649 ---
+  641:                 )
+  642:                 .border(
+  643:                     width = 1.dp,
+  644:                     color = color.copy(alpha = 0.55f),
+  645:                     shape = CircleShape
+  646:                 ),
+  647:             contentAlignment = Alignment.Center
+  648:         ) {
+  649:             Icon(
+  650:                 imageVector = icon,
+  651:                 contentDescription = null,
+  652:                 tint = color,
+  653:                 modifier = Modifier.size(26.dp)
+  654:             )
+  655:         }
+  656: 
+  657:         Spacer(modifier = Modifier.size(14.dp))
+  658: 
+  659:         Column {
+  660:             Text(
+  661:                 text = number,
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\ui\screens\login\LoginScreen.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.ui.screens.login
+    2: 
+    3: import androidx.compose.foundation.background
+    4: import androidx.compose.foundation.border
+    5: import androidx.compose.foundation.layout.*
+    6: import androidx.compose.foundation.shape.CircleShape
+    7: import androidx.compose.foundation.shape.RoundedCornerShape
+    8: import androidx.compose.material.icons.Icons
+    9: import androidx.compose.material.icons.automirrored.rounded.Login
+   10: import androidx.compose.material.icons.rounded.Email
+   11: import androidx.compose.material.icons.rounded.Lock
+   12: import androidx.compose.material3.*
+   13: import androidx.compose.runtime.*
+
+--- HIT: 'CircleShape' around line 6 ---
+    1: package com.example.quizmaster.ui.screens.login
+    2: 
+    3: import androidx.compose.foundation.background
+    4: import androidx.compose.foundation.border
+    5: import androidx.compose.foundation.layout.*
+    6: import androidx.compose.foundation.shape.CircleShape
+    7: import androidx.compose.foundation.shape.RoundedCornerShape
+    8: import androidx.compose.material.icons.Icons
+    9: import androidx.compose.material.icons.automirrored.rounded.Login
+   10: import androidx.compose.material.icons.rounded.Email
+   11: import androidx.compose.material.icons.rounded.Lock
+   12: import androidx.compose.material3.*
+   13: import androidx.compose.runtime.*
+   14: import androidx.compose.ui.Alignment
+   15: import androidx.compose.ui.Modifier
+   16: import androidx.compose.ui.draw.blur
+   17: import androidx.compose.ui.draw.clip
+   18: import androidx.compose.ui.draw.scale
+
+--- HIT: 'Icons.AutoMirrored' around line 9 ---
+    1: package com.example.quizmaster.ui.screens.login
+    2: 
+    3: import androidx.compose.foundation.background
+    4: import androidx.compose.foundation.border
+    5: import androidx.compose.foundation.layout.*
+    6: import androidx.compose.foundation.shape.CircleShape
+    7: import androidx.compose.foundation.shape.RoundedCornerShape
+    8: import androidx.compose.material.icons.Icons
+    9: import androidx.compose.material.icons.automirrored.rounded.Login
+   10: import androidx.compose.material.icons.rounded.Email
+   11: import androidx.compose.material.icons.rounded.Lock
+   12: import androidx.compose.material3.*
+   13: import androidx.compose.runtime.*
+   14: import androidx.compose.ui.Alignment
+   15: import androidx.compose.ui.Modifier
+   16: import androidx.compose.ui.draw.blur
+   17: import androidx.compose.ui.draw.clip
+   18: import androidx.compose.ui.draw.scale
+   19: import androidx.compose.ui.graphics.Brush
+   20: import androidx.compose.ui.graphics.Color
+   21: import androidx.compose.ui.text.font.FontWeight
+
+--- HIT: 'QuizMaster' around line 27 ---
+   19: import androidx.compose.ui.graphics.Brush
+   20: import androidx.compose.ui.graphics.Color
+   21: import androidx.compose.ui.text.font.FontWeight
+   22: import androidx.compose.ui.text.input.PasswordVisualTransformation
+   23: import androidx.compose.ui.text.style.TextAlign
+   24: import androidx.compose.ui.tooling.preview.Preview
+   25: import androidx.compose.ui.unit.dp
+   26: import androidx.compose.ui.unit.sp
+   27: import com.example.quizmaster.ui.components.GlowCircle
+   28: import com.example.quizmaster.ui.theme.QuizMasterTheme
+   29: 
+   30: @Composable
+   31: fun LoginScreen(
+   32:     onLoginClick: () -> Unit
+   33: ) {
+   34:     var email by remember { mutableStateOf("") }
+   35:     var password by remember { mutableStateOf("") }
+   36: 
+   37:     // Temporarily relaxed for testing: no email format validation.
+   38:     val canLogin = email.isNotBlank() && password.isNotBlank()
+   39: 
+
+--- HIT: 'QuizMaster' around line 28 ---
+   20: import androidx.compose.ui.graphics.Color
+   21: import androidx.compose.ui.text.font.FontWeight
+   22: import androidx.compose.ui.text.input.PasswordVisualTransformation
+   23: import androidx.compose.ui.text.style.TextAlign
+   24: import androidx.compose.ui.tooling.preview.Preview
+   25: import androidx.compose.ui.unit.dp
+   26: import androidx.compose.ui.unit.sp
+   27: import com.example.quizmaster.ui.components.GlowCircle
+   28: import com.example.quizmaster.ui.theme.QuizMasterTheme
+   29: 
+   30: @Composable
+   31: fun LoginScreen(
+   32:     onLoginClick: () -> Unit
+   33: ) {
+   34:     var email by remember { mutableStateOf("") }
+   35:     var password by remember { mutableStateOf("") }
+   36: 
+   37:     // Temporarily relaxed for testing: no email format validation.
+   38:     val canLogin = email.isNotBlank() && password.isNotBlank()
+   39: 
+   40:     com.example.quizmaster.ui.components.AppBackground {
+
+--- HIT: 'Login' around line 31 ---
+   23: import androidx.compose.ui.text.style.TextAlign
+   24: import androidx.compose.ui.tooling.preview.Preview
+   25: import androidx.compose.ui.unit.dp
+   26: import androidx.compose.ui.unit.sp
+   27: import com.example.quizmaster.ui.components.GlowCircle
+   28: import com.example.quizmaster.ui.theme.QuizMasterTheme
+   29: 
+   30: @Composable
+   31: fun LoginScreen(
+   32:     onLoginClick: () -> Unit
+   33: ) {
+   34:     var email by remember { mutableStateOf("") }
+   35:     var password by remember { mutableStateOf("") }
+   36: 
+   37:     // Temporarily relaxed for testing: no email format validation.
+   38:     val canLogin = email.isNotBlank() && password.isNotBlank()
+   39: 
+   40:     com.example.quizmaster.ui.components.AppBackground {
+   41:         Column(
+   42:             modifier = Modifier
+   43:                 .fillMaxSize()
+
+--- HIT: 'Login' around line 32 ---
+   24: import androidx.compose.ui.tooling.preview.Preview
+   25: import androidx.compose.ui.unit.dp
+   26: import androidx.compose.ui.unit.sp
+   27: import com.example.quizmaster.ui.components.GlowCircle
+   28: import com.example.quizmaster.ui.theme.QuizMasterTheme
+   29: 
+   30: @Composable
+   31: fun LoginScreen(
+   32:     onLoginClick: () -> Unit
+   33: ) {
+   34:     var email by remember { mutableStateOf("") }
+   35:     var password by remember { mutableStateOf("") }
+   36: 
+   37:     // Temporarily relaxed for testing: no email format validation.
+   38:     val canLogin = email.isNotBlank() && password.isNotBlank()
+   39: 
+   40:     com.example.quizmaster.ui.components.AppBackground {
+   41:         Column(
+   42:             modifier = Modifier
+   43:                 .fillMaxSize()
+   44:                 .padding(24.dp),
+
+--- HIT: 'Login' around line 38 ---
+   30: @Composable
+   31: fun LoginScreen(
+   32:     onLoginClick: () -> Unit
+   33: ) {
+   34:     var email by remember { mutableStateOf("") }
+   35:     var password by remember { mutableStateOf("") }
+   36: 
+   37:     // Temporarily relaxed for testing: no email format validation.
+   38:     val canLogin = email.isNotBlank() && password.isNotBlank()
+   39: 
+   40:     com.example.quizmaster.ui.components.AppBackground {
+   41:         Column(
+   42:             modifier = Modifier
+   43:                 .fillMaxSize()
+   44:                 .padding(24.dp),
+   45:             horizontalAlignment = Alignment.CenterHorizontally,
+   46:             verticalArrangement = Arrangement.Center
+   47:         ) {
+   48:             // Logo area
+   49:             Box(
+   50:                 modifier = Modifier
+
+--- HIT: 'QuizMaster' around line 40 ---
+   32:     onLoginClick: () -> Unit
+   33: ) {
+   34:     var email by remember { mutableStateOf("") }
+   35:     var password by remember { mutableStateOf("") }
+   36: 
+   37:     // Temporarily relaxed for testing: no email format validation.
+   38:     val canLogin = email.isNotBlank() && password.isNotBlank()
+   39: 
+   40:     com.example.quizmaster.ui.components.AppBackground {
+   41:         Column(
+   42:             modifier = Modifier
+   43:                 .fillMaxSize()
+   44:                 .padding(24.dp),
+   45:             horizontalAlignment = Alignment.CenterHorizontally,
+   46:             verticalArrangement = Arrangement.Center
+   47:         ) {
+   48:             // Logo area
+   49:             Box(
+   50:                 modifier = Modifier
+   51:                     .size(100.dp)
+   52:                     .clip(CircleShape)
+
+--- HIT: 'CircleShape' around line 52 ---
+   44:                 .padding(24.dp),
+   45:             horizontalAlignment = Alignment.CenterHorizontally,
+   46:             verticalArrangement = Arrangement.Center
+   47:         ) {
+   48:             // Logo area
+   49:             Box(
+   50:                 modifier = Modifier
+   51:                     .size(100.dp)
+   52:                     .clip(CircleShape)
+   53:                     .background(Color.White.copy(alpha = 0.05f))
+   54:                     .border(1.dp, Color.White.copy(alpha = 0.15f), CircleShape),
+   55:                 contentAlignment = Alignment.Center
+   56:             ) {
+   57:                 Icon(
+   58:                     imageVector = Icons.AutoMirrored.Rounded.Login,
+   59:                     contentDescription = null,
+   60:                     tint = Color(0xFF60A5FA),
+   61:                     modifier = Modifier.size(48.dp)
+   62:                 )
+   63:             }
+   64: 
+
+--- HIT: 'CircleShape' around line 54 ---
+   46:             verticalArrangement = Arrangement.Center
+   47:         ) {
+   48:             // Logo area
+   49:             Box(
+   50:                 modifier = Modifier
+   51:                     .size(100.dp)
+   52:                     .clip(CircleShape)
+   53:                     .background(Color.White.copy(alpha = 0.05f))
+   54:                     .border(1.dp, Color.White.copy(alpha = 0.15f), CircleShape),
+   55:                 contentAlignment = Alignment.Center
+   56:             ) {
+   57:                 Icon(
+   58:                     imageVector = Icons.AutoMirrored.Rounded.Login,
+   59:                     contentDescription = null,
+   60:                     tint = Color(0xFF60A5FA),
+   61:                     modifier = Modifier.size(48.dp)
+   62:                 )
+   63:             }
+   64: 
+   65:             Spacer(modifier = Modifier.height(24.dp))
+   66: 
+
+--- HIT: 'Icon(' around line 57 ---
+   49:             Box(
+   50:                 modifier = Modifier
+   51:                     .size(100.dp)
+   52:                     .clip(CircleShape)
+   53:                     .background(Color.White.copy(alpha = 0.05f))
+   54:                     .border(1.dp, Color.White.copy(alpha = 0.15f), CircleShape),
+   55:                 contentAlignment = Alignment.Center
+   56:             ) {
+   57:                 Icon(
+   58:                     imageVector = Icons.AutoMirrored.Rounded.Login,
+   59:                     contentDescription = null,
+   60:                     tint = Color(0xFF60A5FA),
+   61:                     modifier = Modifier.size(48.dp)
+   62:                 )
+   63:             }
+   64: 
+   65:             Spacer(modifier = Modifier.height(24.dp))
+   66: 
+   67:             Text(
+   68:                 text = "Quiz Master",
+   69:                 color = Color.White,
+
+--- HIT: 'Icons.AutoMirrored' around line 58 ---
+   50:                 modifier = Modifier
+   51:                     .size(100.dp)
+   52:                     .clip(CircleShape)
+   53:                     .background(Color.White.copy(alpha = 0.05f))
+   54:                     .border(1.dp, Color.White.copy(alpha = 0.15f), CircleShape),
+   55:                 contentAlignment = Alignment.Center
+   56:             ) {
+   57:                 Icon(
+   58:                     imageVector = Icons.AutoMirrored.Rounded.Login,
+   59:                     contentDescription = null,
+   60:                     tint = Color(0xFF60A5FA),
+   61:                     modifier = Modifier.size(48.dp)
+   62:                 )
+   63:             }
+   64: 
+   65:             Spacer(modifier = Modifier.height(24.dp))
+   66: 
+   67:             Text(
+   68:                 text = "Quiz Master",
+   69:                 color = Color.White,
+   70:                 style = MaterialTheme.typography.displayMedium,
+
+--- HIT: 'Quiz Master' around line 68 ---
+   60:                     tint = Color(0xFF60A5FA),
+   61:                     modifier = Modifier.size(48.dp)
+   62:                 )
+   63:             }
+   64: 
+   65:             Spacer(modifier = Modifier.height(24.dp))
+   66: 
+   67:             Text(
+   68:                 text = "Quiz Master",
+   69:                 color = Color.White,
+   70:                 style = MaterialTheme.typography.displayMedium,
+   71:                 fontWeight = FontWeight.Black
+   72:             )
+   73: 
+   74:             Text(
+   75:                 text = "Sign in to continue",
+   76:                 color = Color.White.copy(alpha = 0.5f),
+   77:                 style = MaterialTheme.typography.titleMedium
+   78:             )
+   79: 
+   80:             Spacer(modifier = Modifier.height(48.dp))
+
+--- HIT: 'Sign in to continue' around line 75 ---
+   67:             Text(
+   68:                 text = "Quiz Master",
+   69:                 color = Color.White,
+   70:                 style = MaterialTheme.typography.displayMedium,
+   71:                 fontWeight = FontWeight.Black
+   72:             )
+   73: 
+   74:             Text(
+   75:                 text = "Sign in to continue",
+   76:                 color = Color.White.copy(alpha = 0.5f),
+   77:                 style = MaterialTheme.typography.titleMedium
+   78:             )
+   79: 
+   80:             Spacer(modifier = Modifier.height(48.dp))
+   81: 
+   82:             // Glassmorphic Card
+   83:             Surface(
+   84:                 modifier = Modifier
+   85:                     .fillMaxWidth()
+   86:                     .border(
+   87:                         width = 0.5.dp,
+
+--- HIT: 'Email Address' around line 104 ---
+   96:                 Column(
+   97:                     modifier = Modifier.padding(24.dp),
+   98:                     horizontalAlignment = Alignment.CenterHorizontally
+   99:                 ) {
+  100:                     OutlinedTextField(
+  101:                         value = email,
+  102:                         onValueChange = { email = it },
+  103:                         modifier = Modifier.fillMaxWidth(),
+  104:                         placeholder = { Text("Email Address", color = Color.White.copy(alpha = 0.3f)) },
+  105:                         leadingIcon = { Icon(Icons.Rounded.Email, null, tint = Color.White.copy(alpha = 0.5f)) },
+  106:                         shape = RoundedCornerShape(16.dp),
+  107:                         colors = OutlinedTextFieldDefaults.colors(
+  108:                             focusedTextColor = Color.White,
+  109:                             unfocusedTextColor = Color.White,
+  110:                             focusedBorderColor = MaterialTheme.colorScheme.primary,
+  111:                             unfocusedBorderColor = Color.White.copy(alpha = 0.1f),
+  112:                             cursorColor = MaterialTheme.colorScheme.primary
+  113:                         )
+  114:                     )
+  115: 
+  116:                     Spacer(modifier = Modifier.height(16.dp))
+
+--- HIT: 'Icon(' around line 105 ---
+   97:                     modifier = Modifier.padding(24.dp),
+   98:                     horizontalAlignment = Alignment.CenterHorizontally
+   99:                 ) {
+  100:                     OutlinedTextField(
+  101:                         value = email,
+  102:                         onValueChange = { email = it },
+  103:                         modifier = Modifier.fillMaxWidth(),
+  104:                         placeholder = { Text("Email Address", color = Color.White.copy(alpha = 0.3f)) },
+  105:                         leadingIcon = { Icon(Icons.Rounded.Email, null, tint = Color.White.copy(alpha = 0.5f)) },
+  106:                         shape = RoundedCornerShape(16.dp),
+  107:                         colors = OutlinedTextFieldDefaults.colors(
+  108:                             focusedTextColor = Color.White,
+  109:                             unfocusedTextColor = Color.White,
+  110:                             focusedBorderColor = MaterialTheme.colorScheme.primary,
+  111:                             unfocusedBorderColor = Color.White.copy(alpha = 0.1f),
+  112:                             cursorColor = MaterialTheme.colorScheme.primary
+  113:                         )
+  114:                     )
+  115: 
+  116:                     Spacer(modifier = Modifier.height(16.dp))
+  117: 
+
+--- HIT: 'Icon(' around line 123 ---
+  115: 
+  116:                     Spacer(modifier = Modifier.height(16.dp))
+  117: 
+  118:                     OutlinedTextField(
+  119:                         value = password,
+  120:                         onValueChange = { password = it },
+  121:                         modifier = Modifier.fillMaxWidth(),
+  122:                         placeholder = { Text("Password", color = Color.White.copy(alpha = 0.3f)) },
+  123:                         leadingIcon = { Icon(Icons.Rounded.Lock, null, tint = Color.White.copy(alpha = 0.5f)) },
+  124:                         visualTransformation = PasswordVisualTransformation(),
+  125:                         shape = RoundedCornerShape(16.dp),
+  126:                         colors = OutlinedTextFieldDefaults.colors(
+  127:                             focusedTextColor = Color.White,
+  128:                             unfocusedTextColor = Color.White,
+  129:                             focusedBorderColor = MaterialTheme.colorScheme.primary,
+  130:                             unfocusedBorderColor = Color.White.copy(alpha = 0.1f),
+  131:                             cursorColor = MaterialTheme.colorScheme.primary
+  132:                         )
+  133:                     )
+  134: 
+  135:                     Spacer(modifier = Modifier.height(12.dp))
+
+--- HIT: 'Login' around line 148 ---
+  140:                         fontSize = 14.sp,
+  141:                         fontWeight = FontWeight.Medium,
+  142:                         modifier = Modifier.align(Alignment.End)
+  143:                     )
+  144: 
+  145:                     Spacer(modifier = Modifier.height(32.dp))
+  146: 
+  147:                     Button(
+  148:                         onClick = onLoginClick,
+  149:                         enabled = canLogin,
+  150:                         modifier = Modifier
+  151:                             .fillMaxWidth()
+  152:                             .height(56.dp),
+  153:                         shape = RoundedCornerShape(16.dp),
+  154:                         colors = ButtonDefaults.buttonColors(
+  155:                             containerColor = MaterialTheme.colorScheme.primary,
+  156:                             contentColor = MaterialTheme.colorScheme.onPrimary,
+  157:                             disabledContainerColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.32f),
+  158:                             disabledContentColor = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.48f)
+  159:                         )
+  160:                     ) {
+
+--- HIT: 'Login' around line 149 ---
+  141:                         fontWeight = FontWeight.Medium,
+  142:                         modifier = Modifier.align(Alignment.End)
+  143:                     )
+  144: 
+  145:                     Spacer(modifier = Modifier.height(32.dp))
+  146: 
+  147:                     Button(
+  148:                         onClick = onLoginClick,
+  149:                         enabled = canLogin,
+  150:                         modifier = Modifier
+  151:                             .fillMaxWidth()
+  152:                             .height(56.dp),
+  153:                         shape = RoundedCornerShape(16.dp),
+  154:                         colors = ButtonDefaults.buttonColors(
+  155:                             containerColor = MaterialTheme.colorScheme.primary,
+  156:                             contentColor = MaterialTheme.colorScheme.onPrimary,
+  157:                             disabledContainerColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.32f),
+  158:                             disabledContentColor = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.48f)
+  159:                         )
+  160:                     ) {
+  161:                         Text(
+
+--- HIT: 'Login' around line 162 ---
+  154:                         colors = ButtonDefaults.buttonColors(
+  155:                             containerColor = MaterialTheme.colorScheme.primary,
+  156:                             contentColor = MaterialTheme.colorScheme.onPrimary,
+  157:                             disabledContainerColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.32f),
+  158:                             disabledContentColor = MaterialTheme.colorScheme.onPrimary.copy(alpha = 0.48f)
+  159:                         )
+  160:                     ) {
+  161:                         Text(
+  162:                             text = "Login",
+  163:                             fontSize = 18.sp,
+  164:                             fontWeight = FontWeight.Bold
+  165:                         )
+  166:                     }
+  167: 
+  168:                     Spacer(modifier = Modifier.height(16.dp))
+  169: 
+  170:                     OutlinedButton(
+  171:                         onClick = { /* Handle Google Sign In */ },
+  172:                         modifier = Modifier
+  173:                             .fillMaxWidth()
+  174:                             .height(56.dp),
+
+--- HIT: 'Sign in with Google' around line 190 ---
+  182:                         )
+  183:                     ) {
+  184:                         Row(
+  185:                             modifier = Modifier.fillMaxWidth(),
+  186:                             verticalAlignment = Alignment.CenterVertically,
+  187:                             horizontalArrangement = Arrangement.Center
+  188:                         ) {
+  189:                             Text(
+  190:                                 text = "Sign in with Google",
+  191:                                 fontSize = 16.sp,
+  192:                                 fontWeight = FontWeight.Medium,
+  193:                                 modifier = Modifier.weight(1f),
+  194:                                 textAlign = TextAlign.Center
+  195:                             )
+  196:                             
+  197:                             GoogleIcon(modifier = Modifier.size(24.dp))
+  198:                         }
+  199:                     }
+  200:                 }
+  201:             }
+  202: 
+
+--- HIT: 'Icon(' around line 197 ---
+  189:                             Text(
+  190:                                 text = "Sign in with Google",
+  191:                                 fontSize = 16.sp,
+  192:                                 fontWeight = FontWeight.Medium,
+  193:                                 modifier = Modifier.weight(1f),
+  194:                                 textAlign = TextAlign.Center
+  195:                             )
+  196:                             
+  197:                             GoogleIcon(modifier = Modifier.size(24.dp))
+  198:                         }
+  199:                     }
+  200:                 }
+  201:             }
+  202: 
+  203:             Spacer(modifier = Modifier.height(24.dp))
+  204: 
+  205:             Row {
+  206:                 Text(
+  207:                     text = "Don't have an account? ",
+  208:                     color = Color.White.copy(alpha = 0.5f),
+  209:                     fontSize = 14.sp
+
+--- HIT: 'Icon(' around line 223 ---
+  215:                     fontWeight = FontWeight.Bold
+  216:                 )
+  217:             }
+  218:         }
+  219:     }
+  220: }
+  221: 
+  222: @Composable
+  223: private fun GoogleIcon(modifier: Modifier = Modifier) {
+  224:     Box(
+  225:         modifier = modifier
+  226:             .clip(CircleShape)
+  227:             .background(Color.White)
+  228:             .padding(2.dp),
+  229:         contentAlignment = Alignment.Center
+  230:     ) {
+  231:         androidx.compose.foundation.Canvas(modifier = Modifier.fillMaxSize()) {
+  232:             val radius = size.minDimension / 2
+  233:             
+  234:             // Google Colors
+  235:             val red = Color(0xFFEA4335)
+
+--- HIT: 'CircleShape' around line 226 ---
+  218:         }
+  219:     }
+  220: }
+  221: 
+  222: @Composable
+  223: private fun GoogleIcon(modifier: Modifier = Modifier) {
+  224:     Box(
+  225:         modifier = modifier
+  226:             .clip(CircleShape)
+  227:             .background(Color.White)
+  228:             .padding(2.dp),
+  229:         contentAlignment = Alignment.Center
+  230:     ) {
+  231:         androidx.compose.foundation.Canvas(modifier = Modifier.fillMaxSize()) {
+  232:             val radius = size.minDimension / 2
+  233:             
+  234:             // Google Colors
+  235:             val red = Color(0xFFEA4335)
+  236:             val yellow = Color(0xFFFBBC05)
+  237:             val green = Color(0xFF34A853)
+  238:             val blue = Color(0xFF4285F4)
+
+--- HIT: 'Login' around line 261 ---
+  253:             fontWeight = FontWeight.Black,
+  254:             textAlign = TextAlign.Center
+  255:         )
+  256:     }
+  257: }
+  258: 
+  259: @Preview
+  260: @Composable
+  261: fun LoginScreenPreview() {
+  262:     QuizMasterTheme {
+  263:         LoginScreen(onLoginClick = {})
+  264:     }
+  265: }
+
+--- HIT: 'QuizMaster' around line 262 ---
+  254:             textAlign = TextAlign.Center
+  255:         )
+  256:     }
+  257: }
+  258: 
+  259: @Preview
+  260: @Composable
+  261: fun LoginScreenPreview() {
+  262:     QuizMasterTheme {
+  263:         LoginScreen(onLoginClick = {})
+  264:     }
+  265: }
+
+--- HIT: 'Login' around line 263 ---
+  255:         )
+  256:     }
+  257: }
+  258: 
+  259: @Preview
+  260: @Composable
+  261: fun LoginScreenPreview() {
+  262:     QuizMasterTheme {
+  263:         LoginScreen(onLoginClick = {})
+  264:     }
+  265: }
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\ui\screens\quiz\QuizPreviewScreen.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.ui.screens.quiz
+    2: import androidx.compose.ui.draw.alpha
+    3: import androidx.compose.animation.core.FastOutSlowInEasing
+    4: import androidx.compose.animation.core.LinearEasing
+    5: import androidx.compose.animation.core.RepeatMode
+    6: import androidx.compose.animation.core.animateFloat
+    7: import androidx.compose.animation.core.animateFloatAsState
+    8: import androidx.compose.animation.core.infiniteRepeatable
+    9: import androidx.compose.animation.core.rememberInfiniteTransition
+   10: import androidx.compose.animation.core.tween
+   11: import androidx.compose.foundation.Canvas
+   12: import androidx.compose.foundation.background
+   13: import androidx.compose.foundation.border
+
+--- HIT: 'CircleShape' around line 31 ---
+   23: import androidx.compose.foundation.layout.fillMaxSize
+   24: import androidx.compose.foundation.layout.fillMaxWidth
+   25: import androidx.compose.foundation.layout.height
+   26: import androidx.compose.foundation.layout.heightIn
+   27: import androidx.compose.foundation.layout.padding
+   28: import androidx.compose.foundation.layout.size
+   29: import androidx.compose.foundation.layout.systemBarsPadding
+   30: import androidx.compose.foundation.layout.width
+   31: import androidx.compose.foundation.shape.CircleShape
+   32: import androidx.compose.foundation.shape.RoundedCornerShape
+   33: import androidx.compose.material.icons.Icons
+   34: import androidx.compose.material.icons.rounded.CheckCircle
+   35: import androidx.compose.material.icons.rounded.Close
+   36: import androidx.compose.material.icons.rounded.LightMode
+   37: import androidx.compose.material.icons.rounded.Nightlight
+   38: import androidx.compose.material.icons.rounded.Refresh
+   39: import androidx.compose.material.icons.rounded.SkipNext
+   40: import androidx.compose.material3.AlertDialog
+   41: import androidx.compose.material3.ButtonDefaults
+   42: import androidx.compose.material3.Card
+   43: import androidx.compose.material3.CardDefaults
+
+--- HIT: 'IconButton' around line 46 ---
+   38: import androidx.compose.material.icons.rounded.Refresh
+   39: import androidx.compose.material.icons.rounded.SkipNext
+   40: import androidx.compose.material3.AlertDialog
+   41: import androidx.compose.material3.ButtonDefaults
+   42: import androidx.compose.material3.Card
+   43: import androidx.compose.material3.CardDefaults
+   44: import androidx.compose.material3.FilledTonalButton
+   45: import androidx.compose.material3.Icon
+   46: import androidx.compose.material3.IconButton
+   47: import androidx.compose.material3.LinearProgressIndicator
+   48: import androidx.compose.material3.MaterialTheme
+   49: import androidx.compose.material3.ProgressIndicatorDefaults
+   50: import androidx.compose.material3.Text
+   51: import androidx.compose.material3.TextButton
+   52: import androidx.compose.runtime.Composable
+   53: import androidx.compose.runtime.LaunchedEffect
+   54: import androidx.compose.runtime.getValue
+   55: import androidx.compose.runtime.mutableIntStateOf
+   56: import androidx.compose.runtime.mutableStateOf
+   57: import androidx.compose.runtime.remember
+   58: import androidx.compose.runtime.setValue
+
+--- HIT: 'QuizMaster' around line 74 ---
+   66: import androidx.compose.ui.graphics.drawscope.Stroke
+   67: import androidx.compose.ui.platform.LocalConfiguration
+   68: import androidx.compose.ui.platform.LocalContext
+   69: import androidx.compose.ui.text.font.FontWeight
+   70: import androidx.compose.ui.text.style.TextAlign
+   71: import androidx.compose.ui.text.style.TextOverflow
+   72: import androidx.compose.ui.unit.dp
+   73: import androidx.compose.ui.unit.sp
+   74: import com.example.quizmaster.data.local.QuestionEntity
+   75: import com.example.quizmaster.data.local.QuizDatabase
+   76: import com.example.quizmaster.data.remote.QuizApiService
+   77: import com.example.quizmaster.data.repository.QuestionRepository
+   78: import com.example.quizmaster.ui.components.AppBackground
+   79: import com.example.quizmaster.ui.components.CategoryHeader
+   80: import kotlinx.coroutines.Dispatchers
+   81: import kotlinx.coroutines.delay
+   82: import kotlinx.coroutines.withContext
+   83: import kotlin.time.Duration.Companion.seconds
+   84: 
+   85: private const val QUIZ_LIMIT = 10
+   86: private const val QUESTION_SECONDS = 15
+
+--- HIT: 'QuizMaster' around line 75 ---
+   67: import androidx.compose.ui.platform.LocalConfiguration
+   68: import androidx.compose.ui.platform.LocalContext
+   69: import androidx.compose.ui.text.font.FontWeight
+   70: import androidx.compose.ui.text.style.TextAlign
+   71: import androidx.compose.ui.text.style.TextOverflow
+   72: import androidx.compose.ui.unit.dp
+   73: import androidx.compose.ui.unit.sp
+   74: import com.example.quizmaster.data.local.QuestionEntity
+   75: import com.example.quizmaster.data.local.QuizDatabase
+   76: import com.example.quizmaster.data.remote.QuizApiService
+   77: import com.example.quizmaster.data.repository.QuestionRepository
+   78: import com.example.quizmaster.ui.components.AppBackground
+   79: import com.example.quizmaster.ui.components.CategoryHeader
+   80: import kotlinx.coroutines.Dispatchers
+   81: import kotlinx.coroutines.delay
+   82: import kotlinx.coroutines.withContext
+   83: import kotlin.time.Duration.Companion.seconds
+   84: 
+   85: private const val QUIZ_LIMIT = 10
+   86: private const val QUESTION_SECONDS = 15
+   87: private const val SKIPPED_ANSWER = "__SKIPPED_ANSWER__"
+
+--- HIT: 'QuizMaster' around line 76 ---
+   68: import androidx.compose.ui.platform.LocalContext
+   69: import androidx.compose.ui.text.font.FontWeight
+   70: import androidx.compose.ui.text.style.TextAlign
+   71: import androidx.compose.ui.text.style.TextOverflow
+   72: import androidx.compose.ui.unit.dp
+   73: import androidx.compose.ui.unit.sp
+   74: import com.example.quizmaster.data.local.QuestionEntity
+   75: import com.example.quizmaster.data.local.QuizDatabase
+   76: import com.example.quizmaster.data.remote.QuizApiService
+   77: import com.example.quizmaster.data.repository.QuestionRepository
+   78: import com.example.quizmaster.ui.components.AppBackground
+   79: import com.example.quizmaster.ui.components.CategoryHeader
+   80: import kotlinx.coroutines.Dispatchers
+   81: import kotlinx.coroutines.delay
+   82: import kotlinx.coroutines.withContext
+   83: import kotlin.time.Duration.Companion.seconds
+   84: 
+   85: private const val QUIZ_LIMIT = 10
+   86: private const val QUESTION_SECONDS = 15
+   87: private const val SKIPPED_ANSWER = "__SKIPPED_ANSWER__"
+   88: 
+
+--- HIT: 'QuizMaster' around line 77 ---
+   69: import androidx.compose.ui.text.font.FontWeight
+   70: import androidx.compose.ui.text.style.TextAlign
+   71: import androidx.compose.ui.text.style.TextOverflow
+   72: import androidx.compose.ui.unit.dp
+   73: import androidx.compose.ui.unit.sp
+   74: import com.example.quizmaster.data.local.QuestionEntity
+   75: import com.example.quizmaster.data.local.QuizDatabase
+   76: import com.example.quizmaster.data.remote.QuizApiService
+   77: import com.example.quizmaster.data.repository.QuestionRepository
+   78: import com.example.quizmaster.ui.components.AppBackground
+   79: import com.example.quizmaster.ui.components.CategoryHeader
+   80: import kotlinx.coroutines.Dispatchers
+   81: import kotlinx.coroutines.delay
+   82: import kotlinx.coroutines.withContext
+   83: import kotlin.time.Duration.Companion.seconds
+   84: 
+   85: private const val QUIZ_LIMIT = 10
+   86: private const val QUESTION_SECONDS = 15
+   87: private const val SKIPPED_ANSWER = "__SKIPPED_ANSWER__"
+   88: 
+   89: @Composable
+
+--- HIT: 'QuizMaster' around line 78 ---
+   70: import androidx.compose.ui.text.style.TextAlign
+   71: import androidx.compose.ui.text.style.TextOverflow
+   72: import androidx.compose.ui.unit.dp
+   73: import androidx.compose.ui.unit.sp
+   74: import com.example.quizmaster.data.local.QuestionEntity
+   75: import com.example.quizmaster.data.local.QuizDatabase
+   76: import com.example.quizmaster.data.remote.QuizApiService
+   77: import com.example.quizmaster.data.repository.QuestionRepository
+   78: import com.example.quizmaster.ui.components.AppBackground
+   79: import com.example.quizmaster.ui.components.CategoryHeader
+   80: import kotlinx.coroutines.Dispatchers
+   81: import kotlinx.coroutines.delay
+   82: import kotlinx.coroutines.withContext
+   83: import kotlin.time.Duration.Companion.seconds
+   84: 
+   85: private const val QUIZ_LIMIT = 10
+   86: private const val QUESTION_SECONDS = 15
+   87: private const val SKIPPED_ANSWER = "__SKIPPED_ANSWER__"
+   88: 
+   89: @Composable
+   90: fun QuizPreviewScreen(
+
+--- HIT: 'QuizMaster' around line 79 ---
+   71: import androidx.compose.ui.text.style.TextOverflow
+   72: import androidx.compose.ui.unit.dp
+   73: import androidx.compose.ui.unit.sp
+   74: import com.example.quizmaster.data.local.QuestionEntity
+   75: import com.example.quizmaster.data.local.QuizDatabase
+   76: import com.example.quizmaster.data.remote.QuizApiService
+   77: import com.example.quizmaster.data.repository.QuestionRepository
+   78: import com.example.quizmaster.ui.components.AppBackground
+   79: import com.example.quizmaster.ui.components.CategoryHeader
+   80: import kotlinx.coroutines.Dispatchers
+   81: import kotlinx.coroutines.delay
+   82: import kotlinx.coroutines.withContext
+   83: import kotlin.time.Duration.Companion.seconds
+   84: 
+   85: private const val QUIZ_LIMIT = 10
+   86: private const val QUESTION_SECONDS = 15
+   87: private const val SKIPPED_ANSWER = "__SKIPPED_ANSWER__"
+   88: 
+   89: @Composable
+   90: fun QuizPreviewScreen(
+   91:     selectedCategory: String,
+
+--- HIT: 'CircleShape' around line 390 ---
+  382: 
+  383:             Spacer(modifier = Modifier.height(5.dp))
+  384: 
+  385:             LinearProgressIndicator(
+  386:                 progress = { animatedProgress },
+  387:                 modifier = Modifier
+  388:                     .fillMaxWidth(0.86f)
+  389:                     .height(5.dp)
+  390:                     .clip(CircleShape),
+  391:                 color = MaterialTheme.colorScheme.primary,
+  392:                 trackColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.12f),
+  393:                 strokeCap = StrokeCap.Round
+  394:             )
+  395:         }
+  396: 
+  397:         IconButton(
+  398:             onClick = onThemeToggle,
+  399:             modifier = Modifier.size(34.dp)
+  400:         ) {
+  401:             Icon(
+  402:                 imageVector = if (isDarkTheme) Icons.Rounded.LightMode else Icons.Rounded.Nightlight,
+
+--- HIT: 'IconButton' around line 397 ---
+  389:                     .height(5.dp)
+  390:                     .clip(CircleShape),
+  391:                 color = MaterialTheme.colorScheme.primary,
+  392:                 trackColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.12f),
+  393:                 strokeCap = StrokeCap.Round
+  394:             )
+  395:         }
+  396: 
+  397:         IconButton(
+  398:             onClick = onThemeToggle,
+  399:             modifier = Modifier.size(34.dp)
+  400:         ) {
+  401:             Icon(
+  402:                 imageVector = if (isDarkTheme) Icons.Rounded.LightMode else Icons.Rounded.Nightlight,
+  403:                 contentDescription = "Toggle Theme",
+  404:                 tint = MaterialTheme.colorScheme.primary,
+  405:                 modifier = Modifier.size(18.dp)
+  406:             )
+  407:         }
+  408: 
+  409:         CompactCountdownTimer(secondsLeft = secondsLeft)
+
+--- HIT: 'Icon(' around line 401 ---
+  393:                 strokeCap = StrokeCap.Round
+  394:             )
+  395:         }
+  396: 
+  397:         IconButton(
+  398:             onClick = onThemeToggle,
+  399:             modifier = Modifier.size(34.dp)
+  400:         ) {
+  401:             Icon(
+  402:                 imageVector = if (isDarkTheme) Icons.Rounded.LightMode else Icons.Rounded.Nightlight,
+  403:                 contentDescription = "Toggle Theme",
+  404:                 tint = MaterialTheme.colorScheme.primary,
+  405:                 modifier = Modifier.size(18.dp)
+  406:             )
+  407:         }
+  408: 
+  409:         CompactCountdownTimer(secondsLeft = secondsLeft)
+  410:     }
+  411: }
+  412: 
+  413: @Composable
+
+--- HIT: 'Icon(' around line 585 ---
+  577:                     MaterialTheme.colorScheme.onSurfaceVariant
+  578:                 },
+  579:                 maxLines = 2,
+  580:                 overflow = TextOverflow.Ellipsis,
+  581:                 textAlign = TextAlign.Start
+  582:             )
+  583: 
+  584:             if (isLocked && isCorrectAnswer) {
+  585:                 Icon(
+  586:                     imageVector = Icons.Rounded.CheckCircle,
+  587:                     contentDescription = null,
+  588:                     tint = Color.White,
+  589:                     modifier = Modifier.size(17.dp)
+  590:                 )
+  591:             } else if (isLocked && isSelected) {
+  592:                 Icon(
+  593:                     imageVector = Icons.Rounded.Close,
+  594:                     contentDescription = null,
+  595:                     tint = Color.White,
+  596:                     modifier = Modifier.size(17.dp)
+  597:                 )
+
+--- HIT: 'Icon(' around line 592 ---
+  584:             if (isLocked && isCorrectAnswer) {
+  585:                 Icon(
+  586:                     imageVector = Icons.Rounded.CheckCircle,
+  587:                     contentDescription = null,
+  588:                     tint = Color.White,
+  589:                     modifier = Modifier.size(17.dp)
+  590:                 )
+  591:             } else if (isLocked && isSelected) {
+  592:                 Icon(
+  593:                     imageVector = Icons.Rounded.Close,
+  594:                     contentDescription = null,
+  595:                     tint = Color.White,
+  596:                     modifier = Modifier.size(17.dp)
+  597:                 )
+  598:             }
+  599:         }
+  600:     }
+  601: }
+  602: 
+  603: @Composable
+  604: private fun CompactFooter(
+
+--- HIT: 'Icon(' around line 671 ---
+  663:                     maxLines = 1,
+  664:                     overflow = TextOverflow.Ellipsis
+  665:                 )
+  666: 
+  667:                 TextButton(
+  668:                     onClick = onSkipClick,
+  669:                     contentPadding = PaddingValues(horizontal = 8.dp, vertical = 0.dp)
+  670:                 ) {
+  671:                     Icon(
+  672:                         imageVector = Icons.Rounded.SkipNext,
+  673:                         contentDescription = null,
+  674:                         modifier = Modifier.size(14.dp)
+  675:                     )
+  676: 
+  677:                     Spacer(modifier = Modifier.width(4.dp))
+  678: 
+  679:                     Text(
+  680:                         text = "Skip",
+  681:                         fontSize = 11.sp,
+  682:                         fontWeight = FontWeight.Bold
+  683:                     )
+
+--- HIT: 'Icon(' around line 705 ---
+  697:         modifier = Modifier.heightIn(min = 32.dp, max = 36.dp),
+  698:         shape = RoundedCornerShape(12.dp),
+  699:         contentPadding = PaddingValues(horizontal = 14.dp, vertical = 2.dp),
+  700:         colors = ButtonDefaults.filledTonalButtonColors(
+  701:             containerColor = MaterialTheme.colorScheme.primary.copy(alpha = 0.22f),
+  702:             contentColor = MaterialTheme.colorScheme.primary
+  703:         )
+  704:     ) {
+  705:         Icon(
+  706:             imageVector = Icons.Rounded.SkipNext,
+  707:             contentDescription = null,
+  708:             modifier = Modifier.size(15.dp)
+  709:         )
+  710: 
+  711:         Spacer(modifier = Modifier.width(6.dp))
+  712: 
+  713:         Text(
+  714:             text = text,
+  715:             fontSize = 12.sp,
+  716:             fontWeight = FontWeight.ExtraBold,
+  717:             maxLines = 1
+
+--- HIT: 'Icon(' around line 732 ---
+  724: @Composable
+  725: private fun CompactSkipDialog(
+  726:     onDismiss: () -> Unit,
+  727:     onConfirm: () -> Unit
+  728: ) {
+  729:     AlertDialog(
+  730:         onDismissRequest = onDismiss,
+  731:         icon = {
+  732:             Icon(
+  733:                 imageVector = Icons.Rounded.SkipNext,
+  734:                 contentDescription = null,
+  735:                 tint = MaterialTheme.colorScheme.tertiary
+  736:             )
+  737:         },
+  738:         title = {
+  739:             Text(
+  740:                 text = "Skip this question?",
+  741:                 fontSize = 18.sp,
+  742:                 fontWeight = FontWeight.Black
+  743:             )
+  744:         },
+
+--- HIT: 'Icon(' around line 845 ---
+  837:         Spacer(modifier = Modifier.height(8.dp))
+  838: 
+  839:         FilledTonalButton(
+  840:             onClick = onBackClick,
+  841:             modifier = Modifier.heightIn(min = 34.dp, max = 38.dp),
+  842:             shape = RoundedCornerShape(12.dp),
+  843:             contentPadding = PaddingValues(horizontal = 14.dp, vertical = 2.dp)
+  844:         ) {
+  845:             Icon(
+  846:                 imageVector = Icons.Rounded.Refresh,
+  847:                 contentDescription = null,
+  848:                 modifier = Modifier.size(15.dp)
+  849:             )
+  850: 
+  851:             Spacer(modifier = Modifier.width(6.dp))
+  852: 
+  853:             Text(
+  854:                 text = "Back to difficulty",
+  855:                 fontSize = 12.sp,
+  856:                 fontWeight = FontWeight.ExtraBold
+  857:             )
+
+--- HIT: 'CircleShape' around line 934 ---
+  926:         warning -> Color(0xFFF59E0B)
+  927:         else -> MaterialTheme.colorScheme.primary
+  928:     }
+  929: 
+  930:     Box(
+  931:         modifier = modifier
+  932:             .size(if (critical) 54.dp else 50.dp)
+  933:             .alpha(blinkAlpha)
+  934:             .clip(CircleShape)
+  935:             .background(
+  936:                 timerColor.copy(
+  937:                     alpha = if (critical) 0.22f else 0.13f
+  938:                 )
+  939:             )
+  940:             .border(
+  941:                 width = if (critical) 2.dp else 1.2.dp,
+  942:                 color = timerColor.copy(
+  943:                     alpha = if (critical) 0.95f else 0.62f
+  944:                 ),
+  945:                 shape = CircleShape
+  946:             ),
+
+--- HIT: 'CircleShape' around line 945 ---
+  937:                     alpha = if (critical) 0.22f else 0.13f
+  938:                 )
+  939:             )
+  940:             .border(
+  941:                 width = if (critical) 2.dp else 1.2.dp,
+  942:                 color = timerColor.copy(
+  943:                     alpha = if (critical) 0.95f else 0.62f
+  944:                 ),
+  945:                 shape = CircleShape
+  946:             ),
+  947:         contentAlignment = Alignment.Center
+  948:     ) {
+  949:         Text(
+  950:             text = safeSeconds.toString(),
+  951:             fontSize = if (critical) 18.sp else 15.sp,
+  952:             fontWeight = FontWeight.Black,
+  953:             color = timerColor
+  954:         )
+  955:     }
+  956: }
+  957: 
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\ui\screens\splash\SplashScreen.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.ui.screens.splash
+    2: 
+    3: import androidx.compose.foundation.background
+    4: import androidx.compose.foundation.border
+    5: import androidx.compose.foundation.layout.Box
+    6: import androidx.compose.foundation.layout.fillMaxSize
+    7: import androidx.compose.foundation.layout.size
+    8: import androidx.compose.foundation.shape.RoundedCornerShape
+    9: import androidx.compose.material.icons.Icons
+   10: import androidx.compose.material.icons.rounded.Bolt
+   11: import androidx.compose.material3.Icon
+   12: import androidx.compose.material3.MaterialTheme
+   13: import androidx.compose.runtime.Composable
+
+--- HIT: 'QuizMaster' around line 20 ---
+   12: import androidx.compose.material3.MaterialTheme
+   13: import androidx.compose.runtime.Composable
+   14: import androidx.compose.runtime.LaunchedEffect
+   15: import androidx.compose.ui.Alignment
+   16: import androidx.compose.ui.Modifier
+   17: import androidx.compose.ui.graphics.Brush
+   18: import androidx.compose.ui.res.painterResource
+   19: import androidx.compose.ui.unit.dp
+   20: import com.example.quizmaster.R
+   21: import kotlinx.coroutines.delay
+   22: import kotlin.time.Duration.Companion.milliseconds
+   23: 
+   24: @Composable
+   25: fun SplashScreen(
+   26:     onSplashFinished: () -> Unit
+   27: ) {
+   28:     LaunchedEffect(Unit) {
+   29:         delay(700.milliseconds)
+   30:         onSplashFinished()
+   31:     }
+   32: 
+
+--- HIT: 'QuizMaster' around line 39 ---
+   31:     }
+   32: 
+   33:     Box(
+   34:         modifier = Modifier
+   35:             .fillMaxSize()
+   36:             .background(MaterialTheme.colorScheme.background),
+   37:         contentAlignment = Alignment.Center
+   38:     ) {
+   39:         QuizMasterSplashLogo()
+   40:     }
+   41: }
+   42: 
+   43: @Composable
+   44: private fun QuizMasterSplashLogo() {
+   45:     Box(
+   46:         modifier = Modifier
+   47:             .size(116.dp)
+   48:             .background(
+   49:                 brush = Brush.linearGradient(
+   50:                     colors = listOf(
+   51:                         MaterialTheme.colorScheme.primary,
+
+--- HIT: 'QuizMaster' around line 44 ---
+   36:             .background(MaterialTheme.colorScheme.background),
+   37:         contentAlignment = Alignment.Center
+   38:     ) {
+   39:         QuizMasterSplashLogo()
+   40:     }
+   41: }
+   42: 
+   43: @Composable
+   44: private fun QuizMasterSplashLogo() {
+   45:     Box(
+   46:         modifier = Modifier
+   47:             .size(116.dp)
+   48:             .background(
+   49:                 brush = Brush.linearGradient(
+   50:                     colors = listOf(
+   51:                         MaterialTheme.colorScheme.primary,
+   52:                         MaterialTheme.colorScheme.secondary
+   53:                     )
+   54:                 ),
+   55:                 shape = RoundedCornerShape(32.dp)
+   56:             )
+
+--- HIT: 'Icon(' around line 64 ---
+   56:             )
+   57:             .border(
+   58:                 width = 1.dp,
+   59:                 color = MaterialTheme.colorScheme.primary.copy(alpha = 0.45f),
+   60:                 shape = RoundedCornerShape(32.dp)
+   61:             ),
+   62:         contentAlignment = Alignment.Center
+   63:     ) {
+   64:         Icon(
+   65:             imageVector = Icons.Rounded.Bolt,
+   66:             contentDescription = null,
+   67:             modifier = Modifier.size(68.dp),
+   68:             tint = MaterialTheme.colorScheme.onPrimary
+   69:         )
+   70:     }
+   71: }
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\ui\theme\Color.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.ui.theme
+    2: 
+    3: import androidx.compose.ui.graphics.Color
+    4: 
+    5: // ------------------------------------------------------------
+    6: // QUIZMASTER NEON JUNGLE / MATERIAL 3 PALETTE
+    7: // ------------------------------------------------------------
+    8: 
+    9: val NeonBlue = Color(0xFF3B82F6)
+   10: val NeonRed = Color(0xFFEF4444)
+   11: val NeonPurple = Color(0xFF9D4DFF)
+   12: val NeonPink = Color(0xFFFF4DDB)
+   13: val JungleGreen = Color(0xFF39FF8A)
+
+--- HIT: 'QuizMaster' around line 6 ---
+    1: package com.example.quizmaster.ui.theme
+    2: 
+    3: import androidx.compose.ui.graphics.Color
+    4: 
+    5: // ------------------------------------------------------------
+    6: // QUIZMASTER NEON JUNGLE / MATERIAL 3 PALETTE
+    7: // ------------------------------------------------------------
+    8: 
+    9: val NeonBlue = Color(0xFF3B82F6)
+   10: val NeonRed = Color(0xFFEF4444)
+   11: val NeonPurple = Color(0xFF9D4DFF)
+   12: val NeonPink = Color(0xFFFF4DDB)
+   13: val JungleGreen = Color(0xFF39FF8A)
+   14: val JungleGold = Color(0xFFFFB84D)
+   15: val AquaCyan = Color(0xFF38DFFF)
+   16: 
+   17: val DeepBlack = Color(0xFF050711)
+   18: val DarkBlue = Color(0xFF0A192F)
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\ui\theme\Theme.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.ui.theme
+    2: import androidx.compose.ui.platform.LocalConfiguration
+    3: import android.os.Build
+    4: import androidx.compose.animation.core.FastOutSlowInEasing
+    5: import androidx.compose.animation.core.RepeatMode
+    6: import androidx.compose.animation.core.Spring
+    7: import androidx.compose.runtime.State
+    8: import androidx.compose.animation.core.animateFloat
+    9: import androidx.compose.animation.core.infiniteRepeatable
+   10: import androidx.compose.animation.core.rememberInfiniteTransition
+   11: import androidx.compose.animation.core.spring
+   12: import androidx.compose.animation.core.tween
+   13: import androidx.compose.foundation.isSystemInDarkTheme
+
+--- HIT: 'QuizMaster' around line 309 ---
+  301:             ),
+  302:             repeatMode = RepeatMode.Reverse
+  303:         ),
+  304:         label = "neonPulseValue"
+  305:     )
+  306: }
+  307: 
+  308: @Composable
+  309: fun QuizMasterTheme(
+  310:     darkTheme: Boolean = isSystemInDarkTheme(),
+  311:     dynamicColor: Boolean = false,
+  312:     content: @Composable () -> Unit
+  313: ) {
+  314:     val configuration = LocalConfiguration.current
+  315: 
+  316:     val useCompactLightTheme = configuration.screenWidthDp <= 393 ||
+  317:         configuration.screenHeightDp <= 860
+  318: 
+  319:     val colorScheme = when {
+  320:         darkTheme -> NeonDarkColorScheme
+  321:         useCompactLightTheme -> CompactReadableLightColorScheme
+
+--- HIT: 'QuizMaster' around line 327 ---
+  319:     val colorScheme = when {
+  320:         darkTheme -> NeonDarkColorScheme
+  321:         useCompactLightTheme -> CompactReadableLightColorScheme
+  322:         else -> ReadableLightColorScheme
+  323:     }
+  324: 
+  325:     MaterialTheme(
+  326:         colorScheme = colorScheme,
+  327:         typography = QuizMasterTypography,
+  328:         content = content
+  329:     )
+  330: }
+  331: 
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\ui\theme\Type.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.ui.theme
+    2: 
+    3: import androidx.compose.material3.Typography
+    4: import androidx.compose.ui.text.TextStyle
+    5: import androidx.compose.ui.text.font.Font
+    6: import androidx.compose.ui.text.font.FontFamily
+    7: import androidx.compose.ui.text.font.FontWeight
+    8: import androidx.compose.ui.unit.sp
+    9: import com.example.quizmaster.R
+   10: 
+   11: val Sora = FontFamily(
+   12:     Font(R.font.sora_regular, FontWeight.Normal),
+   13:     Font(R.font.sora_medium, FontWeight.Medium),
+
+--- HIT: 'QuizMaster' around line 9 ---
+    1: package com.example.quizmaster.ui.theme
+    2: 
+    3: import androidx.compose.material3.Typography
+    4: import androidx.compose.ui.text.TextStyle
+    5: import androidx.compose.ui.text.font.Font
+    6: import androidx.compose.ui.text.font.FontFamily
+    7: import androidx.compose.ui.text.font.FontWeight
+    8: import androidx.compose.ui.unit.sp
+    9: import com.example.quizmaster.R
+   10: 
+   11: val Sora = FontFamily(
+   12:     Font(R.font.sora_regular, FontWeight.Normal),
+   13:     Font(R.font.sora_medium, FontWeight.Medium),
+   14:     Font(R.font.sora_semibold, FontWeight.SemiBold),
+   15:     Font(R.font.sora_bold, FontWeight.Bold)
+   16: )
+   17: 
+   18: val QuizMasterTypography = Typography(
+   19:     displayLarge = TextStyle(
+   20:         fontFamily = Sora,
+   21:         fontWeight = FontWeight.Bold,
+
+--- HIT: 'QuizMaster' around line 18 ---
+   10: 
+   11: val Sora = FontFamily(
+   12:     Font(R.font.sora_regular, FontWeight.Normal),
+   13:     Font(R.font.sora_medium, FontWeight.Medium),
+   14:     Font(R.font.sora_semibold, FontWeight.SemiBold),
+   15:     Font(R.font.sora_bold, FontWeight.Bold)
+   16: )
+   17: 
+   18: val QuizMasterTypography = Typography(
+   19:     displayLarge = TextStyle(
+   20:         fontFamily = Sora,
+   21:         fontWeight = FontWeight.Bold,
+   22:         fontSize = 42.sp,
+   23:         lineHeight = 48.sp,
+   24:         letterSpacing = (-0.5).sp
+   25:     ),
+   26:     headlineLarge = TextStyle(
+   27:         fontFamily = Sora,
+   28:         fontWeight = FontWeight.Bold,
+   29:         fontSize = 32.sp,
+   30:         lineHeight = 38.sp,
+
+============================================================
+FILE: C:\Users\pdrpic86\Desktop\QuizMaster-push\app\src\main\java\com\example\quizmaster\ui\util\Adaptive.kt
+============================================================
+
+--- HIT: 'QuizMaster' around line 1 ---
+    1: package com.example.quizmaster.ui.util
+    2: 
+    3: import androidx.compose.foundation.layout.Box
+    4: import androidx.compose.foundation.layout.fillMaxSize
+    5: import androidx.compose.foundation.layout.padding
+    6: import androidx.compose.foundation.layout.safeDrawingPadding
+    7: import androidx.compose.runtime.Composable
+    8: import androidx.compose.runtime.CompositionLocalProvider
+    9: import androidx.compose.ui.Modifier
+   10: import androidx.compose.ui.platform.LocalConfiguration
+   11: import androidx.compose.ui.platform.LocalDensity
+   12: import androidx.compose.ui.unit.Density
+   13: import androidx.compose.ui.unit.dp
