@@ -1,3 +1,0 @@
-Starting: Intent { cmp=com.example.quizmaster/.MainActivity }
-Error type 3
-Error: Activity class {com.example.quizmaster/com.example.quizmaster.MainActivity} does not exist.

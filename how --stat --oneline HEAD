@@ -1,9 +1,0 @@
-* [33m417bb40[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m)[m Apply MD3 UI polish and skip dialog patch
-* [33mb8097eb[m Fix Neon Jungle theme compile errors
-* [33me4b19e6[m Replace app with updated QuizMaster source
-* [33m6fdcda1[m[33m ([m[1;31morigin/backup-before-replace[m[33m, [m[1;32mbackup-before-replace[m[33m)[m part2/21
-* [33m45db604[m part2/2
-* [33m1920157[m Enhance QuizMaster: Smooth timer, Login screen, and Ktor integration
-* [33ma532a98[m build: modernize splash screen, update to SDK 37, and fix build/crash issues
-* [33m052c741[m Working demo app
-* [33m00e5967[m Initial clean QuizMaster version

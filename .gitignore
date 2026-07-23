@@ -18,6 +18,16 @@ local.properties
 .cxx/
 captures/
 
+# Local backups and debug logs
+app/src/*-backup*/
+*.bak-*
+*.bak_*
+crash-*.txt
+*-log.txt
+NAV_BUTTON_HUNT.txt
+start-result.txt
+how --stat --oneline HEAD
+
 # OS files
 .DS_Store
 Thumbs.db
