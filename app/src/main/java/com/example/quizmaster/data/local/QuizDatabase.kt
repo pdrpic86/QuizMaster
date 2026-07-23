@@ -12,7 +12,7 @@ import kotlinx.coroutines.launch
 @Database(
     entities = [QuestionEntity::class],
     version = 1,
-    exportSchema = false
+    exportSchema = true
 )
 abstract class QuizDatabase : RoomDatabase() {
 
@@ -40,7 +40,6 @@ abstract class QuizDatabase : RoomDatabase() {
                             }
                         }
                     })
-                    .fallbackToDestructiveMigration(false)
                     .build()
 
                 INSTANCE = instance
@@ -148,3 +147,4 @@ abstract class QuizDatabase : RoomDatabase() {
         }
     }
 }
+
