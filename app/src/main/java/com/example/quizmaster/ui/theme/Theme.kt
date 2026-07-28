@@ -1,279 +1,153 @@
 package com.example.quizmaster.ui.theme
-import androidx.compose.ui.platform.LocalConfiguration
-import android.os.Build
+
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.RepeatMode
 import androidx.compose.animation.core.Spring
-import androidx.compose.runtime.State
 import androidx.compose.animation.core.animateFloat
 import androidx.compose.animation.core.infiniteRepeatable
 import androidx.compose.animation.core.rememberInfiniteTransition
 import androidx.compose.animation.core.spring
 import androidx.compose.animation.core.tween
-import androidx.compose.foundation.isSystemInDarkTheme
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Shapes
 import androidx.compose.material3.darkColorScheme
-import androidx.compose.material3.dynamicDarkColorScheme
-import androidx.compose.material3.dynamicLightColorScheme
-import androidx.compose.material3.lightColorScheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.State
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.platform.LocalContext
 
-// ------------------------------------------------------------
-// MATERIAL 3 COLOR SCHEME - polished custom default + dynamic support
-// ------------------------------------------------------------
-
-
-private val ReadableLightColorScheme = lightColorScheme(
-    primary = Color(0xFF5B21B6),
+private val PremiumDarkColorScheme = darkColorScheme(
+    primary = PremiumPurple,
     onPrimary = Color.White,
-    primaryContainer = Color(0xFFE9DDFF),
-    onPrimaryContainer = Color(0xFF24104F),
+    primaryContainer = PremiumPlum,
+    onPrimaryContainer = Color(0xFFF0E5FF),
 
-    secondary = Color(0xFF047857),
-    onSecondary = Color.White,
-    secondaryContainer = Color(0xFFD1FAE5),
-    onSecondaryContainer = Color(0xFF052E25),
-
-    tertiary = Color(0xFFB45309),
-    onTertiary = Color.White,
-    tertiaryContainer = Color(0xFFFFE8C2),
-    onTertiaryContainer = Color(0xFF3B2200),
-
-    background = Color(0xFFF8F5FF),
-    onBackground = Color(0xFF111827),
-
-    surface = Color(0xFFFFFFFF),
-    onSurface = Color(0xFF111827),
-
-    surfaceVariant = Color(0xFFEDE7F6),
-    onSurfaceVariant = Color(0xFF374151),
-
-    surfaceContainerLowest = Color(0xFFFFFFFF),
-    surfaceContainerLow = Color(0xFFFAF7FF),
-    surfaceContainer = Color(0xFFF3ECFF),
-    surfaceContainerHigh = Color(0xFFECE4F8),
-    surfaceContainerHighest = Color(0xFFE5DCF3),
-
-    outline = Color(0xFF7C6F91),
-    outlineVariant = Color(0xFFCFC2DD),
-
-    error = Color(0xFFB3261E),
-    onError = Color.White,
-    errorContainer = Color(0xFFFFDAD6),
-    onErrorContainer = Color(0xFF410002),
-
-    inverseSurface = Color(0xFF1F2937),
-    inverseOnSurface = Color(0xFFF9FAFB),
-    inversePrimary = Color(0xFFC4B5FD),
-
-    scrim = Color(0xFF000000)
-)
-
-private val CompactReadableLightColorScheme = lightColorScheme(
-    primary = Color(0xFF4C1D95),
-    onPrimary = Color.White,
-    primaryContainer = Color(0xFFDCCBFF),
-    onPrimaryContainer = Color(0xFF1A0B3D),
-
-    secondary = Color(0xFF065F46),
-    onSecondary = Color.White,
-    secondaryContainer = Color(0xFFBFF3DA),
-    onSecondaryContainer = Color(0xFF022C22),
-
-    tertiary = Color(0xFF92400E),
-    onTertiary = Color.White,
-    tertiaryContainer = Color(0xFFFFDEAD),
-    onTertiaryContainer = Color(0xFF301800),
-
-    background = Color(0xFFF6F1FF),
-    onBackground = Color(0xFF0F172A),
-
-    surface = Color(0xFFFFFFFF),
-    onSurface = Color(0xFF0F172A),
-
-    surfaceVariant = Color(0xFFE7DFF2),
-    onSurfaceVariant = Color(0xFF1F2937),
-
-    surfaceContainerLowest = Color(0xFFFFFFFF),
-    surfaceContainerLow = Color(0xFFFBF8FF),
-    surfaceContainer = Color(0xFFF0E7FF),
-    surfaceContainerHigh = Color(0xFFE6DCF5),
-    surfaceContainerHighest = Color(0xFFDCD0EE),
-
-    outline = Color(0xFF675A78),
-    outlineVariant = Color(0xFFB9ABC9),
-
-    error = Color(0xFF991B1B),
-    onError = Color.White,
-    errorContainer = Color(0xFFFEE2E2),
-    onErrorContainer = Color(0xFF450A0A),
-
-    inverseSurface = Color(0xFF111827),
-    inverseOnSurface = Color(0xFFF9FAFB),
-    inversePrimary = Color(0xFFC4B5FD),
-
-    scrim = Color(0xFF000000)
-)
-private val NeonDarkColorScheme = darkColorScheme(
-    primary = NeonPurple,
-    onPrimary = Color.White,
-    primaryContainer = Color(0xFF27124A),
-    onPrimaryContainer = Color(0xFFEBDDFF),
-
-    secondary = JungleGreen,
+    secondary = PremiumSuccess,
     onSecondary = Color(0xFF06140C),
-    secondaryContainer = Color(0xFF0E3E25),
-    onSecondaryContainer = Color(0xFFC8FFD9),
+    secondaryContainer = Color(0xFF10391F),
+    onSecondaryContainer = Color(0xFFD8FFE3),
 
-    tertiary = JungleGold,
-    onTertiary = Color(0xFF221300),
-    tertiaryContainer = Color(0xFF4A2F08),
-    onTertiaryContainer = Color(0xFFFFE3B0),
+    tertiary = PremiumGold,
+    onTertiary = Color(0xFF281800),
+    tertiaryContainer = Color(0xFF4A3008),
+    onTertiaryContainer = Color(0xFFFFE6B2),
 
-    background = DeepSpace,
-    onBackground = TextMain,
+    background = PremiumBackground,
+    onBackground = PremiumText,
 
-    surface = CardDark,
-    onSurface = TextMain,
-    surfaceVariant = CardGreenDark,
-    onSurfaceVariant = TextMuted,
-    surfaceContainerLowest = Color(0xFF080B15),
-    surfaceContainerLow = Color(0xFF0D1320),
-    surfaceContainer = Color(0xFF111A26),
-    surfaceContainerHigh = Color(0xFF162233),
-    surfaceContainerHighest = Color(0xFF1C2A3D),
+    surface = PremiumSurface,
+    onSurface = PremiumText,
+    surfaceVariant = PremiumSurfaceVariant,
+    onSurfaceVariant = PremiumTextMuted,
 
-    error = WrongRed,
+    surfaceContainerLowest = Color(0xFF09070F),
+    surfaceContainerLow = Color(0xFF120D1C),
+    surfaceContainer = PremiumSurface,
+    surfaceContainerHigh = PremiumSurfaceVariant,
+    surfaceContainerHighest = PremiumSurfaceHigh,
+
+    outline = PremiumOutline,
+    outlineVariant = PremiumOutline.copy(alpha = 0.38f),
+
+    error = PremiumError,
     onError = Color.White,
-    errorContainer = Color(0xFF5C1020),
-    onErrorContainer = Color(0xFFFFD9DF),
+    errorContainer = Color(0xFF4A1519),
+    onErrorContainer = Color(0xFFFFDAD8),
 
-    outline = NeonPurple.copy(alpha = 0.72f),
-    outlineVariant = AquaCyan.copy(alpha = 0.20f),
+    inverseSurface = PremiumText,
+    inverseOnSurface = PremiumBackground,
+    inversePrimary = Color(0xFFD7B8FF),
     scrim = Color.Black
 )
 
-private val NeonLightColorScheme = lightColorScheme(
-    primary = NeonPurple,
-    onPrimary = Color.White,
-    primaryContainer = Color(0xFFEBDDFF),
-    onPrimaryContainer = Color(0xFF230B4B),
-
-    secondary = Color(0xFF008A46),
-    onSecondary = Color.White,
-    secondaryContainer = Color(0xFFC8FFD9),
-    onSecondaryContainer = Color(0xFF00210E),
-
-    tertiary = Color(0xFF8A5A00),
-    onTertiary = Color.White,
-    tertiaryContainer = Color(0xFFFFE3B0),
-    onTertiaryContainer = Color(0xFF2A1700),
-
-    background = Color(0xFFF9F7FF),
-    onBackground = Color(0xFF171225),
-
-    surface = Color.White,
-    onSurface = Color(0xFF171225),
-    surfaceVariant = Color(0xFFECE4F4),
-    onSurfaceVariant = Color(0xFF50465A),
-
-    error = WrongRed,
-    onError = Color.White,
-    outline = NeonPurple.copy(alpha = 0.60f)
-)
-
 val NeonShapes = Shapes(
+    extraSmall = RoundedCornerShape(8),
     small = RoundedCornerShape(12),
-    medium = RoundedCornerShape(20),
-    large = RoundedCornerShape(28),
-    extraLarge = RoundedCornerShape(36)
+    medium = RoundedCornerShape(16),
+    large = RoundedCornerShape(24),
+    extraLarge = RoundedCornerShape(32)
 )
 
 object NeonTokens {
     val MainGradient = Brush.linearGradient(
         colors = listOf(
-            DeepSpace,
-            ForestBlack,
-            Color(0xFF160A2E),
-            Color(0xFF071F16)
+            PremiumBackground,
+            Color(0xFF120D1F),
+            Color(0xFF1B102B),
+            PremiumBackground
         )
     )
 
     val HeaderGradient = Brush.linearGradient(
         colors = listOf(
-            NeonPink,
-            NeonPurple,
-            AquaCyan,
-            JungleGreen
+            PremiumGold,
+            PremiumPurpleBright,
+            PremiumPurple
         )
     )
 
     val AnswerSelectedGradient = Brush.horizontalGradient(
         colors = listOf(
-            NeonPurple.copy(alpha = 0.95f),
-            NeonPink.copy(alpha = 0.88f)
+            PremiumPurple,
+            PremiumPurpleBright
         )
     )
 
     val CorrectGradient = Brush.horizontalGradient(
         colors = listOf(
-            CorrectGreen,
-            Color(0xFF13C967)
+            PremiumSuccess,
+            Color(0xFF16A34A)
         )
     )
 
     val WrongGradient = Brush.horizontalGradient(
         colors = listOf(
-            WrongRed,
-            Color(0xFFDC2626)
+            PremiumError,
+            Color(0xFFB91C1C)
         )
     )
 
     val SkipGradient = Brush.horizontalGradient(
         colors = listOf(
-            JungleGold,
-            Color(0xFFFFE08A)
+            PremiumGold,
+            Color(0xFFFFD98A)
         )
     )
 
     val CardBrush = Brush.linearGradient(
         colors = listOf(
-            CardDark.copy(alpha = 0.96f),
-            CardGreenDark.copy(alpha = 0.88f)
+            PremiumSurface.copy(alpha = 0.98f),
+            PremiumSurfaceVariant.copy(alpha = 0.92f)
         )
     )
 
     val PremiumBorder = Brush.linearGradient(
         colors = listOf(
-            Color.White.copy(alpha = 0.30f),
-            NeonPurple.copy(alpha = 0.36f),
-            JungleGreen.copy(alpha = 0.22f),
+            Color.White.copy(alpha = 0.18f),
+            PremiumPurple.copy(alpha = 0.44f),
+            PremiumGold.copy(alpha = 0.18f),
             Color.Transparent
         )
     )
 
     val GlowColors = listOf(
-        NeonPurple,
-        NeonPink,
-        AquaCyan,
-        JungleGreen,
-        JungleGold
+        PremiumPurple,
+        PremiumPurpleBright,
+        PremiumGold,
+        PremiumSuccess,
+        PremiumError
     )
 }
 
 object NeonAnimations {
-    const val Fast = 180
-    const val Normal = 350
-    const val Slow = 700
+    const val Fast = 160
+    const val Normal = 280
+    const val Slow = 520
 
     val SmoothSpring = spring<Float>(
         dampingRatio = Spring.DampingRatioMediumBouncy,
-        stiffness = Spring.StiffnessLow
+        stiffness = Spring.StiffnessMediumLow
     )
 
     val SoftSpring = spring<Float>(
@@ -289,43 +163,32 @@ object NeonAnimations {
 
 @Composable
 fun rememberNeonPulse(): State<Float> {
-    val infiniteTransition = rememberInfiniteTransition(label = "neonPulse")
+    val infiniteTransition = rememberInfiniteTransition(label = "premiumPulse")
 
     return infiniteTransition.animateFloat(
-        initialValue = 0.55f,
+        initialValue = 0.72f,
         targetValue = 1f,
         animationSpec = infiniteRepeatable(
             animation = tween(
-                durationMillis = 1400,
+                durationMillis = 1800,
                 easing = FastOutSlowInEasing
             ),
             repeatMode = RepeatMode.Reverse
         ),
-        label = "neonPulseValue"
+        label = "premiumPulseValue"
     )
 }
 
 @Composable
 fun QuizMasterTheme(
-    darkTheme: Boolean = isSystemInDarkTheme(),
+    darkTheme: Boolean = true,
     dynamicColor: Boolean = false,
     content: @Composable () -> Unit
 ) {
-    val configuration = LocalConfiguration.current
-
-    val useCompactLightTheme = configuration.screenWidthDp <= 393 ||
-        configuration.screenHeightDp <= 860
-
-    val colorScheme = when {
-        darkTheme -> NeonDarkColorScheme
-        useCompactLightTheme -> CompactReadableLightColorScheme
-        else -> ReadableLightColorScheme
-    }
-
     MaterialTheme(
-        colorScheme = colorScheme,
+        colorScheme = PremiumDarkColorScheme,
         typography = QuizMasterTypography,
+        shapes = NeonShapes,
         content = content
     )
 }
-
