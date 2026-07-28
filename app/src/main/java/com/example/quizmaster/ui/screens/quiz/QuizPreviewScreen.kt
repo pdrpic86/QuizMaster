@@ -1,5 +1,5 @@
 package com.example.quizmaster.ui.screens.quiz
-import androidx.compose.ui.draw.alpha
+
 import androidx.compose.animation.core.FastOutSlowInEasing
 import androidx.compose.animation.core.LinearEasing
 import androidx.compose.animation.core.RepeatMode
@@ -51,13 +51,14 @@ import androidx.compose.material3.Text
 import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableIntStateOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.scale
 import androidx.compose.ui.graphics.Brush
@@ -65,26 +66,15 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.StrokeCap
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.platform.LocalConfiguration
-import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.quizmaster.data.local.QuestionEntity
-import com.example.quizmaster.data.local.QuizDatabase
-import com.example.quizmaster.data.remote.QuizApiService
-import com.example.quizmaster.data.repository.QuestionRepository
 import com.example.quizmaster.ui.components.AppBackground
 import com.example.quizmaster.ui.components.CategoryHeader
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.delay
-import kotlinx.coroutines.withContext
-import kotlin.time.Duration.Companion.seconds
-
-private const val QUIZ_LIMIT = 10
-private const val QUESTION_SECONDS = 15
-private const val SKIPPED_ANSWER = "__SKIPPED_ANSWER__"
 
 @Composable
 fun QuizPreviewScreen(
@@ -92,83 +82,32 @@ fun QuizPreviewScreen(
     selectedDifficulty: String,
     onBackClick: () -> Unit,
     isDarkTheme: Boolean,
-    onThemeToggle: () -> Unit
+    onThemeToggle: () -> Unit,
+    quizViewModel: QuizViewModel = viewModel()
 ) {
-    val context = LocalContext.current
+    val uiState by quizViewModel.uiState.collectAsState()
 
-    var questions by remember(selectedCategory, selectedDifficulty) { mutableStateOf<List<QuestionEntity>>(emptyList()) }
-    var isLoading by remember(selectedCategory, selectedDifficulty) { mutableStateOf(true) }
-    var errorMessage by remember(selectedCategory, selectedDifficulty) { mutableStateOf<String?>(null) }
-    var currentIndex by remember(selectedCategory, selectedDifficulty) { mutableIntStateOf(0) }
-    var score by remember(selectedCategory, selectedDifficulty) { mutableIntStateOf(0) }
-    var selectedAnswer by remember(selectedCategory, selectedDifficulty) { mutableStateOf<String?>(null) }
-    var isFinished by remember(selectedCategory, selectedDifficulty) { mutableStateOf(false) }
-    var secondsLeft by remember(selectedCategory, selectedDifficulty) { mutableIntStateOf(QUESTION_SECONDS) }
-    var quizRun by remember(selectedCategory, selectedDifficulty) { mutableIntStateOf(0) }
-
-    LaunchedEffect(selectedCategory, selectedDifficulty, quizRun) {
-        isLoading = true
-        errorMessage = null
-        currentIndex = 0
-        score = 0
-        selectedAnswer = null
-        isFinished = false
-        secondsLeft = QUESTION_SECONDS
-
-        runCatching {
-            withContext(Dispatchers.IO) {
-                val database = QuizDatabase.getDatabase(context)
-                val repository = QuestionRepository(
-                    questionDao = database.questionDao(),
-                    apiService = QuizApiService()
-                )
-
-                repository.syncQuestions(selectedCategory, selectedDifficulty)
-
-                repository.getQuestionsForQuiz(
-                    category = selectedCategory,
-                    difficulty = selectedDifficulty,
-                    limit = QUIZ_LIMIT
-                )
-            }
-        }.onSuccess { loadedQuestions ->
-            questions = loadedQuestions
-            errorMessage = if (loadedQuestions.isEmpty()) {
-                "No questions found for $selectedCategory / $selectedDifficulty."
-            } else {
-                null
-            }
-        }.onFailure { throwable ->
-            questions = emptyList()
-            errorMessage = throwable.message ?: "Database loading failed."
-        }
-
-        isLoading = false
+    LaunchedEffect(
+        selectedCategory,
+        selectedDifficulty
+    ) {
+        quizViewModel.startQuiz(
+            category = selectedCategory,
+            difficulty = selectedDifficulty
+        )
     }
 
-    val currentQuestion = questions.getOrNull(currentIndex)
-
-    LaunchedEffect(currentQuestion?.id, selectedAnswer, isFinished) {
-        if (currentQuestion == null || selectedAnswer != null || isFinished) return@LaunchedEffect
-
-        secondsLeft = QUESTION_SECONDS
-
-        while (secondsLeft > 0 && selectedAnswer == null && !isFinished) {
-            delay(1.seconds)
-            secondsLeft--
-        }
-
-        if (secondsLeft == 0 && selectedAnswer == null && !isFinished) {
-            selectedAnswer = ""
-        }
-    }
+    val currentQuestion = uiState.currentQuestion
 
     AppBackground {
         Column(
             modifier = Modifier
                 .fillMaxSize()
                 .systemBarsPadding()
-                .padding(horizontal = 10.dp, vertical = 6.dp),
+                .padding(
+                    horizontal = 10.dp,
+                    vertical = 6.dp
+                ),
             verticalArrangement = Arrangement.spacedBy(6.dp)
         ) {
             CategoryHeader(
@@ -183,25 +122,26 @@ fun QuizPreviewScreen(
                     .weight(1f)
             ) {
                 when {
-                    isLoading -> {
+                    uiState.isLoading -> {
                         CenterMessage(
                             title = "Loading questions...",
                             message = "Database is waking up."
                         )
                     }
 
-                    errorMessage != null -> {
+                    uiState.errorMessage != null -> {
                         CenterMessage(
                             title = "Quiz cannot start",
-                            message = errorMessage.orEmpty()
+                            message = uiState.errorMessage.orEmpty()
                         )
                     }
 
-                    isFinished -> {
+                    uiState.isFinished -> {
                         ResultCard(
-                            score = score,
-                            total = questions.size,
-                            onRestartClick = { quizRun++ },
+                            score = uiState.score,
+                            total = uiState.questions.size,
+                            onRestartClick =
+                                quizViewModel::restartQuiz,
                             onBackClick = onBackClick
                         )
                     }
@@ -209,36 +149,19 @@ fun QuizPreviewScreen(
                     currentQuestion != null -> {
                         CompactQuizContent(
                             question = currentQuestion,
-                            currentIndex = currentIndex,
-                            totalQuestions = questions.size,
-                            score = score,
-                            secondsLeft = secondsLeft,
-                            selectedAnswer = selectedAnswer,
+                            currentIndex = uiState.currentIndex,
+                            totalQuestions = uiState.questions.size,
+                            score = uiState.score,
+                            secondsLeft = uiState.secondsLeft,
+                            selectedAnswer = uiState.selectedAnswer,
                             isDarkTheme = isDarkTheme,
                             onThemeToggle = onThemeToggle,
-                            onAnswerSelected = { answer ->
-                                if (selectedAnswer == null) {
-                                    selectedAnswer = answer
-
-                                    if (answer == currentQuestion.correctAnswer) {
-                                        score++
-                                    }
-                                }
-                            },
-                            onSkipQuestion = {
-                                if (selectedAnswer == null) {
-                                    selectedAnswer = SKIPPED_ANSWER
-                                }
-                            },
-                            onNextClick = {
-                                if (currentIndex < questions.lastIndex) {
-                                    currentIndex++
-                                    selectedAnswer = null
-                                    secondsLeft = QUESTION_SECONDS
-                                } else {
-                                    isFinished = true
-                                }
-                            }
+                            onAnswerSelected =
+                                quizViewModel::selectAnswer,
+                            onSkipQuestion =
+                                quizViewModel::skipQuestion,
+                            onNextClick =
+                                quizViewModel::nextQuestion
                         )
                     }
                 }
@@ -246,7 +169,6 @@ fun QuizPreviewScreen(
         }
     }
 }
-
 @Composable
 private fun CompactQuizContent(
     question: QuestionEntity,
@@ -954,4 +876,5 @@ private fun CompactCountdownTimer(
         )
     }
 }
+
 
