@@ -33,8 +33,6 @@ import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.rounded.CheckCircle
 import androidx.compose.material.icons.rounded.Close
-import androidx.compose.material.icons.rounded.LightMode
-import androidx.compose.material.icons.rounded.Nightlight
 import androidx.compose.material.icons.rounded.Refresh
 import androidx.compose.material.icons.rounded.SkipNext
 import androidx.compose.material3.AlertDialog
@@ -43,7 +41,6 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.FilledTonalButton
 import androidx.compose.material3.Icon
-import androidx.compose.material3.IconButton
 import androidx.compose.material3.LinearProgressIndicator
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ProgressIndicatorDefaults
@@ -81,8 +78,6 @@ fun QuizPreviewScreen(
     selectedCategory: String,
     selectedDifficulty: String,
     onBackClick: () -> Unit,
-    isDarkTheme: Boolean,
-    onThemeToggle: () -> Unit,
     quizViewModel: QuizViewModel = viewModel()
 ) {
     val uiState by quizViewModel.uiState.collectAsState()
@@ -154,8 +149,7 @@ fun QuizPreviewScreen(
                             score = uiState.score,
                             secondsLeft = uiState.secondsLeft,
                             selectedAnswer = uiState.selectedAnswer,
-                            isDarkTheme = isDarkTheme,
-                            onThemeToggle = onThemeToggle,
+                            answers = uiState.answerOptions,
                             onAnswerSelected =
                                 quizViewModel::selectAnswer,
                             onSkipQuestion =
@@ -177,8 +171,7 @@ private fun CompactQuizContent(
     score: Int,
     secondsLeft: Int,
     selectedAnswer: String?,
-    isDarkTheme: Boolean,
-    onThemeToggle: () -> Unit,
+    answers: List<String>,
     onAnswerSelected: (String) -> Unit,
     onSkipQuestion: () -> Unit,
     onNextClick: () -> Unit
@@ -226,8 +219,6 @@ private fun CompactQuizContent(
             score = score,
             animatedProgress = animatedProgress,
             secondsLeft = secondsLeft,
-            isDarkTheme = isDarkTheme,
-            onThemeToggle = onThemeToggle,
             modifier = Modifier
                 .fillMaxWidth()
                 .weight(0.16f)
@@ -280,8 +271,6 @@ private fun CompactStatusBar(
     score: Int,
     animatedProgress: Float,
     secondsLeft: Int,
-    isDarkTheme: Boolean,
-    onThemeToggle: () -> Unit,
     modifier: Modifier = Modifier
 ) {
     Row(
@@ -316,17 +305,6 @@ private fun CompactStatusBar(
             )
         }
 
-        IconButton(
-            onClick = onThemeToggle,
-            modifier = Modifier.size(34.dp)
-        ) {
-            Icon(
-                imageVector = if (isDarkTheme) Icons.Rounded.LightMode else Icons.Rounded.Nightlight,
-                contentDescription = "Toggle Theme",
-                tint = MaterialTheme.colorScheme.primary,
-                modifier = Modifier.size(18.dp)
-            )
-        }
 
         CompactCountdownTimer(secondsLeft = secondsLeft)
     }

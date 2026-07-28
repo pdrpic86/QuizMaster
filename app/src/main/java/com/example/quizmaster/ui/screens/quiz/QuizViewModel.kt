@@ -28,6 +28,7 @@ data class QuizUiState(
     val category: String = "",
     val difficulty: String = "",
     val questions: List<QuestionEntity> = emptyList(),
+    val answerOptions: List<String> = emptyList(),
     val isLoading: Boolean = false,
     val errorMessage: String? = null,
     val currentIndex: Int = 0,
@@ -44,15 +45,19 @@ class QuizViewModel(
     application: Application
 ) : AndroidViewModel(application) {
 
-    private val database = QuizDatabase.getDatabase(application)
+    private val database =
+        QuizDatabase.getDatabase(application)
 
     private val repository = QuestionRepository(
         questionDao = database.questionDao(),
         apiService = QuizApiService()
     )
 
-    private val _uiState = MutableStateFlow(QuizUiState())
-    val uiState: StateFlow<QuizUiState> = _uiState.asStateFlow()
+    private val _uiState =
+        MutableStateFlow(QuizUiState())
+
+    val uiState: StateFlow<QuizUiState> =
+        _uiState.asStateFlow()
 
     private var loadingJob: Job? = null
     private var timerJob: Job? = null
@@ -61,16 +66,16 @@ class QuizViewModel(
         category: String,
         difficulty: String
     ) {
-        val currentState = _uiState.value
+        val state = _uiState.value
 
         val sameQuiz =
-            currentState.category == category &&
-                currentState.difficulty == difficulty
+            state.category == category &&
+                state.difficulty == difficulty
 
         val alreadyInitialized =
-            currentState.isLoading ||
-                currentState.questions.isNotEmpty() ||
-                currentState.errorMessage != null
+            state.isLoading ||
+                state.questions.isNotEmpty() ||
+                state.errorMessage != null
 
         if (sameQuiz && alreadyInitialized) {
             return
@@ -85,7 +90,10 @@ class QuizViewModel(
     fun restartQuiz() {
         val state = _uiState.value
 
-        if (state.category.isBlank() || state.difficulty.isBlank()) {
+        if (
+            state.category.isBlank() ||
+            state.difficulty.isBlank()
+        ) {
             return
         }
 
@@ -99,7 +107,10 @@ class QuizViewModel(
         val state = _uiState.value
         val question = state.currentQuestion ?: return
 
-        if (state.selectedAnswer != null || state.isFinished) {
+        if (
+            state.selectedAnswer != null ||
+            state.isFinished
+        ) {
             return
         }
 
@@ -108,7 +119,9 @@ class QuizViewModel(
         _uiState.update {
             it.copy(
                 selectedAnswer = answer,
-                score = if (answer == question.correctAnswer) {
+                score = if (
+                    answer == question.correctAnswer
+                ) {
                     it.score + 1
                 } else {
                     it.score
@@ -131,21 +144,33 @@ class QuizViewModel(
         timerJob?.cancel()
 
         _uiState.update {
-            it.copy(selectedAnswer = SKIPPED_ANSWER)
+            it.copy(
+                selectedAnswer = SKIPPED_ANSWER
+            )
         }
     }
 
     fun nextQuestion() {
         val state = _uiState.value
 
-        if (state.currentQuestion == null || state.isFinished) {
+        if (
+            state.currentQuestion == null ||
+            state.isFinished
+        ) {
             return
         }
 
         if (state.currentIndex < state.questions.lastIndex) {
+            val nextIndex = state.currentIndex + 1
+            val nextQuestion =
+                state.questions.getOrNull(nextIndex)
+                    ?: return
+
             _uiState.update {
                 it.copy(
-                    currentIndex = it.currentIndex + 1,
+                    currentIndex = nextIndex,
+                    answerOptions =
+                        createAnswerOptions(nextQuestion),
                     selectedAnswer = null,
                     secondsLeft = QUESTION_SECONDS
                 )
@@ -189,15 +214,24 @@ class QuizViewModel(
                     )
                 }
             }.onSuccess { loadedQuestions ->
-                val emptyMessage = if (loadedQuestions.isEmpty()) {
-                    "No questions found for $category / $difficulty."
-                } else {
-                    null
-                }
+                val firstQuestion =
+                    loadedQuestions.firstOrNull()
+
+                val emptyMessage =
+                    if (loadedQuestions.isEmpty()) {
+                        "No questions found for " +
+                            "$category / $difficulty."
+                    } else {
+                        null
+                    }
 
                 _uiState.update {
                     it.copy(
                         questions = loadedQuestions,
+                        answerOptions =
+                            firstQuestion
+                                ?.let(::createAnswerOptions)
+                                .orEmpty(),
                         isLoading = false,
                         errorMessage = emptyMessage,
                         currentIndex = 0,
@@ -215,13 +249,26 @@ class QuizViewModel(
                 _uiState.update {
                     it.copy(
                         questions = emptyList(),
+                        answerOptions = emptyList(),
                         isLoading = false,
                         errorMessage =
-                            throwable.message ?: "Database loading failed."
+                            throwable.message
+                                ?: "Database loading failed."
                     )
                 }
             }
         }
+    }
+
+    private fun createAnswerOptions(
+        question: QuestionEntity
+    ): List<String> {
+        return listOf(
+            question.correctAnswer,
+            question.wrongAnswer1,
+            question.wrongAnswer2,
+            question.wrongAnswer3
+        ).shuffled()
     }
 
     private fun startTimer() {
@@ -241,8 +288,9 @@ class QuizViewModel(
                     return@launch
                 }
 
-                val newSeconds = (state.secondsLeft - 1)
-                    .coerceAtLeast(0)
+                val newSeconds =
+                    (state.secondsLeft - 1)
+                        .coerceAtLeast(0)
 
                 if (newSeconds == 0) {
                     _uiState.update {

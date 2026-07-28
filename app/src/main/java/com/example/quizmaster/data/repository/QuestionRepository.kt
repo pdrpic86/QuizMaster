@@ -16,6 +16,7 @@ class QuestionRepository(
             "Easy" -> 1
             "Medium" -> 2
             "Hard" -> 3
+            "Expert" -> 4
             else -> 1
         }
 
@@ -65,7 +66,8 @@ class QuestionRepository(
                 "Easy" -> 1
                 "Medium" -> 2
                 "Hard" -> 3
-                else -> 1
+            "Expert" -> 4
+            else -> 1
             }
 
             questionDao.getQuestionsByCategoryAndDifficulty(
