@@ -2,36 +2,56 @@ package com.example.quizmaster.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
-// ------------------------------------------------------------
-// QUIZMASTER NEON JUNGLE / MATERIAL 3 PALETTE
-// ------------------------------------------------------------
+// QuizMaster premium dark Material 3 palette.
+// Existing public color names are retained so the current UI keeps compiling
+// while the visual layer is redesigned.
 
-val NeonBlue = Color(0xFF3B82F6)
-val NeonRed = Color(0xFFEF4444)
-val NeonPurple = Color(0xFF9D4DFF)
-val NeonPink = Color(0xFFFF4DDB)
-val JungleGreen = Color(0xFF39FF8A)
-val JungleGold = Color(0xFFFFB84D)
-val AquaCyan = Color(0xFF38DFFF)
+val PremiumBackground = Color(0xFF0E0A1A)
+val PremiumSurface = Color(0xFF171123)
+val PremiumSurfaceVariant = Color(0xFF21172F)
+val PremiumSurfaceHigh = Color(0xFF2A1B3D)
+val PremiumPlum = Color(0xFF2A1B4A)
 
-val DeepBlack = Color(0xFF050711)
-val DarkBlue = Color(0xFF0A192F)
-val DarkRed = Color(0xFF1F0707)
+val PremiumPurple = Color(0xFF7B2CFF)
+val PremiumPurpleBright = Color(0xFFA855F7)
+val PremiumGold = Color(0xFFFFB84D)
+val PremiumBlue = Color(0xFF3B82F6)
 
-val DeepSpace = Color(0xFF050711)
-val ForestBlack = Color(0xFF07120D)
-val CardDark = Color(0xFF101822)
-val CardGreenDark = Color(0xFF102417)
-val CardAccentDark = Color(0xFF1F1010)
+val PremiumSuccess = Color(0xFF22C55E)
+val PremiumError = Color(0xFFE53935)
+val PremiumWarning = Color(0xFFF59E0B)
 
-val TextMain = Color(0xFFF7F4FF)
-val TextMuted = Color(0xFFB9B2C8)
+val PremiumText = Color(0xFFF7F4FF)
+val PremiumTextMuted = Color(0xFFB8B0C6)
+val PremiumOutline = Color(0xFF6E5B82)
 
-val CorrectGreen = Color(0xFF39FF8A)
-val WrongRed = Color(0xFFFF4D6D)
-val WarningGold = Color(0xFFFFC857)
+// Compatibility aliases used by existing screens and components.
+val NeonBlue = PremiumBlue
+val NeonRed = PremiumError
+val NeonPurple = PremiumPurple
+val NeonPink = PremiumPurpleBright
+val JungleGreen = PremiumSuccess
+val JungleGold = PremiumGold
+val AquaCyan = Color(0xFF38BDF8)
 
-// Legacy colors for compatibility during refactor
+val DeepBlack = PremiumBackground
+val DarkBlue = PremiumSurface
+val DarkRed = Color(0xFF3A1117)
+
+val DeepSpace = PremiumBackground
+val ForestBlack = Color(0xFF110D1B)
+val CardDark = PremiumSurface
+val CardGreenDark = PremiumSurfaceVariant
+val CardAccentDark = Color(0xFF25141B)
+
+val TextMain = PremiumText
+val TextMuted = PremiumTextMuted
+
+val CorrectGreen = PremiumSuccess
+val WrongRed = PremiumError
+val WarningGold = PremiumGold
+
+// Legacy names kept until all old UI code is replaced.
 val QuizBlack = DeepBlack
 val QuizBlue = NeonBlue
 val QuizRed = NeonRed
@@ -39,6 +59,6 @@ val QuizBlueLight = Color(0xFF60A5FA)
 val QuizText = TextMain
 val QuizBlackSoft = CardDark
 val QuizCardBlue = DarkBlue
-val QuizCardBlueLight = Color(0xFF14243D)
+val QuizCardBlueLight = PremiumSurfaceHigh
 val QuizDarkBlue = DarkBlue
 val QuizRedDark = DarkRed
